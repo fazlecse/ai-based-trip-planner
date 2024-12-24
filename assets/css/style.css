@@ -42,6 +42,7 @@ Typography
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --heading-font: "El Messiri", serif;
+  --heading-font: "Jost", serif;
   --body-font: "Jost", serif;
   --primary-color: 99, 171, 69;
   --body-color: #333333;
@@ -214,14 +215,14 @@ h3,
 h4,
 h5 {
   font-family: var(--heading-font);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   color: rgb(var(--heading-color));
 }
 
 h1 {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
   line-height: 50px;
 }
@@ -233,8 +234,8 @@ h1 {
   }
 }
 h2 {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 
@@ -267,7 +268,7 @@ h4 {
 h5 {
   font-size: 20px;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h6 {
@@ -299,7 +300,7 @@ figure {
 
 body {
   font-family: var(--body-font);
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--body-color);
   font-size: 16px;
   padding: 0 !important;
@@ -4573,6 +4574,26 @@ Bottom Mobile, Tab nav end
 .hero-section {
   padding: 150px 0 100px;
 }
+.hero-section .header-box {
+  text-align: center;
+}
+.hero-section .header-box .title {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero-section .header-box .title img {
+  width: 42px;
+}
+.hero-section .header-box .title .img2 {
+  width: 36px;
+}
+.hero-section .header-box .description {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 .product-box {
   display: flex;
@@ -4598,9 +4619,8 @@ Bottom Mobile, Tab nav end
   font-family: var(--heading-font);
   color: rgb(var(--heading-color));
   text-transform: capitalize;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 25px;
 }
 .product-box .text-box .sub-title {
   color: rgb(var(--heading-color));
@@ -4611,46 +4631,77 @@ Bottom Mobile, Tab nav end
 Hero section end
 ----------------------------------------------*/
 /*----------------------------------------------
-00. Exclusive offer section start
+00. Story section start
 ----------------------------------------------*/
-.trending-items-carousel {
-  position: relative;
-}
-.trending-items-carousel .owl-nav {
-  position: absolute;
-  top: calc(0% - 100px);
-  right: 0;
+.story-section {
+  background-color: var(--bg-color2);
 }
 
-.rtl .trending-items-carousel .owl-nav {
-  right: auto;
-  left: 0;
-}
-
-/*----------------------------------------------
-Exclusive offer section end
-----------------------------------------------*/
-/*----------------------------------------------
-00. About section start
-----------------------------------------------*/
-.about-section {
+.story-box {
   background-color: var(--bg-color1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
 }
-.about-section .img-box {
-  max-width: 500px;
-  margin: 0 auto;
+.story-box:hover .img-box::after {
+  height: 250%;
+  transition: all 600ms linear;
+  background-color: transparent;
+}
+.story-box .img-box {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.story-box .img-box::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 1;
+}
+.story-box .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.story-box .text-box {
+  padding: 5px;
+}
+.story-box .text-box .title {
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.story-box .text-box .sub-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
-@media (max-width: 991px) {
-  .about-section .text-box {
-    text-align: center;
-  }
-  .about-section .img-box {
-    max-width: 450px;
-  }
-}
 /*----------------------------------------------
-About section end
+Story section end
 ----------------------------------------------*/
 /*----------------------------------------------
 17. Faq section start
@@ -4845,6 +4896,7 @@ Testimonial end
   position: relative;
   font-weight: 500;
   font-size: 14px;
+  color: rgb(var(--primary-color));
 }
 .meta .item a {
   display: flex;
