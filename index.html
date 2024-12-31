@@ -172,251 +172,489 @@
     <div class="hero-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 mx-auto ">
-                    <!-- Multi step progress section start -->
-                    <div class="multi-step-progress-section mb-60">
-                        <ul class="multi-step-list">
-                            <li class="item active">
-                                <div class="progress-link">
-                                    <div class="icon-area">
-                                        <i class="fa-regular fa-check"></i>
+                <div class="col-lg-9 mx-auto">
+                    <div class="hero-section-inner">
+                        <!-- Multi step progress section start -->
+                        <div class="multi-step-progress-section mb-60">
+                            <ul class="multi-step-list">
+                                <li class="item active">
+                                    <div class="progress-link">
+                                        <div class="icon-area">
+                                            <i class="fa-regular fa-check"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item active">
+                                    <div class="progress-link">
+                                        <div class="icon-area">
+                                            <i class="fa-solid fa-circle"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="progress-link">
+                                        <div class="icon-area">
+                                            <i class="fa-solid fa-circle"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="progress-link">
+                                        <div class="icon-area">
+                                            <i class="fa-solid fa-circle"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="progress-link">
+                                        <div class="icon-area">
+                                            <i class="fa-solid fa-circle"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Multi step progress section end -->
+
+
+                        <form id="multiStepForm">
+                            <!-- Step 1: NWhere do you want to go -->
+                            <div class="step active">
+                                <div class="top-box">
+                                    <div class="header-box">
+                                        <h1 class="title">Where do you want to go?<img
+                                                src="./assets/img/hero/airplane.png" alt=""></h1>
+                                        <p class="">Discover customized options and seamlessly build your travel
+                                            itinerary
+                                        </p>
+                                    </div>
+                                    <div class="search-box2 mt-30" id="search-box2">
+                                        <input type="text" id="search-input" class="form-control"
+                                            placeholder="Choose a city or town">
+                                        <div class="search-btn"><i class="far fa-search"></i></div>
+                                        <div class="search-result" id="search-result">
+
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">istanbul</div>
+                                                    <div class="sub-title">Türkiye, Europe</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">New York City</div>
+                                                    <div class="sub-title">United States</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">London</div>
+                                                    <div class="sub-title">United Kingdom</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">Dhaka</div>
+                                                    <div class="sub-title">Bangladesh</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">Dubai</div>
+                                                    <div class="sub-title">United Arab Emirates</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="search-item">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-location-dot"></i>
+                                                </div>
+                                                <div class="text-box">
+                                                    <div class="title">Paris</div>
+                                                    <div class="sub-title">France</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h5 class="mt-40 text-center">Or get started with a popular destination</h5>
+                                    <div class="mt-50">
+                                        <div class="row g-4">
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/1.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">istanbul</div>
+                                                        <div class="sub-title">Türkiye</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/2.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">dubai</div>
+                                                        <div class="sub-title">United Arab Emirates</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/3.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">London</div>
+                                                        <div class="sub-title">United Kingdom</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/4.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">Paris</div>
+                                                        <div class="sub-title">France</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/5.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">New York City</div>
+                                                        <div class="sub-title">United States</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="" class="product-box">
+                                                    <div class="img-box">
+                                                        <img src="./assets/img/products/6.jpg" alt="">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <div class="title">bali</div>
+                                                        <div class="sub-title">indoneshia</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="item active">
-                                <div class="progress-link">
-                                    <div class="icon-area">
-                                        <i class="fa-regular fa-check"></i>
+                            </div>
+
+                            <!-- Step 2: When will you want to go? -->
+                            <div class="step">
+                                <div class="top-box">
+                                    <div class="header-box">
+                                        <h2 class="title">When will you want to go? <img class="img2"
+                                                src="./assets/img/hero/calendar.png" alt=""></h2>
+                                        <p class="description">
+                                            Could you clarify what you're referring to? Are you asking about planning a
+                                            trip,
+                                            scheduling something, or something else?</p>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="item">
-                                <div class="progress-link">
-                                    <div class="icon-area">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
+                            </div>
+
+                            <!-- Step 3: Who is going? -->
+                            <div class="step">
+                                <div class="top-box">
+                                    <div class="header-box">
+                                        <h2 class="title">Who is going? <img class="img2"
+                                                src="./assets/img/hero/shrug.png" alt=""></h2>
+                                        <p class="description">Let's get started by selecting who you're travelling
+                                            with.
+                                        </p>
+                                    </div>
+                                    <div class="custom-radio-container mt-50">
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1" checked="">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                <div class="content-box">
+                                                    <div class="title">only me <img src="./assets/img/hero/man.png"
+                                                            alt="">
+                                                    </div>
+                                                    <span>Traveling so, just you</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                <div class="content-box">
+                                                    <div class="title">music partner <img
+                                                            src="./assets/img/hero/music.png" alt=""></div>
+                                                    <span>This is demo music partner</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault3">
+                                            <label class="form-check-label" for="flexRadioDefault3">
+                                                <div class="content-box">
+                                                    <div class="title">car rental <img
+                                                            src="./assets/img/hero/vehicle.png" alt="car rentel"></div>
+                                                    <span>car rental with all the cars</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault4">
+                                            <label class="form-check-label" for="flexRadioDefault4">
+                                                <div class="content-box">
+                                                    <div class="title">Your guide <img
+                                                            src="./assets/img/hero/user-guide.png" alt="Guidance"></div>
+                                                    <span>Guidance</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault5">
+                                            <label class="form-check-label" for="flexRadioDefault5">
+                                                <div class="content-box">
+                                                    <div class="title">friends trip <img
+                                                            src="./assets/img/hero/friends.png" alt="food"></div>
+                                                    <span>Art, theatre, and shared adventures.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault6">
+                                            <label class="form-check-label" for="flexRadioDefault6">
+                                                <div class="content-box">
+                                                    <div class="title">Arts & Theatre <img
+                                                            src="./assets/img/hero/theater.png" alt="Theatre"></div>
+                                                    <span>Vibrant theatre and art.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault7">
+                                            <label class="form-check-label" for="flexRadioDefault7">
+                                                <div class="content-box">
+                                                    <div class="title">Partner trip <img
+                                                            src="./assets/img/hero/relationship.png" alt="Guidance"></div>
+                                                    <span>Romantic theatre and artistic charm.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault8">
+                                            <label class="form-check-label" for="flexRadioDefault8">
+                                                <div class="content-box">
+                                                    <div class="title">family trip <img
+                                                            src="./assets/img/hero/family.png" alt="Guidance"></div>
+                                                    <span>Family-friendly theatre and art.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
                                     </div>
                                 </div>
-                            </li>
-                            <li class="item">
-                                <div class="progress-link">
-                                    <div class="icon-area">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
+                            </div>
+
+                            <!-- Step 4: Set your Trip budget -->
+                            <div class="step">
+                                <div class="top-box">
+                                    <div class="header-box">
+                                        <h2 class="title">Set your Trip budget<img class="img2"
+                                                src="./assets/img/hero/money-bag.png" alt=""></h2>
+                                        <p class="description">Let's us know your budget preference, and we'll craft an
+                                            itinerary that suits your financial comfort.</p>
+                                    </div>
+                                    <div class="custom-radio-container mt-50">
+                                        <div class="item">
+                                            <input class="form-check-input" type="radio" name="budget"
+                                                id="flexRadioDefault" checked="">
+                                            <label class="form-check-label" for="flexRadioDefault">
+                                                <div class="content-box">
+                                                    <div class="title">balanced <img
+                                                            src="./assets/img/hero/suitcase.png" alt="">
+                                                    </div>
+                                                    <span>Moderate Spending for a balanced trip</span>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="item">
-                                <div class="progress-link">
-                                    <div class="icon-area">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
+                            </div>
+
+                            <!-- Step 5: Travel Preferences -->
+                            <div class="step">
+                                <div class="top-box">
+                                    <div class="header-box">
+                                        <h2 class="title">Travel Preferences 0/5<img class="img2"
+                                                src="./assets/img/hero/settings.png" alt=""></h2>
+                                        <p class="description">Let's us know your budget preference, and we'll craft an
+                                            itinerary that suits your financial comfort.</p>
+                                    </div>
+                                    <div class="custom-checkbox-container mt-50">
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault" checked>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                <div class="content-box">
+                                                    <div class="title">city breaks <img
+                                                            src="./assets/img/hero/statue-of-liberty.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault2">
+                                            <label class="form-check-label" for="flexCheckDefault2">
+                                                <div class="content-box">
+                                                    <div class="title">glamping <img src="./assets/img/hero/fire.png"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault3">
+                                            <label class="form-check-label" for="flexCheckDefault3">
+                                                <div class="content-box">
+                                                    <div class="title">beach vacations <img
+                                                            src="./assets/img/hero/sunbed.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault4">
+                                            <label class="form-check-label" for="flexCheckDefault4">
+                                                <div class="content-box">
+                                                    <div class="title">relaxing gateways<img
+                                                            src="./assets/img/hero/deck-chair.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault5">
+                                            <label class="form-check-label" for="flexCheckDefault5">
+                                                <div class="content-box">
+                                                    <div class="title">nature escapes<img
+                                                            src="./assets/img/hero/flower-pot.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault6">
+                                            <label class="form-check-label" for="flexCheckDefault6">
+                                                <div class="content-box">
+                                                    <div class="title">road trips<img src="./assets/img/hero/travel.png"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault7">
+                                            <label class="form-check-label" for="flexCheckDefault7">
+                                                <div class="content-box">
+                                                    <div class="title">food tourism<img
+                                                            src="./assets/img/hero/burger.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault8">
+                                            <label class="form-check-label" for="flexCheckDefault8">
+                                                <div class="content-box">
+                                                    <div class="title">fishing<img src="./assets/img/hero/fishing.png"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault9">
+                                            <label class="form-check-label" for="flexCheckDefault9">
+                                                <div class="content-box">
+                                                    <div class="title">cruise vacations<img
+                                                            src="./assets/img/hero/cruise.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault10">
+                                            <label class="form-check-label" for="flexCheckDefault10">
+                                                <div class="content-box">
+                                                    <div class="title">art galleries<img
+                                                            src="./assets/img/hero/palette.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="form-check-input" type="checkbox" name="budget"
+                                                id="flexCheckDefault11">
+                                            <label class="form-check-label" for="flexCheckDefault11">
+                                                <div class="content-box">
+                                                    <div class="title">Horse Riding<img
+                                                            src="./assets/img/hero/horseback-riding.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </form>
+                        <div class="button-box">
+                            <button type="button" class="prev-btn prevBtn">
+                                <span><i class="fa-regular fa-arrow-left"></i></span>
+                                prev
+                            </button>
+                            <button type="button" class="cmn-btn nextBtn">
+                                next
+                                <span><i class="fa-regular fa-arrow-right"></i></span>
+                            </button>
+                        </div>
                     </div>
-                    <!-- Multi step progress section end -->
-
-
-                    <form id="multiStepForm">
-
-                        <!-- Step 1: Name And Description -->
-                        <div class="step active">
-                            <div class="header-box text-center">
-                                <h1 class="title">Where do you want to go?<img src="./assets/img/hero/airplane.png"
-                                        alt=""></h1>
-                                <p class="">Discover customized options and seamlessly build your travel itinerary</p>
-                            </div>
-                            <div class="search-box2 mt-30" id="search-box2">
-                                <input type="text" id="search-input" class="form-control"
-                                    placeholder="Choose a city or town">
-                                <div class="search-btn"><i class="far fa-search"></i></div>
-                                <div class="search-result" id="search-result">
-
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">istanbul</div>
-                                            <div class="sub-title">Türkiye, Europe</div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">New York City</div>
-                                            <div class="sub-title">United States</div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">London</div>
-                                            <div class="sub-title">United Kingdom</div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">Dhaka</div>
-                                            <div class="sub-title">Bangladesh</div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">Dubai</div>
-                                            <div class="sub-title">United Arab Emirates</div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="search-item">
-                                        <div class="icon-box">
-                                            <i class="fa-regular fa-location-dot"></i>
-                                        </div>
-                                        <div class="text-box">
-                                            <div class="title">Paris</div>
-                                            <div class="sub-title">France</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h5 class="mt-40 text-center">Or get started with a popular destination</h5>
-                            <div class="mt-50">
-                                <div class="row g-4">
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/1.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">istanbul</div>
-                                                <div class="sub-title">Türkiye</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/2.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">dubai</div>
-                                                <div class="sub-title">United Arab Emirates</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/3.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">London</div>
-                                                <div class="sub-title">United Kingdom</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/4.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">Paris</div>
-                                                <div class="sub-title">France</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/5.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">New York City</div>
-                                                <div class="sub-title">United States</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="" class="product-box">
-                                            <div class="img-box">
-                                                <img src="./assets/img/products/6.jpg" alt="">
-                                            </div>
-                                            <div class="text-box">
-                                                <div class="title">bali</div>
-                                                <div class="sub-title">indoneshia</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 mt-30">
-                                <button type="button" class="cmn-btn nextBtn">next</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 2: Category And Attributes -->
-                        <div class="step">
-                            <div class="header-box">
-                                <h2 class="title">When will you want to go? <img class="img2"
-                                        src="./assets/img/hero/calendar.png" alt=""></h2>
-                                <p class="description">
-                                    Could you clarify what you're referring to? Are you asking about planning a trip,
-                                    scheduling something, or something else?</p>
-                            </div>
-
-                            <div class="d-flex gap-3 mt-30">
-                                <button type="button" class="cmn-btn2 prevBtn">prev</button>
-                                <button type="button" class="cmn-btn nextBtn">next</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 3: Files -->
-                        <div class="step">
-                            step3
-
-                            <div class="d-flex gap-3 mt-30">
-                                <button type="button" class="cmn-btn2 prevBtn">prev</button>
-                                <button type="button" class="cmn-btn nextBtn">next</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 4: Price -->
-                        <div class="step">
-                            step4
-
-                            <div class="d-flex gap-3 mt-30">
-                                <button type="button" class="cmn-btn2 prevBtn">prev</button>
-                                <button type="button" class="cmn-btn nextBtn">next</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 5: Message Reviewer -->
-                        <div class="step">
-                            step5
-
-                            <div class="d-flex gap-3 mt-30">
-                                <button type="button" class="cmn-btn2 prevBtn">prev</button>
-                                <button type="submit" class="cmn-btn nextBtn">next</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 6: Welcome Message -->
-                        <div class="step">
-                            step6
-                        </div>
-
-
-
-                    </form>
                 </div>
             </div>
         </div>
@@ -533,10 +771,10 @@
 
 
     <!-- Footer Section start -->
-    <!-- <section class="footer-section">
+    <section class="footer-section">
         <div class="container">
             <div class="row gy-4 g-sm-5">
-                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="500">
+                <div class="col-lg-4 col-sm-6">
                     <div class="footer-widget">
                         <div class="widget-logo">
                             <a href="#nav_area"><img class="footer-logo" src="assets/img/logo/logo.png" alt="GEMOT"></a>
@@ -558,7 +796,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6" data-aos="fade-up" data-aos-duration="700">
+                <div class="col-lg-2 col-sm-6">
                     <div class="footer-widget">
                         <h5 class="widget-title">Quick Links</h5>
                         <ul>
@@ -570,7 +808,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3 ps-lg-5" data-aos="fade-up" data-aos-duration="900">
+                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3 ps-lg-5">
                     <div class="footer-widget">
                         <h5 class="widget-title">Company Policy</h5>
                         <ul>
@@ -580,7 +818,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3" data-aos="fade-up" data-aos-duration="1100">
+                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3">
                     <div class="footer-widget">
                         <h5 class="widget-title">Newsletter</h5>
                         <p>Subscribe To Our Mailing List
@@ -593,39 +831,28 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section> -->
-    <!-- Footer Section end -->
-
-    <!-- Copyright section start -->
-    <!-- <div class="copyright-section">
-        <div class="container">
-            <div class="copyright-inner">
-                <div class="row gy-4 align-items-center">
+            <hr class="cmn-hr">
+             <!-- Copyright section start -->
+            <div class="copyright-area">
+                <div class="row gy-4">
                     <div class="col-sm-6">
-                        <p class="mb-0 text-center text-sm-start">Copyright ©2024 <a class="highlight"
-                                href="index.html">PlanVista</a> All Rights
-                            Reserved!
+                        <p class="mb-0">Copyright ©2023 <a class="highlight" href="index.html">PTCPro</a> All Rights
+                            Reserved
                         </p>
                     </div>
-                    <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end">
-                        <div class="payment-gateway">
-                            <img src="./assets/img/gateway/small/396d4ffb14c64be61694621c480d9917.png"
-                                alt="gateway-img">
-                            <img src="./assets/img/gateway/small/9862aeaf448f32090a4c61dced07ae74.png"
-                                alt="gateway-img">
-                            <img src="./assets/img/gateway/small/98e2d9681b5a058a3eed7ea018a70269.png"
-                                alt="gateway-img">
-                            <img src="./assets/img/gateway/small/c1e8cfdb317c02f0892c59027811a97e.png"
-                                alt="gateway-img">
+                    <div class="col-sm-6">
+                        <div class="language">
+                            <a href="" class="item active">English</a>
+                            <a href="" class="item">Spanish</a>
+                            <a href="" class="item">Germany</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Copyright section end -->
         </div>
-    </div> -->
-    <!-- Copyright section end -->
-
+    </section>
+    <!-- Footer Section end -->
 
     <!-- Modal section start -->
     <div class="modal fade" id="lang-currency-modal" data-bs-keyboard="false" tabindex="-1"
@@ -673,6 +900,72 @@
     <!-- Modal section end -->
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentStep = 0;
+            const steps = document.querySelectorAll('.step');
+            const progressItems = document.querySelectorAll('.multi-step-list .item');
+            const form = document.getElementById('multiStepForm');
+
+            // Show the first step
+            showStep(currentStep);
+            updateProgressBar();
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === stepIndex);
+                });
+            }
+
+            function updateProgressBar() {
+                progressItems.forEach((item, index) => {
+                    item.classList.toggle('active', index <= currentStep);
+                });
+            }
+
+            function nextStep() {
+                if (validateStep()) {
+                    currentStep++;
+                    if (currentStep >= steps.length) {
+                        form.submit();
+                    } else {
+                        showStep(currentStep);
+                        updateProgressBar();
+                    }
+                }
+            }
+
+            function prevStep() {
+                currentStep--;
+                showStep(currentStep);
+                updateProgressBar();
+            }
+
+            // Function to validate regex for each field
+            function validateStep() {
+                let valid = true;
+                return valid;
+            }
+
+            // Event listeners for next and previous buttons
+            document.querySelectorAll('.nextBtn').forEach(btn => {
+                btn.addEventListener('click', nextStep);
+            });
+
+            document.querySelectorAll('.prevBtn').forEach(btn => {
+                btn.addEventListener('click', prevStep);
+            });
+
+            // Form submission handler
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                document.getElementById('formMessage').innerText = 'Product submitted successfully!';
+                document.getElementById('formMessage').style.display = 'block';
+                form.reset();
+            });
+        });
+
+    </script>
 
 
 

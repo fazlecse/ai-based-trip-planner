@@ -72,7 +72,7 @@ Typography
     --bg-color1: #ffffff;
     --bg-color2: rgb(var(--primary-color), 0.05);
     --bg-color3: rgb(var(--primary-color), 0.1);
-    --bg-color4: #242C50;
+    --bg-color4: #F2F2F2;
     --border-color1: rgba(231, 234, 243, .7);
     --border-color2: rgba(140, 152, 164, .25);
     --border-color3: rgba(255, 255, 255, .06);
@@ -239,7 +239,7 @@ h5 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 600;
     margin-bottom: 20px;
     line-height: 50px;
@@ -253,7 +253,7 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 5px;
 
@@ -1870,7 +1870,6 @@ Offcanvas end
     &:hover {
         background-color: rgb(var(--primary-color), 0.8);
         color: rgb(var(--white));
-        gap: 10px;
     }
 
 }
@@ -2024,15 +2023,13 @@ Offcanvas end
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 2px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
 
     &:hover {
         transition: var(--transition);
-        text-decoration: underline;
-        gap: 10px;
         background-color: rgb(var(--primary-color), 0.1);
 
-        border-radius: 8px;
     }
 }
 
@@ -2801,6 +2798,10 @@ hr.divider:after {
                 background-color: rgb(var(--primary-color));
                 color: rgb(var(--white));
                 font-size: 12px;
+
+                i::before {
+                    content: '\f00c';
+                }
             }
 
             .title {
@@ -5706,7 +5707,7 @@ Bottom Mobile, Tab nav end
 00. Hero section start
 ----------------------------------------------*/
 .hero-section {
-    padding: 150px 0 100px;
+    padding: 150px 0 80px;
 
     .header-box {
         text-align: center;
@@ -5723,7 +5724,7 @@ Bottom Mobile, Tab nav end
             }
 
             .img2 {
-                width: 36px;
+                width: 34px;
             }
         }
 
@@ -5732,6 +5733,19 @@ Bottom Mobile, Tab nav end
             margin: 0 auto;
         }
     }
+
+    .button-box {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 30px;
+    }
+}
+
+.hero-section-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
 }
 
 .product-box {
@@ -5778,8 +5792,202 @@ Bottom Mobile, Tab nav end
     }
 }
 
+.prev-btn {
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &:hover {
+        background-color: rgb(var(--primary-color), 0.1);
+        border-radius: 9999px;
+    }
+}
+
+#multiStepForm {
+    flex: 1 1 0;
+}
+
+.step {
+    display: none;
+
+
+}
+
+.step.active {
+    display: block;
+}
+
 /*----------------------------------------------
 Hero section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Custom radio container start
+----------------------------------------------*/
+.custom-radio-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    .item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: var(--transition);
+        gap: 15px;
+        border: 1px solid var(--border-color1);
+        outline: 1px solid transparent;
+        background-color: var(--bg-color1);
+        box-shadow: var(--shadow1);
+
+        .content-box {
+            padding-right: 30px;
+
+            .title {
+                font-size: 18px;
+                text-transform: capitalize;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+
+                img {
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    .form-check-input {
+        position: absolute;
+        right: 15px;
+        margin-top: 0;
+    }
+
+    .form-check-input[type=radio]:checked+.form-check-label {
+        background-color: rgb(var(--primary-color), 0.1);
+        border-color: rgb(var(--primary-color));
+        outline: 1px solid rgb(var(--primary-color));
+
+    }
+}
+
+// Rtl payment section start
+.rtl {
+    .payment-container-list {
+        .form-check-label .content-area {
+            padding-right: 0;
+            padding-left: 30px;
+        }
+
+        .form-check-input {
+            left: 15px;
+            right: auto;
+        }
+    }
+}
+
+// Rtl payment section enn
+/*----------------------------------------------
+Custom radio container end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Custom checkbox container start
+----------------------------------------------*/
+.custom-checkbox-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    .item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 9999px;
+        transition: var(--transition);
+        gap: 15px;
+        border: 1px solid var(--border-color1);
+        outline: 1px solid transparent;
+        background-color: var(--bg-color1);
+        box-shadow: var(--shadow1);
+
+        .content-box {
+            padding-right: 30px;
+
+            .title {
+                text-transform: capitalize;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                font-weight: 500;
+
+                img {
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    .form-check-input {
+        position: absolute;
+        right: 15px;
+        margin-top: 0;
+    }
+
+    .form-check-input[type=checkbox]:checked+.form-check-label {
+        background-color: rgb(var(--primary-color), 0.1);
+        border-color: rgb(var(--primary-color));
+        outline: 1px solid rgb(var(--primary-color));
+
+    }
+}
+
+// Rtl payment section start
+.rtl {
+    .payment-container-list {
+        .form-check-label .content-area {
+            padding-right: 0;
+            padding-left: 30px;
+        }
+
+        .form-check-input {
+            left: 15px;
+            right: auto;
+        }
+    }
+}
+
+// Rtl payment section enn
+/*----------------------------------------------
+Custom checkbox container end
 ----------------------------------------------*/
 
 /*----------------------------------------------
@@ -6712,7 +6920,7 @@ Newsletter end
     position: relative;
     z-index: 0;
     padding-bottom: 40px;
-    background-color: var(--bg-color2);
+    background-color: var(--bg-color4);
     color: rgb(var(--white-rgb), 0.9);
 
     .footer-widget {
@@ -6817,7 +7025,7 @@ Footer section end
 21. Copyright section start
 ----------------------------------------------*/
 .copyright-section {
-    background-color: var(--bg-color3);
+    background-color: var(--bg-color4);
     font-size: 16px;
 }
 
@@ -6825,15 +7033,19 @@ Footer section end
     padding: 20px 0;
 }
 
-.payment-gateway {
+.language {
     display: flex;
-    align-items: center;
+    justify-content: end;
     gap: 10px;
 
-    img {
-        width: 42px;
-        height: 28px;
-        border-radius: 4px;
+    .item {
+        &.active{
+            color: rgb(var(--primary-color));
+        }
+        &:hover {
+            color: rgb(var(--primary-color));
+        }
+
     }
 }
 
@@ -6841,6 +7053,9 @@ Footer section end
 @media (max-width: 575px) {
     .copyright-area {
         text-align: center;
+    }
+    .language {
+        justify-content: center;
     }
 }
 
