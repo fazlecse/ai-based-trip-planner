@@ -2312,6 +2312,7 @@ hr.divider:after {
 }
 .multi-step-list .item {
   position: relative;
+  transition: var(--transition);
 }
 .multi-step-list .item::before {
   content: "";
@@ -5606,14 +5607,13 @@ Copyright end
 ----------------------------------------------*/
 .banner-section {
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 20px;
-  background-image: url(../img/banner/bg-footer.webp);
+  padding-top: 170px;
+  padding-bottom: 90px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
-  background-color: var(--bg-color2);
+  background-color: var(--bg-color3);
 }
 .banner-section .img-box {
   max-width: 300px;
@@ -6752,4 +6752,93 @@ Offer chat section start
 }
 /*----------------------------------------------
 Offer chat section end 
+----------------------------------------------*/
+/*----------------------------------------------
+00. Inline date range picker start
+----------------------------------------------*/
+.inline-date-range-picker .date-picker-wrapper {
+  width: 100%;
+  background-color: var(--bg-color2);
+  border-color: var(--border-color1);
+  border-radius: 10px;
+  color: rgb(var(--heading-color));
+  font-family: var(--body-font);
+}
+.inline-date-range-picker .date-picker-wrapper .drp_top-bar {
+  font-size: 16px;
+}
+.inline-date-range-picker .date-picker-wrapper .drp_top-bar .start-day,
+.inline-date-range-picker .date-picker-wrapper .drp_top-bar .end-day {
+  font-weight: 500;
+  color: var(--heading-color);
+}
+.inline-date-range-picker .date-picker-wrapper .first-date-selected,
+.inline-date-range-picker .date-picker-wrapper .last-date-selected {
+  background-color: rgb(var(--primary-color)) !important;
+}
+.inline-date-range-picker .month-wrapper {
+  width: 100% !important;
+  border-color: var(--border-color1);
+  border-radius: 10px;
+}
+.inline-date-range-picker .month-wrapper .caption {
+  height: 50px;
+}
+.inline-date-range-picker .month-wrapper .caption .prev,
+.inline-date-range-picker .month-wrapper .caption .next {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.inline-date-range-picker .month-wrapper .caption th {
+  padding-bottom: 15px;
+}
+.inline-date-range-picker .month-wrapper .caption > th:first-of-type .prev,
+.inline-date-range-picker .month-wrapper .caption > th:first-of-type .next,
+.inline-date-range-picker .month-wrapper .caption > th:last-of-type .prev,
+.inline-date-range-picker .month-wrapper .caption > th:last-of-type .next {
+  margin: auto;
+}
+.inline-date-range-picker .month-wrapper .month-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+.inline-date-range-picker .month-wrapper .week-name {
+  font-size: 14px;
+}
+.inline-date-range-picker .month-wrapper .week-name th {
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+.inline-date-range-picker .month-wrapper .month1,
+.inline-date-range-picker .month-wrapper .month2 {
+  width: calc(50% - 18px) !important;
+}
+.inline-date-range-picker .month-wrapper table th {
+  min-width: 54px;
+  text-transform: capitalize;
+}
+.inline-date-range-picker .month-wrapper table .day {
+  margin: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.inline-date-range-picker .month-wrapper table .day.checked {
+  background-color: rgb(var(--primary-color), 0.5);
+}
+.inline-date-range-picker .month-wrapper table .day.toMonth.hovering {
+  background-color: rgb(var(--primary-color), 0.5);
+}
+
+/*----------------------------------------------
+Inline date range picker end 
 ----------------------------------------------*/

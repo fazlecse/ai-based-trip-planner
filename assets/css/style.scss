@@ -2746,18 +2746,6 @@ hr.divider:after {
     gap: 5px;
 }
 
-// Progress bar section start
-// .progress {
-//     margin: 20px 0;
-//     height: 10px;
-
-//     .progress-bar {
-
-//         background-color: var(--secondary-color);
-//     }
-// }
-
-// Progress bar section end
 
 // Multi step progress section start
 .multi-step-progress-section {
@@ -2772,6 +2760,7 @@ hr.divider:after {
 
     .item {
         position: relative;
+        transition: var(--transition);
 
         &::before {
             content: "";
@@ -2781,6 +2770,7 @@ hr.divider:after {
             top: 9px;
             position: absolute;
             background-color: var(--light-gray);
+
 
         }
 
@@ -7039,9 +7029,10 @@ Footer section end
     gap: 10px;
 
     .item {
-        &.active{
+        &.active {
             color: rgb(var(--primary-color));
         }
+
         &:hover {
             color: rgb(var(--primary-color));
         }
@@ -7054,6 +7045,7 @@ Footer section end
     .copyright-area {
         text-align: center;
     }
+
     .language {
         justify-content: center;
     }
@@ -7071,14 +7063,14 @@ Copyright end
 ----------------------------------------------*/
 .banner-section {
     position: relative;
-    padding-top: 70px;
-    padding-bottom: 20px;
-    background-image: url(../img/banner/bg-footer.webp);
+    padding-top: 170px;
+    padding-bottom: 90px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
-    background-color: var(--bg-color2);
+    // background-image: linear-gradient(180deg, var(--bg-color2), var(--bg-color3));
+    background-color: var(--bg-color3);
 
     .img-box {
         max-width: 300px;
@@ -8532,4 +8524,125 @@ Offer chat section start
 
 /*----------------------------------------------
 Offer chat section end 
+----------------------------------------------*/
+
+/*----------------------------------------------
+00. Inline date range picker start
+----------------------------------------------*/
+.inline-date-range-picker {
+    .date-picker-wrapper {
+        width: 100%;
+        background-color: var(--bg-color2);
+        border-color: var(--border-color1);
+        border-radius: 10px;
+        color: rgb(var(--heading-color));
+        font-family: var(--body-font);
+
+        .drp_top-bar {
+            font-size: 16px;
+
+            .start-day,
+            .end-day {
+                font-weight: 500;
+                color: var(--heading-color);
+            }
+        }
+
+        .first-date-selected,
+        .last-date-selected {
+            background-color: rgb(var(--primary-color)) !important;
+        }
+
+    }
+
+    .month-wrapper {
+        width: 100% !important;
+        border-color: var(--border-color1);
+        border-radius: 10px;
+
+
+        .caption {
+            height: 50px;
+
+            .prev,
+            .next {
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 16px;
+            }
+
+            th {
+                padding-bottom: 15px;
+            }
+        }
+
+        .caption>th:first-of-type,
+        .caption>th:last-of-type {
+
+            .prev,
+            .next {
+                margin: auto;
+            }
+        }
+
+        .month-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .week-name {
+            font-size: 14px;
+
+
+            th {
+                padding-bottom: 10px;
+                font-weight: 600;
+            }
+        }
+
+        .month1,
+        .month2 {
+            width: calc(50% - 18px) !important;
+        }
+
+        table {
+            th {
+                min-width: 54px;
+                text-transform: capitalize;
+            }
+
+            // td{
+            //     &:has(.checked) {
+            //         background-color: rgb(var(--primary-color), 0.5);
+            //     }
+            // }
+
+            .day {
+                margin: auto;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+
+                &.checked {
+                    background-color: rgb(var(--primary-color), 0.5);
+                }
+
+                &.toMonth.hovering {
+                    background-color: rgb(var(--primary-color), 0.5);
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------------
+Inline date range picker end 
 ----------------------------------------------*/
