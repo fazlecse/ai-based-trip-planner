@@ -326,16 +326,18 @@ $(document).ready(function () {
     // Aos end
 
     // Date range picker start
-    $('#inline-date-range-picker').dateRangePicker({
-        inline: true,
-        container: '#inline-date-range-picker',
-        language: 'en',
-        format: 'YYYY-MM-DD',
-        autoClose: false,
-        startDate: '2023-01-01',
-        endDate: '2025-12-31',
-        alwaysOpen: true
-    });
+    if ($('#inline-date-range-picker').length) {
+        $('#inline-date-range-picker').dateRangePicker({
+            inline: true,
+            container: '#inline-date-range-picker',
+            language: 'en',
+            format: 'YYYY-MM-DD',
+            autoClose: false,
+            startDate: '2023-01-01',
+            endDate: '2025-12-31',
+            alwaysOpen: true
+        });
+    }
     // Date range picker end
 });
 
