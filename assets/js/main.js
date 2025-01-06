@@ -11,10 +11,12 @@ const toggleSideMenu = () => {
 // toggleSideMenu end
 
 // add bg to nav
-const header = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-    header.classList.toggle('active', window.scrollY >= 100);
-});
+if ($('nav').length) {
+    const header = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('active', window.scrollY >= 100);
+    });
+}
 
 $(document).ready(function () {
     // Testimonial section start
@@ -54,7 +56,7 @@ $(document).ready(function () {
     });
 
     // product-slider carousel
-    $('.flash-sale-carousel').owlCarousel({
+    $('.product-img-carousel').owlCarousel({
         loop: true,
         autoplay: true,
         margin: 20,
@@ -123,8 +125,9 @@ $(document).ready(function () {
         margin: 10,
         autoplayTimeout: 2000,
         // rtl: true,
-        nav: false,
+        nav: true,
         dots: true,
+        navText: ["<i class='fa-regular fa-arrow-left'></i>", "<i class='fa-regular fa-arrow-right'></i>"],
         responsive: {
             0: {
                 items: 1,
