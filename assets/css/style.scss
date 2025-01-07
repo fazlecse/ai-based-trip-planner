@@ -855,7 +855,7 @@ body::-webkit-scrollbar-thumb {
     // padding-left: 0;
     // padding-right: 0;
     color: rgb(var(--heading-color));
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     border-radius: 10px !important;
     text-transform: capitalize;
@@ -882,10 +882,6 @@ body::-webkit-scrollbar-thumb {
     border: none;
     background-color: var(--bg-color2);
     color: rgb(var(--heading-color));
-}
-
-.accordion-item:not(:first-of-type) {
-    border-top: 1px solid var(--border-color1);
 }
 
 
@@ -1977,6 +1973,30 @@ Offcanvas end
         height: 20px;
         min-height: 20px;
         border-radius: 50%;
+    }
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 999px;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    padding: 6px;
+    background-color: rgb(var(--white));
+    transition: var(--transition);
+    text-transform: capitalize;
+
+    &:hover {
+        background-color: rgb(var(--white), 0.8);
+    }
+
+    &.invite {
+        width: auto;
+        padding: 8px 12px;
     }
 }
 
@@ -6134,6 +6154,7 @@ Story section end
     }
 
     .accordion-button {
+
         &::after {
             background: url(../img/accordion/plus.png);
             width: 25px;
@@ -6830,21 +6851,28 @@ Blog section end
 // Author box3 end
 .page-tabs {
     display: flex;
-    margin-bottom: 30px;
-
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color1);
 
     .item {
         padding: 10px;
-        flex-grow: 1;
         text-align: center;
         text-transform: capitalize;
-        border-bottom: 1px solid var(--border-color1);
+        display: flex;
+
+        font-weight: 500;
 
         &.active {
             border-bottom: 2px solid rgb(var(--primary-color));
             background-color: var(--bg-color1);
             color: rgb(var(--primary-color));
             font-weight: 600;
+        }
+
+        &:hover {
+            border-bottom: 2px solid rgb(var(--primary-color));
+            background-color: var(--bg-color1);
+            color: rgb(var(--primary-color));
         }
     }
 }
@@ -8670,7 +8698,6 @@ Inline date range picker end
     iframe {
         width: 100%;
         height: 100%;
-        height: 100vh;
         // padding: 5px;
         background-color: var(--white);
         // box-shadow: var(--shadow1);
@@ -8701,6 +8728,10 @@ Trip builder preview section start
     .map-section {
         position: sticky;
         top: 0;
+
+        #map {
+            height: 100vh;
+        }
     }
 }
 
@@ -8788,6 +8819,31 @@ Trip builder preview section start
 
     strong {
         font-weight: 500;
+    }
+}
+.product-box3{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border-color1);
+    background-color: var(--bg-color1);
+    padding: 15px;
+    border-radius: 10px;
+    .img-box{
+        width: 120px;
+        height: 120px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+    .text-box{
+        .title{
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
 }
 
@@ -8889,4 +8945,133 @@ Img carousel start
 
 /*----------------------------------------------
 Img carousel end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Trip details section start
+----------------------------------------------*/
+.trip-details-section {
+    padding-top: 110px;
+
+    .breadcrumb-area {
+        text-align: initial;
+        font-size: 18px;
+    }
+
+    .map-section {
+        position: sticky;
+        top: 70px;
+
+        #map {
+            width: 100%;
+            height: calc(100vh - 80px);
+            border-radius: 20px;
+        }
+    }
+
+    .accordion-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+        .add-location{
+            font-weight: 400;
+            font-size: 20px;
+        }
+    }
+}
+
+.trip-details-header {
+    position: relative;
+
+    .img-box {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(180deg, rgb(var(--black), 0%) 0, rgb(var(--black), 0.6) 100%);
+            border-radius: 15px;
+        }
+
+        img {
+            border-radius: 15px;
+            aspect-ratio: 2/1;
+            max-height: 370px;
+            width: 100%;
+        }
+    }
+
+    .text-box {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 32px 24px 32px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title {
+            color: rgb(var(--white));
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .sub-title {
+            color: rgb(var(--white));
+            font-weight: 500;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+    }
+
+    .action-box {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 7px;
+    }
+
+
+}
+
+/*----------------------------------------------
+Trip details section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Timeline box section start
+----------------------------------------------*/
+.timeline-box{
+    .timeline-item{
+        display: flex;
+        gap: 30px;
+        .left-side{
+            .icon-box{
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                background-color: rgb(var(--black));
+                color: rgb(var(--white));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .right-box{
+            flex-grow: 1;
+        }
+    }
+}
+/*----------------------------------------------
+Timeline box section end
 ----------------------------------------------*/

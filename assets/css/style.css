@@ -750,7 +750,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .accordion-button {
   color: rgb(var(--heading-color));
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   border-radius: 10px !important;
   text-transform: capitalize;
@@ -774,10 +774,6 @@ body::-webkit-scrollbar-thumb:hover {
   border: none;
   background-color: var(--bg-color2);
   color: rgb(var(--heading-color));
-}
-
-.accordion-item:not(:first-of-type) {
-  border-top: 1px solid var(--border-color1);
 }
 
 .video-box {
@@ -1654,6 +1650,28 @@ Offcanvas end
   height: 20px;
   min-height: 20px;
   border-radius: 50%;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 999px;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  padding: 6px;
+  background-color: rgb(var(--white));
+  transition: var(--transition);
+  text-transform: capitalize;
+}
+.action-btn:hover {
+  background-color: rgb(var(--white), 0.8);
+}
+.action-btn.invite {
+  width: auto;
+  padding: 8px 12px;
 }
 
 @media (max-width: 575px) {
@@ -5436,20 +5454,26 @@ Blog section end
 }
 .page-tabs {
   display: flex;
-  margin-bottom: 30px;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color1);
 }
 .page-tabs .item {
   padding: 10px;
-  flex-grow: 1;
   text-align: center;
   text-transform: capitalize;
-  border-bottom: 1px solid var(--border-color1);
+  display: flex;
+  font-weight: 500;
 }
 .page-tabs .item.active {
   border-bottom: 2px solid rgb(var(--primary-color));
   background-color: var(--bg-color1);
   color: rgb(var(--primary-color));
   font-weight: 600;
+}
+.page-tabs .item:hover {
+  border-bottom: 2px solid rgb(var(--primary-color));
+  background-color: var(--bg-color1);
+  color: rgb(var(--primary-color));
 }
 
 /*----------------------------------------------
@@ -6866,7 +6890,6 @@ Inline date range picker end
 .map-section iframe {
   width: 100%;
   height: 100%;
-  height: 100vh;
   background-color: var(--white);
   margin-bottom: -6px;
 }
@@ -6889,6 +6912,9 @@ Trip builder preview section start
 .trip-builder-preview-section .map-section {
   position: sticky;
   top: 0;
+}
+.trip-builder-preview-section .map-section #map {
+  height: 100vh;
 }
 
 .product-box2 {
@@ -6959,6 +6985,31 @@ Trip builder preview section start
   top: 0;
 }
 .product-box2 strong {
+  font-weight: 500;
+}
+
+.product-box3 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--border-color1);
+  background-color: var(--bg-color1);
+  padding: 15px;
+  border-radius: 10px;
+}
+.product-box3 .img-box {
+  width: 120px;
+  height: 120px;
+}
+.product-box3 .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.product-box3 .text-box .title {
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -7047,4 +7098,115 @@ Img carousel start
 
 /*----------------------------------------------
 Img carousel end
+----------------------------------------------*/
+/*----------------------------------------------
+Trip details section start
+----------------------------------------------*/
+.trip-details-section {
+  padding-top: 110px;
+}
+.trip-details-section .breadcrumb-area {
+  text-align: initial;
+  font-size: 18px;
+}
+.trip-details-section .map-section {
+  position: sticky;
+  top: 70px;
+}
+.trip-details-section .map-section #map {
+  width: 100%;
+  height: calc(100vh - 80px);
+  border-radius: 20px;
+}
+.trip-details-section .accordion-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+}
+.trip-details-section .accordion-button .add-location {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.trip-details-header {
+  position: relative;
+}
+.trip-details-header .img-box {
+  position: relative;
+}
+.trip-details-header .img-box::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgb(var(--black), 0%) 0, rgb(var(--black), 0.6) 100%);
+  border-radius: 15px;
+}
+.trip-details-header .img-box img {
+  border-radius: 15px;
+  aspect-ratio: 2/1;
+  max-height: 370px;
+  width: 100%;
+}
+.trip-details-header .text-box {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px 24px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.trip-details-header .text-box .title {
+  color: rgb(var(--white));
+  font-size: 36px;
+  font-weight: 600;
+}
+.trip-details-header .text-box .sub-title {
+  color: rgb(var(--white));
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.trip-details-header .action-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 7px;
+}
+
+/*----------------------------------------------
+Trip details section end
+----------------------------------------------*/
+/*----------------------------------------------
+Timeline box section start
+----------------------------------------------*/
+.timeline-box .timeline-item {
+  display: flex;
+  gap: 30px;
+}
+.timeline-box .timeline-item .left-side .icon-box {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: rgb(var(--black));
+  color: rgb(var(--white));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-box .timeline-item .right-box {
+  flex-grow: 1;
+}
+
+/*----------------------------------------------
+Timeline box section end
 ----------------------------------------------*/

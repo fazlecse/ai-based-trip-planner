@@ -10,7 +10,8 @@ window.initMap = function () {
 
     // Initialize the Google map
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 48.8566, lng: 2.3522 }, // Default map center (example: Paris)
+        // center: { lat: 48.8566, lng: 2.3522 }, // Default map center (example: Paris)
+        center: { lat: 41.0082, lng: 28.9784 }, // Istanbul
         zoom: 13,
         mapId: "DEMO_MAP_ID"
     });
