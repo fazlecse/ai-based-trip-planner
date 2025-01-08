@@ -303,7 +303,6 @@ body {
   line-height: 1.4;
   color: var(--body-color);
   font-size: 16px;
-  padding: 0 !important;
 }
 
 @media (max-width: 991px) {
@@ -326,7 +325,7 @@ textarea.form-control {
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .form-select {
@@ -397,7 +396,10 @@ option {
   border: none;
   display: flex;
   justify-content: center;
+  color: rgb(var(--primary-color));
   background-color: rgb(var(--primary-color), 0.1);
+  cursor: pointer;
+  gap: 5px;
 }
 
 /*----------------------------------------------
@@ -975,6 +977,7 @@ Reusable style section start
 
 .link-underline {
   text-decoration: underline;
+  cursor: pointer;
 }
 .link-underline:hover {
   text-decoration: underline;
@@ -1880,14 +1883,31 @@ Offcanvas end
   margin-right: -4px;
 }
 
-.make-offer-btn {
-  text-transform: capitalize;
-  display: inline-flex;
-  gap: 5px;
+.delete-btn {
+  position: relative;
+  background-color: rgb(var(--soft-red));
+  padding: 8px 15px;
+  border-radius: 9999px;
   transition: var(--transition);
+  font-size: 16px;
+  color: rgb(var(--white));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  gap: 5px;
 }
-.make-offer-btn:hover {
-  gap: 10px;
+.delete-btn:hover {
+  color: rgb(var(--white));
+  background-color: rgb(var(--soft-red, 0.8));
+}
+
+.add-place-btn {
+  border: 1px dashed var(--border-color2);
+  padding: 24px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 /*----------------------------------------------
@@ -2460,6 +2480,20 @@ hr.divider:after {
 .rtl .cmn-list .item:not(:last-child)::after {
   left: 0;
   right: 12px;
+}
+
+.cmn-list3 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+}
+.cmn-list3 .cmn-list3-item {
+  display: flex;
+  gap: 15px;
+}
+.cmn-list3 .cmn-list3-item div:first-child {
+  min-width: 80px;
 }
 
 .reviews {
@@ -3226,26 +3260,18 @@ user nav Profile end
 }
 
 .profile-box2 {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.profile-box2 .image-area {
-  margin-bottom: 15px;
+.profile-box2 .img-box {
+  width: 40px;
+  height: 40px;
 }
-.profile-box2 .cover {
-  border-radius: 5px;
-  height: 100px;
+.profile-box2 .img-box img {
   width: 100%;
-}
-.profile-box2 .profile-img {
-  width: 80px;
-  height: 80px;
-  min-width: 60px;
+  height: 100%;
   border-radius: 50%;
-  margin-top: -40px;
-  padding: 2px;
-  border: 1px solid var(--border-color1);
-  background-color: rgb(var(--primary-color));
-  box-shadow: var(--shadow1);
 }
 
 .profile-box3 {
@@ -4132,6 +4158,24 @@ Cmn table end
 }
 .isotope-btn-group button.active:hover {
   background-position: center right;
+}
+
+.custom-flatpickr {
+  position: relative;
+}
+.custom-flatpickr .calendar-icon {
+  position: absolute;
+  background-color: rgb(var(--white));
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: rgb(var(--primary-color));
+  cursor: pointer;
+}
+
+.rtl .custom-flatpickr .calendar-icon {
+  right: auto;
+  left: 15px;
 }
 
 /*----------------------------------------------
@@ -6984,7 +7028,8 @@ Trip builder preview section start
   left: 0;
   top: 0;
 }
-.product-box2 strong {
+
+strong {
   font-weight: 500;
 }
 
@@ -6992,7 +7037,7 @@ Trip builder preview section start
   display: flex;
   align-items: center;
   gap: 15px;
-  border: 1px solid var(--border-color1);
+  border: 1px solid var(--border-color2);
   background-color: var(--bg-color1);
   padding: 15px;
   border-radius: 10px;
@@ -7011,6 +7056,9 @@ Trip builder preview section start
 .product-box3 .text-box .title {
   font-size: 18px;
   font-weight: 500;
+}
+.product-box3 .text-box .title:hover {
+  text-decoration: underline;
 }
 
 .add-remove-btn {
@@ -7118,11 +7166,17 @@ Trip details section start
   height: calc(100vh - 80px);
   border-radius: 20px;
 }
+.trip-details-section .accordion-item {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-color2);
+  border-radius: 0;
+}
 .trip-details-section .accordion-button {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 22px;
+  background-color: transparent;
 }
 .trip-details-section .accordion-button .add-location {
   font-weight: 400;
@@ -7193,6 +7247,23 @@ Timeline box section start
   display: flex;
   gap: 30px;
 }
+.timeline-box .timeline-item:not(:last-child) .right-box {
+  margin-bottom: 30px;
+}
+.timeline-box .timeline-item .left-side {
+  position: relative;
+}
+.timeline-box .timeline-item .left-side::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: rgb(var(--black));
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
 .timeline-box .timeline-item .left-side .icon-box {
   height: 32px;
   width: 32px;
@@ -7207,6 +7278,80 @@ Timeline box section start
   flex-grow: 1;
 }
 
+.see-hours-box {
+  position: relative;
+}
+.see-hours-box:hover .popup-box {
+  display: block;
+}
+.see-hours-box .see-hours {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popup-box {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  display: none;
+}
+.popup-box:hover {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-box.popup-box-right {
+  right: 0;
+  left: auto;
+}
+.popup-box.popup-box-right .popup-box-inner::after {
+  right: 50px;
+  left: auto;
+}
+.popup-box .popup-box-inner {
+  position: relative;
+  padding: 15px;
+  background-color: rgb(var(--white));
+  border-radius: 10px;
+  box-shadow: var(--shadow3);
+  min-width: 200px;
+  cursor: auto;
+  z-index: 1;
+}
+.popup-box .popup-box-inner::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: -8px;
+  width: 17px;
+  height: 17px;
+  transform: rotate(45deg);
+  background: #fff;
+  border-radius: 2px;
+}
+.popup-box .popup-box-inner .close-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+.popup-box .popup-box-inner .close-btn:hover {
+  background-color: hsl(var(--base)/0.1);
+}
+.popup-box .popup-box-inner .form-control {
+  font-size: 14px;
+  height: 30px;
+  width: 65px;
+  min-width: 35px;
+  padding: 5px;
+}
+
+@media (min-width: 576px) {
+  .popup-box .popup-box-inner {
+    min-width: 280px;
+  }
+}
 /*----------------------------------------------
 Timeline box section end
 ----------------------------------------------*/

@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/select2.min.css">
     <!-- Meanmenu css link -->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <!-- flatpickr css link -->
+    <link rel="stylesheet" href="assets/css/flatpickr.min.css">
 
     <!-- Style Css link -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -183,28 +185,31 @@
                             <div class="text-box">
                                 <div class="top-box">
                                     <div class="action-box">
-                                        <button type="button" class="action-btn invite">
+                                        <button type="button" class="action-btn invite" data-bs-target="#invite-modal"
+                                            data-bs-toggle="modal">
                                             <i class="fa-regular fa-user-plus"></i>
                                             invite
                                         </button>
-                                        <button type="button" class="action-btn"><i
-                                                class="fa-regular fa-share"></i></button>
-                                        <button type="button" class="action-btn"><i
-                                                class="fa-regular fa-gear"></i></button>
+
+                                        <button type="button" class="action-btn" data-bs-target="#invite-modal"
+                                            data-bs-toggle="modal"><i class="fa-regular fa-share"></i></button>
+
+                                        <button type="button" class="action-btn" data-bs-target="#edit-trip-modal"
+                                            data-bs-toggle="modal"><i class="fa-regular fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="bottom-box">
-                                    <button type="button">
+                                    <button type="button" data-bs-target="#edit-trip-modal" data-bs-toggle="modal">
                                         <div class="title">Istanbul for 7 days</div>
                                     </button>
                                     <div class="mt-2 d-flex align-items-center gap-4">
-                                        <button type="button">
+                                        <button type="button" data-bs-target="#edit-trip-modal" data-bs-toggle="modal">
                                             <div class="sub-title">
                                                 <div class="icon-area"><i class="fa-regular fa-calendar-days"></i></div>
                                                 <div class="text-area">Jan 16 → Jan 22</div>
                                             </div>
                                         </button>
-                                        <button type="button">
+                                        <button type="button" data-bs-target="#edit-trip-modal" data-bs-toggle="modal">
                                             <div class="sub-title">
                                                 <div class="icon-area"><i class="fa-regular fa-location-dot"></i></div>
                                                 <div class="text-area">Istanbul</div>
@@ -214,7 +219,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="mt-20">What’s this trip about? (optional)</button>
+                        <button type="button" class="mt-20" data-bs-target="#edit-trip-modal"
+                            data-bs-toggle="modal">What’s this trip about? (optional)</button>
                     </div>
 
                     <div class="page-tabs mt-30 mb-20">
@@ -230,7 +236,9 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between gap-2">
                         <p class="mb-0">35/38 saves added</p>
-                        <button type="button" class="cmn-btn">edit</button>
+                        <button type="button" class="cmn-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">edit</button>
                     </div>
                     <div class="accordion mt-20" id="accordionExample3">
                         <div class="accordion-item">
@@ -238,7 +246,9 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
                                     Thursday, Jan 16
-                                    <a href="" class="link-underline add-location">Istanbul, Türkiye</a>
+                                    <a href="" class="link-underline add-location" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasExample" role="button"
+                                        aria-controls="offcanvasExample">Istanbul, Türkiye</a>
                                 </button>
                             </h2>
                             <div id="collapseSeven" class="accordion-collapse collapse show"
@@ -278,12 +288,286 @@
                                                             <div class="item">
                                                                 <div class="icon-box"><i
                                                                         class="fa-regular fa-clock"></i></div>
-                                                                <div class="text-box">See Hours</div>
-
+                                                                <div class="text-box">
+                                                                    <div class="see-hours-box">
+                                                                        <div class="see-hours">See Hours</div>
+                                                                        <div class="popup-box">
+                                                                            <div class="popup-box-inner">
+                                                                                <div class="cmn-list3">
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Monday</div>
+                                                                                        <div>Closed</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Tuesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Wednesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Thursday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Friday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Saturday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Sunday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="left-side">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-fork-knife"></i>
+                                                </div>
+                                            </div>
+                                            <div class="right-box">
+                                                <div class="product-box3">
+                                                    <a href="" class="img-box">
+                                                        <img src="./assets/img/product-box2/20180416-230857-largejpg.jpg"
+                                                            alt="product-img">
+                                                    </a>
+                                                    <div class="text-box">
+                                                        <a href="" class="title">Saray Muhallebicisi</a>
+                                                        <div class="reviews d-flex align-items-center gap-2 mt-1">
+                                                            <div>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                            </div>
+                                                            <span>(5)</span>
+                                                        </div>
+                                                        <div class="cmn-list mt-1">
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-fork-knife"></i>
+                                                                </div>
+                                                                <div class="text-box">Restaurant</div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-utensils"></i>
+                                                                </div>
+                                                                <div class="text-box">Turkish . $$</div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <div class="icon-box"><i
+                                                                        class="fa-regular fa-clock"></i></div>
+                                                                <div class="text-box">
+                                                                    <div class="see-hours-box">
+                                                                        <div class="see-hours">See Hours</div>
+                                                                        <div class="popup-box">
+                                                                            <div class="popup-box-inner">
+                                                                                <div class="cmn-list3">
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Monday</div>
+                                                                                        <div>Closed</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Tuesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Wednesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Thursday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Friday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Saturday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Sunday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="left-side">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                            <div class="right-box">
+                                                <div class="product-box3">
+                                                    <a href="" class="img-box">
+                                                        <img src="./assets/img/product-box2/5.jpg" alt="product-img">
+                                                    </a>
+                                                    <div class="text-box">
+                                                        <a href="" class="title">2 Hours Bosphorus Cruise Boat Tour in
+                                                            Istanbul</a>
+                                                        <div class="reviews d-flex align-items-center gap-2 mt-1">
+                                                            <div>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                            </div>
+                                                            <span>(5)</span>
+                                                        </div>
+                                                        <div class="cmn-list mt-1">
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-ticket"></i>
+                                                                </div>
+                                                                <div class="text-box">Ticket</div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-timer"></i>
+                                                                </div>
+                                                                <div class="text-box">Duration: 2h</div>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="cmn-hr3">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div>
+                                                                <small>from</small>
+                                                                <h6>$21.09</h6>
+                                                                <small>per adult</small>
+                                                            </div>
+                                                            <a href="" class="cmn-btn2">Reserve</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="left-side">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-fork-knife"></i>
+                                                </div>
+                                            </div>
+                                            <div class="right-box">
+                                                <div class="product-box3">
+                                                    <a href="" class="img-box">
+                                                        <img src="./assets/img/product-box2/20180416-230857-largejpg.jpg"
+                                                            alt="product-img">
+                                                    </a>
+                                                    <div class="text-box">
+                                                        <a href="" class="title">Saray Muhallebicisi</a>
+                                                        <div class="reviews d-flex align-items-center gap-2 mt-1">
+                                                            <div>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                                <i class="active fa-solid fa-star"></i>
+                                                            </div>
+                                                            <span>(5)</span>
+                                                        </div>
+                                                        <div class="cmn-list mt-1">
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-fork-knife"></i>
+                                                                </div>
+                                                                <div class="text-box">Restaurant</div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <div class="icon-box">
+                                                                    <i class="fa-regular fa-utensils"></i>
+                                                                </div>
+                                                                <div class="text-box">Turkish . $$</div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <div class="icon-box"><i
+                                                                        class="fa-regular fa-clock"></i></div>
+                                                                <div class="text-box">
+                                                                    <div class="see-hours-box">
+                                                                        <div class="see-hours">See Hours</div>
+                                                                        <div class="popup-box">
+                                                                            <div class="popup-box-inner">
+                                                                                <div class="cmn-list3">
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Monday</div>
+                                                                                        <div>Closed</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Tuesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Wednesday</div>
+                                                                                        <div>11:00 AM - 7:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Thursday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Friday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Saturday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                    <div class="cmn-list3-item">
+                                                                                        <div>Sunday</div>
+                                                                                        <div>11:00 AM - 8:00 PM</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="left-side">
+                                                <div class="icon-box">
+                                                    <i class="fa-regular fa-bed-front"></i>
+                                                </div>
+                                            </div>
+                                            <div class="right-box">
+                                                <button type="button" class="add-place-btn" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasExample" role="button"
+                                                aria-controls="offcanvasExample">
+
+                                                    Pick a home-base that matches your vibe. <strong
+                                                        class="link-underline">Add a place to stay.</strong>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -402,7 +686,6 @@
         </div>
     </section>
     <!-- Trip details section end -->
-
     <!-- Footer Section start -->
     <section class="footer-section">
         <div class="container">
@@ -491,47 +774,328 @@
 
 
 
+    <!-- Offcanvas section start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header pb-0">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-light fa-xmark"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="owl-carousel owl-theme img-carousel" data-aos="fade-up" data-aos-duration="900">
+                <div class="item">
+                    <img src="./assets/img/products/1.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/products/2.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/products/3.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/products/4.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/products/5.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="d-flex justify-content-between align-items-center gap-2 mt-30">
+                    <h4 class="mb-0"><a href="">Geçit Art and More</a></h4>
+                    <button type="button" class="add-remove-btn">
+                        <i class="fa-regular fa-check"></i>
+                    </button>
+                </div>
+                <div class="reviews d-flex align-items-center gap-2 mt-10">
+                    <div>
+                        <i class="active fa-solid fa-star"></i>
+                        <i class="active fa-solid fa-star"></i>
+                        <i class="active fa-solid fa-star"></i>
+                        <i class="active fa-solid fa-star"></i>
+                        <i class="active fa-solid fa-star"></i>
+                    </div>
+                    <span><a href="" class="link-underline">(5)</a></span>
+                </div>
+                <div class="cmn-list mt-15">
+                    <div class="item">
+                        <div class="icon-box"><i class="fa-regular fa-palette"></i></div>
+                        <div class="text-box">Art Galleries</div>
+                    </div>
+                    <div class="item">
+                        <div class="icon-box"><i class="fa-regular fa-star-of-life"></i></div>
+                    </div>
+                    <div class="item">
+                        <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                        <div class="text-box">Duration:
+                            Less than an hour</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-25">
+                <h6>Overview</h6>
+                <p class="mt-2 mb-0">Geçit Art & More presents a unique opportunity to explore an extensive collection
+                    of art-related products that are hard to find elsewhere in Istanbul. As you wander through the
+                    space, you'll discover a diverse array of items that cater to various tastes and interests. The
+                    knowledgeable staff is always ready to assist, offering insightful recommendations tailored to your
+                    preferences. You'll appreciate the reasonable prices, making it easy to find something special
+                    without breaking the bank. This vibrant venue not only showcases creativity but also fosters a
+                    welcoming atmosphere, ensuring your experience is both enjoyable and enriching.</p>
+            </div>
+            <div class="map-section2">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.614148872008!2d28.972679176450193!3d41.01181781920618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab99570e08717%3A0xb58115a43a14bd6b!2sHobyar%2C%20Ankara%20Cd.%2011%2FA%2C%2034112%20Fatih%2F%C4%B0stanbul%2C%20T%C3%BCrkiye!5e0!3m2!1sen!2sbd!4v1736161971154!5m2!1sen!2sbd"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p class="mt-10 mb-0">Hobyar Mah. Ankara Cad. 11/A, Istanbul Türkiye</p>
+            </div>
+            <hr class="cmn-hr2">
+            <div>
+                <h5>Reviews</h5>
+                <div class="d-flex align-items-center gap-2 mt-20">
+                    <h5 class="mb-0">5.0</h5>
+                    <div class="reviews d-flex align-items-center gap-2">
+                        <div>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="fs-6">8 reviews</span>
+                    </div>
+                </div>
+                <div class="progress-box mt-20">
+                    <div class="progress-item">
+                        <h6>Excellent</h6>
+                        <div class="progress">
+                            <div class="progress-bar" data-progress="80" style="opacity: 1; width: 80%;"></div>
+                        </div>
+                        <span>679</span>
+                    </div>
+                    <div class="progress-item">
+                        <h6>Great</h6>
+                        <div class="progress">
+                            <div class="progress-bar" data-progress="20" style="opacity: 1; width: 20%;"></div>
+                        </div>
+                        <span>230</span>
+                    </div>
+                    <div class="progress-item">
+                        <h6>Average</h6>
+                        <div class="progress">
+                            <div class="progress-bar" data-progress="80" style="opacity: 1; width: 80%;"></div>
+                        </div>
+                        <span>190</span>
+                    </div>
+                    <div class="progress-item">
+                        <h6>Poor</h6>
+                        <div class="progress">
+                            <div class="progress-bar" data-progress="50" style="opacity: 1; width: 50%;"></div>
+                        </div>
+                        <span>100</span>
+                    </div>
+                    <div class="progress-item">
+                        <h6>Bad</h6>
+                        <div class="progress">
+                            <div class="progress-bar" data-progress="10" style="opacity: 1; width: 10%;"></div>
+                        </div>
+                        <span>140</span>
+                    </div>
+                </div>
+                <hr class="cmn-hr2">
+                <div class="mt-20">
+                    <div class="review-item mb-20">
+                        <div class="d-flex justify-content-between flex-wrap gap-2 mb-15">
+                            <div class="author-profile">
+                                <a href="" class="img-box"><img src="./assets/img/Person/1.jpg" alt=""></a>
+                                <div class="text-box">
+                                    <h5 class="mb-0">very good environment</h5>
+                                    <small>November 22, 2024</small>
+                                </div>
+                            </div>
+                            <ul class="reviews d-flex align-items-center gap-3">
+                                <li>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="mb-0">It is a complete finished product.</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="d-flex justify-content-between flex-wrap gap-2 mb-15">
+                            <div class="author-profile">
+                                <a href="" class="img-box"><img src="./assets/img/Person/2.jpg" alt=""></a>
+                                <div class="text-box">
+                                    <h5 class="mb-0">All is excellent</h5>
+                                    <small>November 22, 2024</small>
+                                </div>
+                            </div>
+                            <ul class="reviews d-flex align-items-center gap-3">
+                                <li>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="active fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="mb-0">It is a complete finished product.</p>
+                    </div>
+                    <div class="review-box mt-30">
+                        <h4>Review this product
+                        </h4>
+                        <div class="ratings">
+                            <input type="radio" id="star1" name="rate" value="1">
+                            <label for="star1" title="text"></label>
+                            <input type="radio" id="star2" name="rate" value="2">
+                            <label for="star2" title="text"></label>
+                            <input checked="" type="radio" id="star3" name="rate" value="3">
+                            <label for="star3" title="text"></label>
+                            <input type="radio" id="star4" name="rate" value="4">
+                            <label for="star4" title="text"></label>
+                            <input type="radio" id="star5" name="rate" value="5">
+                            <label for="star5" title="text"></label>
+                        </div>
+                        <textarea class="form-control mt-20" id="exampleFormControlTextarea1" placeholder="Type here..."
+                            rows="5"></textarea>
+                        <a href="" class="cmn-btn mt-20" type="button">submit review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas section end -->
+
 
 
     <!-- Modal section start -->
-    <div class="modal fade" id="lang-currency-modal" data-bs-keyboard="false" tabindex="-1"
+    <!-- Invite modal -->
+    <div class="modal fade" id="invite-modal" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Select Language and Currency</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel">Trip collaboration</h4>
                     <button type="button" class="cmn-btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <i class="fa-light fa-xmark"></i>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <div id="formModal">
-                                <label class="form-label">Select language</label>
-                                <select class="modal-select2-image" name="state">
-                                    <option value="us">English</option>
-                                    <option value="es">Spanish</option>
-                                    <option value="bd">bangla</option>
-                                </select>
-                            </div>
+                    <h6 class="d-flex align-items-center gap-2"><i class="fa-regular fa-user-plus"></i> Invite
+                        collaborators</h6>
+                    <p class="mt-2 mb-0">Copy and send the link below to invite collaborators. Anyone with this link can
+                        edit and add to your trip.</p>
+                    <div class="input-group mt-15">
+                        <input id="referralURL" type="text" class="form-control"
+                            value="https://dodger-blue-hyip.bugfinder.net/register/demouser"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2" readonly>
+                        <div class="input-group-text" id="copyBtn"><i class="fa-regular fa-copy"></i>copy
                         </div>
-                        <div class="col-12">
-                            <div id="formModal">
-                                <label class="form-label">Select currency</label>
-                                <select class="modal-select2-image" name="state">
-                                    <option value="es">EUR</option>
-                                    <option value="us">USD</option>
-                                    <option value="bd">BDT</option>
-                                </select>
-                            </div>
+                    </div>
+                    <hr class="cmn-hr2">
+                    <h6>Collaborators</h6>
+                    <div class="profile-box2 mt-10">
+                        <div class="img-box">
+                            <img src="./assets/img/person/1.jpg" alt="">
+                        </div>
+                        <div class="text-box">
+                            <h6>Fazle Rabbi</h6>
+                            <p class="mb-0">Owner</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="modal-footer mt-10">
-                    <!-- <button type="button" class="cmn-btn2" data-bs-dismiss="modal">Close</button> -->
-                    <a href="" class="cmn-btn w-100 mt-10">save</a>
+    <!-- Edit trip modal -->
+    <div class="modal fade" id="edit-trip-modal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Edit trip details</h4>
+                    <button type="button" class="cmn-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-light fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="Trip-name" class="form-label">Trip name</label>
+                            <input type="text" class="form-control" id="Trip-name">
+                        </div>
+                        <div class="col-12">
+                            <label for="Destination" class="form-label">Destination</label>
+                            <input type="text" class="form-control" id="Destination">
+                        </div>
+                        <div class="col-12">
+                            <label for="e-mail" class="form-label">Dates or trip length</label>
+                            <div class="flatpickr custom-flatpickr">
+                                <input type="text" class="form-control" id="myID2" placeholder="Select Date" data-input>
+                                <span class="calendar-icon">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <small>Optional</small>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="cmn-hr2 m-0">
+                        </div>
+                        <div class="col-12">
+                            <label for="Description" class="form-label">Description</label>
+                            <textarea class="form-control" id="Description" rows="3"></textarea>
+                            <div class="d-flex align-items-center justify-content-between gap-2 mt-1">
+                                <small>Optional</small>
+                                <small>0/1000 max characters</small>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="cmn-hr2 m-0">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Who can view</label>
+                            <div class="form-check mt-10">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    <div>
+                                        <h6 class="mb-1">Public</h6>
+                                        <span>Visible to the entire Tripadvisor community. For privacy, we only reveal
+                                            the month and year of a public trip after the dates passed.</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-check mt-10">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    <div>
+                                        <h6 class="mb-1">Restricted</h6>
+                                        <span>Visible to people who’ve received your sharing link to view or an invite
+                                            to collaborate.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="cmn-hr2 m-0">
+                        </div>
+                        <div class="col-12">
+                            <a href="" class="cmn-btn">Duplicate trip</a>
+                            <a href="" class="delete-btn">Delete trip</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cmn-btn">Save</button>
                 </div>
             </div>
         </div>
@@ -557,6 +1121,8 @@
     <script src="assets/js/socialSharing.js"></script>
     <!-- Meanmenu Js link -->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- flatpickr Js link -->
+    <script src="assets/js/flatpickr.js"></script>
     <!-- googleapis Js link -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8QwnfWXeL8Yw9PDqkW7MYLt2F1G1PS4&loading=async&callback=initMap&libraries=marker"></script>
@@ -564,7 +1130,6 @@
     <script src="assets/js/frontend_google_map.js" defer></script>
     <!-- Main Js link -->
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

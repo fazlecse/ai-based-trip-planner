@@ -326,7 +326,6 @@ body {
     line-height: 1.4;
     color: var(--body-color);
     font-size: 16px;
-    padding: 0 !important;
 }
 
 
@@ -352,7 +351,7 @@ textarea.form-control {
     text-transform: capitalize;
     font-size: 14px;
     margin-bottom: 5px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .form-select {
@@ -422,7 +421,10 @@ option {
     border: none;
     display: flex;
     justify-content: center;
+    color: rgb(var(--primary-color));
     background-color: rgb(var(--primary-color), 0.1);
+    cursor: pointer;
+    gap: 5px;
 }
 
 /*----------------------------------------------
@@ -1132,6 +1134,7 @@ Reusable style section start
 
 .link-underline {
     text-decoration: underline;
+    cursor: pointer;
 
     &:hover {
         text-decoration: underline;
@@ -2256,15 +2259,32 @@ Offcanvas end
     }
 }
 
-.make-offer-btn {
-    text-transform: capitalize;
-    display: inline-flex;
-    gap: 5px;
+.delete-btn {
+    position: relative;
+    background-color: rgb(var(--soft-red));
+    padding: 8px 15px;
+    border-radius: 9999px;
     transition: var(--transition);
+    font-size: 16px;
+    color: rgb(var(--white));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-transform: capitalize;
+    gap: 5px;
 
     &:hover {
-        gap: 10px;
+        color: rgb(var(--white));
+        background-color: rgb(var(--soft-red, 0.8));
     }
+}
+
+.add-place-btn {
+    border: 1px dashed var(--border-color2);
+    padding: 24px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /*----------------------------------------------
@@ -2933,7 +2953,6 @@ hr.divider:after {
 // Cmn list2 section start
 .cmn-list2 {
     display: flex;
-
     flex-direction: column;
     gap: 20px;
 
@@ -2960,6 +2979,25 @@ hr.divider:after {
 
 // Rtl cmn list2 section end
 // Cmn list2 section end
+
+// Cmn list3 section start
+.cmn-list3 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+
+    .cmn-list3-item {
+        display: flex;
+        gap: 15px;
+
+        div:first-child {
+            min-width: 80px;
+        }
+    }
+}
+
+// Cmn list3 section end
 // Reviews section start
 .reviews {
     font-size: 14px;
@@ -3983,28 +4021,19 @@ user nav Profile end
 
 // Profile box2 start
 .profile-box2 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-    .image-area {
-        margin-bottom: 15px;
-    }
+    .img-box {
+        width: 40px;
+        height: 40px;
 
-    .cover {
-        border-radius: 5px;
-        height: 100px;
-        width: 100%;
-    }
-
-    .profile-img {
-        width: 80px;
-        height: 80px;
-        min-width: 60px;
-        border-radius: 50%;
-        margin-top: -40px;
-        padding: 2px;
-        border: 1px solid var(--border-color1);
-        background-color: rgb(var(--primary-color));
-        box-shadow: var(--shadow1);
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
     }
 }
 
@@ -5182,6 +5211,30 @@ Cmn table end
 }
 
 // Isotope section end
+
+// Custom flatpickr start
+.custom-flatpickr {
+    position: relative;
+
+    .calendar-icon {
+        position: absolute;
+        background-color: rgb(var(--white));
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        color: rgb(var(--primary-color));
+        cursor: pointer;
+    }
+}
+
+.rtl {
+    .custom-flatpickr .calendar-icon {
+        right: auto;
+        left: 15px;
+    }
+}
+
+// Custom flatpickr end
 /*----------------------------------------------
 /*----------------------------------------------
 Reusable style section end
@@ -6689,7 +6742,6 @@ Blog section end
             }
         }
     }
-
 }
 
 .followers {
@@ -8817,32 +8869,42 @@ Trip builder preview section start
         top: 0;
     }
 
-    strong {
-        font-weight: 500;
-    }
+
 }
-.product-box3{
+
+strong {
+    font-weight: 500;
+}
+
+.product-box3 {
     display: flex;
     align-items: center;
     gap: 15px;
-    border: 1px solid var(--border-color1);
+    border: 1px solid var(--border-color2);
     background-color: var(--bg-color1);
     padding: 15px;
     border-radius: 10px;
-    .img-box{
+
+    .img-box {
         width: 120px;
         height: 120px;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 8px;
         }
     }
-    .text-box{
-        .title{
+
+    .text-box {
+        .title {
             font-size: 18px;
             font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -8969,12 +9031,20 @@ Trip details section start
         }
     }
 
+    .accordion-item {
+        background-color: transparent;
+        border-bottom: 1px solid var(--border-color2);
+        border-radius: 0;
+    }
+
     .accordion-button {
         display: flex;
         align-items: center;
         gap: 10px;
         font-size: 22px;
-        .add-location{
+        background-color: transparent;
+
+        .add-location {
             font-weight: 400;
             font-size: 20px;
         }
@@ -9051,12 +9121,31 @@ Trip details section end
 /*----------------------------------------------
 Timeline box section start
 ----------------------------------------------*/
-.timeline-box{
-    .timeline-item{
+.timeline-box {
+    .timeline-item {
         display: flex;
         gap: 30px;
-        .left-side{
-            .icon-box{
+
+        &:not(:last-child) .right-box {
+            margin-bottom: 30px;
+        }
+
+        .left-side {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 1px;
+                background-color: rgb(var(--black));
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+
+            .icon-box {
                 height: 32px;
                 width: 32px;
                 border-radius: 50%;
@@ -9067,11 +9156,102 @@ Timeline box section start
                 justify-content: center;
             }
         }
-        .right-box{
+
+        .right-box {
             flex-grow: 1;
+
         }
     }
 }
+
+.see-hours-box {
+    position: relative;
+
+    &:hover .popup-box {
+        display: block;
+    }
+
+    .see-hours {
+        text-decoration: underline;
+        cursor: pointer;
+
+    }
+}
+
+.popup-box {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    display: none;
+
+    &:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.popup-box-right {
+        right: 0;
+        left: auto;
+
+        .popup-box-inner {
+            &::after {
+                right: 50px;
+                left: auto;
+            }
+        }
+    }
+
+    .popup-box-inner {
+        position: relative;
+        padding: 15px;
+        background-color: rgb(var(--white));
+        border-radius: 10px;
+        box-shadow: var(--shadow3);
+        min-width: 200px;
+        cursor: auto;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 25px;
+            top: -8px;
+            width: 17px;
+            height: 17px;
+            transform: rotate(45deg);
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .close-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+
+            &:hover {
+                background-color: hsl(var(--base)/0.1);
+            }
+        }
+
+        .form-control {
+            font-size: 14px;
+            height: 30px;
+            width: 65px;
+            min-width: 35px;
+            padding: 5px;
+        }
+    }
+}
+
+@media(min-width: 576px) {
+    .popup-box .popup-box-inner {
+        min-width: 280px;
+    }
+}
+
 /*----------------------------------------------
 Timeline box section end
 ----------------------------------------------*/

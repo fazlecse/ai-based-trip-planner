@@ -342,6 +342,21 @@ $(document).ready(function () {
         });
     }
     // Date range picker end
+
+    // Date range picker start
+    if ($('#myID2').length) {
+        flatpickr("#myID2", {
+            altInput: true,
+            dateFormat: "YYYY-MM-DD",
+            altFormat: "DD-MM-YYYY",
+            allowInput: true,
+        });
+    }
+    const flatpickrInstance = $('#myID2').flatpickr();
+    $('.calendar-icon').on('click', function () {
+        flatpickrInstance.open();
+    });
+    // Date range picker end
 });
 
 // input file preview
@@ -436,20 +451,17 @@ if ($('#datepicker').length) {
 
 // Copy page url start
 if ($('#copyBtn').length) {
-    document.getElementById('copyBtn').addEventListener('click', () => {
-        let pageUrl = window.location.href;
-
-        navigator.clipboard.writeText(pageUrl).then(() => {
-            if (pageUrl) {
-                document.getElementById('copyBtn').innerHTML = 'Copied Profile <i class="fa-regular fa-circle-check"></i>';
-                setTimeout(() => {
-                    document.getElementById('copyBtn').innerHTML = 'Copy Profile <i class="fa-regular fa-copy"></i>';
-                }, 1000);
-            }
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
-    });
+    document.getElementById("copyBtn").addEventListener("click", () => {
+        let referralURL = document.getElementById("referralURL");
+        referralURL.select();
+        navigator.clipboard.writeText(referralURL.value)
+        if (referralURL.value) {
+            document.getElementById("copyBtn").innerHTML = '<i class="fa-regular fa-circle-check"></i> Copied';
+            setTimeout(() => {
+                document.getElementById("copyBtn").innerHTML = '<i class="fa-regular fa-copy"></i>copy';
+            }, 1000)
+        }
+    })
 }
 
 // Copy page url end
