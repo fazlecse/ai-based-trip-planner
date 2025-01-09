@@ -1758,15 +1758,22 @@ Offcanvas section start
 .offcanvas {
     z-index: 99999;
 
+    width: 500px !important;
+
+    .offcanvas-header {
+        padding: 16px 16px 5px;
+    }
+
+    .offcanvas-body {
+        padding: 0 30px 16px;
+    }
+
     .accordion-button {
         font-size: 16px;
         font-weight: 500;
     }
 }
 
-.offcanvas.offcanvas-end {
-    border-left: 1px solid var(--border-color2);
-}
 
 
 /*----------------------------------------------
@@ -2276,7 +2283,7 @@ Offcanvas end
 
     &:hover {
         color: rgb(var(--white));
-        background-color: rgb(var(--soft-red, 0.8));
+        background-color: rgb(var(--soft-red), 0.8);
     }
 }
 
@@ -8911,6 +8918,7 @@ strong {
 
 .add-remove-btn {
     width: 40px;
+    min-width: 40px;
     height: 40px;
     background-color: var(--bg-color1);
     border-radius: 50%;
@@ -8920,6 +8928,7 @@ strong {
     justify-content: center;
     border: 1px solid rgb(var(--black));
     transform: var(--transition);
+    font-size: 16px;
 
     &:hover {
         background-color: rgb(var(--black));
@@ -8946,6 +8955,85 @@ strong {
     .form-check-input {
         height: 30px;
         width: 60px;
+    }
+}
+
+.gm-style .gm-style-iw-c {
+    box-shadow: var(--shadow3);
+}
+
+.map-product-box {
+    display: flex;
+    gap: 15px;
+    width: 310px;
+    font-family: var(--heading-font);
+
+    .img-box {
+        width: 90px;
+        min-width: 90px;
+        aspect-ratio: 1/1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+    }
+
+    .text-box {
+        flex-grow: 1;
+
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .reviews {
+            font-size: 12px;
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.marker-icon-box {
+    width: 28px;
+    position: relative;
+
+    .icon-middle {
+        position: absolute;
+        top: 7px;
+        left: 8px;
+        fill: rgb(var(--white));
+    }
+    .add-icon{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--bg-color1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -8px;
+        right: -9px;
     }
 }
 

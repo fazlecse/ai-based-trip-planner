@@ -351,11 +351,12 @@ $(document).ready(function () {
             altFormat: "DD-MM-YYYY",
             allowInput: true,
         });
+        const flatpickrInstance = $('#myID2').flatpickr();
+        $('.calendar-icon').on('click', function () {
+            flatpickrInstance.open();
+        });
     }
-    const flatpickrInstance = $('#myID2').flatpickr();
-    $('.calendar-icon').on('click', function () {
-        flatpickrInstance.open();
-    });
+ 
     // Date range picker end
 });
 
