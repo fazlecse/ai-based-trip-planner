@@ -3,6 +3,31 @@ window.initMap = function () {
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer();
 
+    // Custom map style to hide POI and other unwanted elements
+    const mapStyle = [
+        {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+                { "visibility": "off" }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [
+                { "visibility": "off" }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [
+                { "visibility": "off" }
+            ]
+        }
+    ];
+
     // Define a single InfoWindow instance globally
     let activeInfoWindow = null;
 
@@ -13,7 +38,8 @@ window.initMap = function () {
         // center: { lat: 48.8566, lng: 2.3522 }, // Default map center (example: Paris)
         center: { lat: 41.0082, lng: 28.9784 }, // Istanbul
         zoom: 13,
-        mapId: "DEMO_MAP_ID"
+        mapId: "DEMO_MAP_ID",
+        styles: mapStyle
     });
 
     // Initialize the DirectionsRenderer and link it to the map
@@ -48,6 +74,7 @@ window.initMap = function () {
         // SVG as a string
 
 
+
         // Convert the HTML string to a DOM element
         const parser = new DOMParser();
         const markerIconElement = parser.parseFromString(`
@@ -73,7 +100,6 @@ window.initMap = function () {
             title: title,
             content: markerIconElement  // Use the DOM element as content
         });
-
 
         // Create content for the InfoWindow
         let content = `

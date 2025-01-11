@@ -709,9 +709,18 @@ body::-webkit-scrollbar-thumb:hover {
   border: none;
 }
 
+.modal-body {
+  padding: 0 30px 20px;
+}
+
+.modal-footer {
+  padding: 0 30px 20px;
+}
+
 .modal-header {
   border-bottom: 1px solid var(--border-color2);
-  padding: 12px 16px;
+  padding: 16px 16px 5px;
+  border-bottom: none;
 }
 .modal-header .modal-title {
   display: flex;
@@ -725,6 +734,11 @@ body::-webkit-scrollbar-thumb:hover {
   border-top: 1px solid var(--border-color1);
 }
 
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 580px;
+  }
+}
 @media (min-width: 576px) {
   #lang-currency-modal .modal-content {
     padding: 20px 40px;
@@ -975,6 +989,15 @@ Reusable style section start
   text-decoration: underline;
 }
 
+.link-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(var(--primary-color), 0.1);
+  font-size: 18px;
+}
+
 .link-underline {
   text-decoration: underline;
   cursor: pointer;
@@ -1177,10 +1200,10 @@ Reusable style section start
 .search-box3 .form-control {
   background-color: var(--bg-color1);
   border-radius: 4px;
-  height: 60px;
+  height: 50px;
   border-radius: 9999px;
-  padding: 6px 60px 6px 12px;
-  box-shadow: var(--shadow2);
+  padding: 6px 45px 6px 12px;
+  box-shadow: var(--shadow1);
 }
 .search-box3 .form-control:focus {
   outline: 1px solid rgb(var(--primary-color));
@@ -1188,22 +1211,13 @@ Reusable style section start
 .search-box3 .search-btn {
   transition: var(--transition);
   position: absolute;
-  right: 6px;
-  background-color: rgb(var(--primary-color));
+  right: 16px;
   height: calc(100% - 12px);
-  border-radius: 9999px;
-  padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--white));
   text-transform: capitalize;
-  gap: 10px;
   font-size: 16px;
-}
-.search-box3 .search-btn:hover {
-  background-color: rgb(var(--primary-color), 0.8);
-  color: rgb(var(--white));
 }
 
 .multiple-search-section {
@@ -1481,6 +1495,13 @@ Offcanvas section start
   font-weight: 500;
 }
 
+.offcanvas-footer {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color2);
+  display: flex;
+  justify-content: space-between;
+}
+
 /*----------------------------------------------
 Offcanvas end 
 ----------------------------------------------*/
@@ -1578,7 +1599,7 @@ Offcanvas end
   background-color: var(--bg-color1);
   padding: 10px 20px;
   border-radius: 40px;
-  border: 1px solid var(--border-color1);
+  border: 1px solid rgb(var(--black));
   transition: var(--transition);
   font-size: 16px;
   display: inline-flex;
@@ -1587,11 +1608,11 @@ Offcanvas end
   gap: 5px;
   font-weight: 500;
   text-transform: capitalize;
-  color: rgb(var(--primary-color));
+  color: rgb(var(--black));
 }
 .cmn-btn2:hover {
-  color: rgb(var(--primary-color));
-  box-shadow: var(--shadow1);
+  color: rgb(var(--white));
+  background-color: rgb(var(--black));
 }
 
 .cmn-btn4 {
@@ -4670,7 +4691,7 @@ Bottom Mobile, Tab nav end
 .hero-section-inner {
   display: flex;
   flex-direction: column;
-  min-height: 75vh;
+  min-height: 82vh;
 }
 
 .product-box {
@@ -7064,6 +7085,45 @@ strong {
   text-decoration: underline;
 }
 
+.product-box4 {
+  display: flex;
+  gap: 15px;
+  border: 1px solid var(--border-color2);
+  background-color: var(--bg-color1);
+  padding: 15px;
+  border-radius: 10px;
+}
+.product-box4.active {
+  border-color: rgb(var(--primary-color));
+  outline: 1px solid rgb(var(--primary-color));
+}
+.product-box4 .img-box {
+  width: 90px;
+  min-width: 90px;
+  height: 90px;
+}
+.product-box4 .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.product-box4 .text-box .tag {
+  color: rgb(var(--primary-color));
+  background-color: rgb(var(--primary-color), 0.1);
+  padding: 2px 5px;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.product-box4 .text-box .title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .add-remove-btn {
   width: 40px;
   min-width: 40px;
@@ -7245,8 +7305,8 @@ Trip details section start
 }
 .trip-details-section .accordion-item {
   background-color: transparent;
-  border-bottom: 1px solid var(--border-color2);
   border-radius: 0;
+  border-bottom: 1px solid var(--border-color2);
 }
 .trip-details-section .accordion-button {
   display: flex;
