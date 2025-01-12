@@ -237,18 +237,18 @@
                     <div class="d-flex align-items-center justify-content-between gap-2">
                         <p class="mb-0">35/38 saves added</p>
                         <button type="button" class="cmn-btn" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasExample" role="button"
-                            aria-controls="offcanvasExample">edit</button>
+                            data-bs-target="#addPlaceOffcanvas" role="button"
+                            aria-controls="addPlaceOffcanvas">edit</button>
                     </div>
-                    <div class="accordion mt-20" id="accordionExample3">
+                    <div class="accordion mt-20 itineray-accordion" id="accordionExample3">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headinSeven">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
                                     Thursday, Jan 16
                                     <a href="" class="link-underline add-location" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasExample" role="button"
-                                        aria-controls="offcanvasExample">Istanbul, Türkiye</a>
+                                        data-bs-target="#addPlaceOffcanvas" role="button"
+                                        aria-controls="addPlaceOffcanvas">Istanbul, Türkiye</a>
                                 </button>
                             </h2>
                             <div id="collapseSeven" class="accordion-collapse collapse show"
@@ -562,8 +562,8 @@
                                             </div>
                                             <div class="right-box">
                                                 <button type="button" class="add-place-btn" data-bs-toggle="offcanvas"
-                                                    data-bs-target="#offcanvasExample" role="button"
-                                                    aria-controls="offcanvasExample">
+                                                    data-bs-target="#addPlaceOffcanvas" role="button"
+                                                    aria-controls="addPlaceOffcanvas">
 
                                                     Pick a home-base that matches your vibe. <strong
                                                         class="link-underline">Add a place to stay.</strong>
@@ -2269,10 +2269,11 @@
 
 
     <!-- Offcanvas section start -->
-    <div class="offcanvas offcanvas-end custom-width" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
+    <!-- Add place offcanvas start -->
+    <div class="offcanvas offcanvas-end custom-width addPlaceOffcanvas" tabindex="-1" id="addPlaceOffcanvas"
+        aria-labelledby="addPlaceOffcanvasLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+            <h5 class="offcanvas-title" id="addPlaceOffcanvasLabel"></h5>
             <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="fa-light fa-xmark"></i>
             </button>
@@ -2598,9 +2599,8 @@
     <!-- Modal section end -->
 
     <script>
-        const productBoxs = document.querySelectorAll('.product-box4');
+        const productBoxs = document.querySelectorAll('.addPlaceOffcanvas .product-box4');
         productBoxs.forEach(productBox => {
-            productBox.style.cursor = 'pointer';
             productBox.addEventListener('click', () => {
                 productBoxs.forEach(productBox => productBox.classList.remove('active'));
                 productBox.classList.add('active');
