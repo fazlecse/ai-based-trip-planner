@@ -62,6 +62,7 @@ Typography
     --soft-green: #ccf888;
     --moderate-lime-green: #4da44e;
     --soft-red: 216, 42, 104;
+    --light-red: 255, 93, 93;
     --lime-gray: #d0d0d0;
     --vivid-orange: #fb6116;
     --soft-magenta: 204, 84, 244;
@@ -5276,7 +5277,31 @@ Cmn table end
 }
 
 // Custom flatpickr end
-/*----------------------------------------------
+
+// Custom check box btn stat
+.custom-checkbox-btn {
+    .btn {
+        border-color: var(--border-color1);
+        border-radius: 9999px;
+        font-weight: 500;
+
+        &:hover {
+            background-color: rgb(var(--primary-color), 0.1);
+            border-color: var(--border-color1);
+        }
+    }
+
+    .btn-check:checked+.btn,
+    .btn.active,
+    .btn.show,
+    .btn:first-child:active,
+    :not(.btn-check)+.btn:active {
+        border-color: rgb(var(--black));
+    }
+}
+
+// Custom check box btn end
+
 /*----------------------------------------------
 Reusable style section end
 ----------------------------------------------*/
@@ -9001,45 +9026,132 @@ strong {
             font-weight: 500;
         }
 
-        .expand-compressed-description {
-            display: flex;
-            gap: 8px;
-            font-size: 15px;
 
-            .icon-box {
-                width: 25px;
-                min-width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: rgb(var(--soft-blue), 0.5);
-            }
-
-            .text-box {
-                .text {
-                    cursor: pointer;
-                    overflow: hidden;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    line-clamp: 2;
-                    -webkit-box-orient: vertical;
-
-                    &.expanded {
-                        -webkit-line-clamp: unset;
-                        line-clamp: unset;
-                    }
-                }
-
-            }
-        }
     }
 
     .wishlist-btn {
         position: absolute;
         right: 10px;
         top: 10px;
+        background-color: rgb(var(--white));
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 18px;
+        transition: var(--transition);
+
+        &.active {
+            color: rgb(var(--soft-red));
+            color: rgb(var(--light-red));
+        }
+    }
+}
+.product-box5 {
+    background-color: rgb(var(--primary-color), 0.1);
+    border-radius: 10px;
+    font-size: 15px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        border-color: rgb(var(--primary-color));
+        outline: 1px solid rgb(var(--primary-color));
+    }
+
+    .product-box5-top {
+        background-color: var(--bg-color1);
+        display: flex;
+        border: 1px solid var(--border-color2);
+        border-radius: 10px;
+        flex-direction: column;
+        flex-grow: 1;
+
+    }
+
+    .product-box5-bottom {
+        padding: 8px;
+    }
+
+    .img-carousel .item img {
+        height: 210px;
+    }
+
+    .product-box5-text-box {
+        padding: 15px;
+        flex-grow: 1;
+
+        .tag {
+            color: rgb(var(--primary-color));
+            background-color: rgb(var(--primary-color), 0.1);
+            padding: 2px 5px;
+            display: inline-flex;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+
+    }
+
+    .wishlist-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: rgb(var(--white));
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 18px;
+        transition: var(--transition);
+
+        &.active {
+            color: rgb(var(--soft-red));
+            color: rgb(var(--light-red));
+        }
+    }
+}
+
+.expand-compressed-description {
+    display: flex;
+    gap: 8px;
+    font-size: 15px;
+
+    .icon-box {
+        width: 25px;
+        min-width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(var(--soft-blue), 0.5);
+    }
+
+    .text-box {
+        .text {
+            cursor: pointer;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            &.expanded {
+                -webkit-line-clamp: unset;
+                line-clamp: unset;
+            }
+        }
+
     }
 }
 
@@ -9214,10 +9326,25 @@ Img carousel start
     }
 
     .owl-dots {
-        margin-top: -30px;
+        margin-top: -22px;
         z-index: 1;
         position: relative;
         text-align: center;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .6) 75%);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        .owl-dot {
+            span {
+                background: rgb(var(--white));
+            }
+
+            &.active {
+                span {
+                    background: rgb(var(--white));
+                }
+            }
+        }
     }
 }
 
@@ -9258,6 +9385,27 @@ Trip details section start
         }
     }
 
+    &.for-you {
+        .product-box4 {
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+            font-size: 15px;
+
+            .img-box {
+                width: 100%;
+                height: 100%;
+
+                .img-carousel .item img {
+                    height: 210px;
+                }
+            }
+
+            .text-box {
+                padding: 15px;
+            }
+        }
+    }
 
 }
 
@@ -9276,9 +9424,18 @@ Trip details section start
 }
 
 .save-accordion {
-    .accordion-body{
+    .accordion-item {
+        border-bottom: none;
+    }
+
+    .accordion-button {
         padding: 0 0 16px;
     }
+
+    .accordion-body {
+        padding: 0 0 16px;
+    }
+
     .product-box4 {
 
         padding: 0;

@@ -121,7 +121,7 @@ $(document).ready(function () {
     // img-slider carousel
     $('.img-carousel').owlCarousel({
         loop: true,
-        autoplay: true,
+        // autoplay: true,
         margin: 10,
         autoplayTimeout: 2000,
         // rtl: true,
