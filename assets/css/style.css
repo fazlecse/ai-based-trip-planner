@@ -1483,12 +1483,16 @@ Offcanvas section start
 ----------------------------------------------*/
 .offcanvas {
   z-index: 99999;
-  width: 500px !important;
 }
-.offcanvas .offcanvas-header {
+.offcanvas.custom-offcanvas {
+  width: 500px !important;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.offcanvas.custom-offcanvas .offcanvas-header {
   padding: 16px 16px 5px;
 }
-.offcanvas .offcanvas-body {
+.offcanvas.custom-offcanvas .offcanvas-body {
   padding: 0 30px 16px;
 }
 .offcanvas .accordion-button {
@@ -1758,53 +1762,45 @@ Offcanvas end
 .round-btn {
   position: relative;
   overflow: hidden;
-  width: 120px;
-  height: 120px;
+  width: 45px;
+  min-width: 45px;
+  height: 45px;
   border-radius: 50%;
-  border: 1px solid rgb(var(--black), 0.5);
+  border: 1px solid rgb(var(--black));
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: all 0.5s ease-in-out;
-  padding: 10px 25px;
+  transition: var(--transition);
   color: rgb(var(--heading-color));
+  font-size: 16px;
 }
 
 .round-btn:hover {
+  background-color: rgb(var(--black));
   color: rgb(var(--white));
   z-index: 1;
   position: relative;
-  border-color: rgb(var(--primary-color));
 }
 
-.round-btn p {
-  font-size: 20px;
-  text-transform: capitalize;
-}
-
-.round-btn span {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  color: rgb(var(--white));
+.round-btn2 {
+  position: relative;
+  overflow: hidden;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  transform: translate(-50%, -50%);
-  background: rgb(var(--primary-color));
-  z-index: -1;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: var(--transition);
+  color: rgb(var(--heading-color));
+  font-size: 16px;
 }
-
-.round-btn:hover span {
-  width: 225%;
-  height: 562.5px;
-  z-index: -1;
-}
-
-.round-btn i {
-  font-size: 20px;
-  transform: rotate(45deg);
+.round-btn2:hover {
+  border: 1px solid rgb(var(--black));
 }
 
 .round-box-content {
@@ -7184,6 +7180,9 @@ strong {
   display: flex;
   flex-direction: column;
 }
+.product-box5:hover {
+  color: inherit;
+}
 .product-box5.active {
   border-color: rgb(var(--primary-color));
   outline: 1px solid rgb(var(--primary-color));
@@ -7605,6 +7604,13 @@ Trip details section start
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.round-btn-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.5s ease-in;
 }
 
 /*----------------------------------------------

@@ -356,7 +356,7 @@ $(document).ready(function () {
             flatpickrInstance.open();
         });
     }
- 
+
     // Date range picker end
 });
 
