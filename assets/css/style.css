@@ -48,8 +48,6 @@ Typography
   --body-color: #333333;
   --heading-color: 14, 7, 0;
   --black: 0, 0, 0;
-  --btn-hover-bg: hsl(var(--base)/.8);
-  --btn-hover-bg2: #332f8c;
   --light-gray: #dddddd;
   --white: 255, 255, 255;
   --soft-blue: 193, 191, 253;
@@ -874,6 +872,10 @@ a.ui-button:active,
   cursor: pointer;
 }
 
+.fw-medium {
+  font-weight: 500;
+}
+
 /*----------------------------------------------
 Reset end
 ----------------------------------------------*/
@@ -1590,6 +1592,7 @@ Offcanvas end
   gap: 5px;
   border-radius: 40px;
   font-weight: 500;
+  border: 1px solid transparent;
 }
 .cmn-btn:hover {
   background-color: rgb(var(--primary-color), 0.8);
@@ -1786,9 +1789,9 @@ Offcanvas end
 .round-btn2 {
   position: relative;
   overflow: hidden;
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
+  width: 45px;
+  min-width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 1px solid transparent;
   display: flex;
@@ -7153,8 +7156,15 @@ strong {
 .product-box4 .text-box .title {
   font-size: 18px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
-.product-box4 .wishlist-btn {
+
+.wishlist-btn {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -7166,8 +7176,7 @@ strong {
   font-size: 18px;
   transition: var(--transition);
 }
-.product-box4 .wishlist-btn.active {
-  color: rgb(var(--soft-red));
+.wishlist-btn.active {
   color: rgb(var(--light-red));
 }
 
@@ -7606,11 +7615,94 @@ Trip details section start
   justify-content: center;
 }
 
-.round-btn-box {
+.action-btn-box .btn-box,
+.edit-btn-box .btn-box {
   display: flex;
   align-items: center;
   gap: 5px;
   transition: all 0.5s ease-in;
+}
+
+.wishlist-btn2 {
+  padding: 7px 10px;
+  border-radius: 9999px;
+  background-color: var(--bg-color1);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+.wishlist-btn2:hover {
+  background-color: rgb(var(--bg-color2));
+  background-color: var(--bg-color4);
+}
+.wishlist-btn2 .icon-box {
+  color: rgb(var(--light-red));
+  font-size: 16px;
+}
+
+.productDetailsOffcanvas .product-box4 {
+  padding: 0;
+  border: none;
+}
+.productDetailsOffcanvas .product-box4 .img-box {
+  width: 140px;
+  min-width: 140px;
+  height: 110px;
+  position: relative;
+}
+
+.itinerary-box.edit .timeline-box .timeline-item {
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.itinerary-box.edit .timeline-box .timeline-item .left-side::after {
+  display: none;
+}
+.itinerary-box.edit .timeline-box .timeline-item .left-side .icon-box {
+  visibility: hidden;
+  opacity: 0;
+}
+.itinerary-box.edit .timeline-box .timeline-item .middle-side {
+  margin-bottom: 0;
+}
+.itinerary-box.edit .remove-btn {
+  visibility: visible;
+  opacity: 1;
+}
+.itinerary-box.edit .right-side {
+  visibility: visible;
+  opacity: 1;
+}
+
+.remove-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgb(var(--soft-red));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+}
+.remove-btn:hover {
+  background-color: var(--bg-color4);
+}
+
+.right-side {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.move-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: move !important;
 }
 
 /*----------------------------------------------
@@ -7623,7 +7715,7 @@ Timeline box section start
   display: flex;
   gap: 30px;
 }
-.timeline-box .timeline-item:not(:last-child) .right-box {
+.timeline-box .timeline-item:not(:last-child) .middle-side {
   margin-bottom: 30px;
 }
 .timeline-box .timeline-item .left-side {
@@ -7650,7 +7742,7 @@ Timeline box section start
   align-items: center;
   justify-content: center;
 }
-.timeline-box .timeline-item .right-box {
+.timeline-box .timeline-item .middle-side {
   flex-grow: 1;
 }
 
