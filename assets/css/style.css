@@ -7662,19 +7662,22 @@ Trip details section start
   display: none;
 }
 .itinerary-box.edit .timeline-box .timeline-item .left-side .icon-box {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 .itinerary-box.edit .timeline-box .timeline-item .middle-side {
   margin-bottom: 0;
 }
-.itinerary-box.edit .remove-btn {
-  visibility: visible;
-  opacity: 1;
+.itinerary-box.edit .timeline-box .timeline-item .right-side {
+  display: block;
 }
-.itinerary-box.edit .right-side {
-  visibility: visible;
-  opacity: 1;
+.itinerary-box.edit .remove-btn {
+  display: flex;
+}
+.itinerary-box.edit .add-place-btn {
+  display: none;
+}
+.itinerary-box.edit .action-btn-box {
+  display: none;
 }
 
 .remove-btn {
@@ -7686,23 +7689,17 @@ Trip details section start
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 .remove-btn:hover {
   background-color: var(--bg-color4);
-}
-
-.right-side {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .move-btn {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  cursor: move !important;
+  cursor: grab !important;
 }
 
 /*----------------------------------------------
@@ -7744,6 +7741,9 @@ Timeline box section start
 }
 .timeline-box .timeline-item .middle-side {
   flex-grow: 1;
+}
+.timeline-box .timeline-item .right-side {
+  display: none;
 }
 
 .see-hours-box {
@@ -7820,6 +7820,14 @@ Timeline box section start
     min-width: 280px;
   }
 }
+.sortable-ghost {
+  opacity: 0.5;
+}
+
+.sortable-chosen {
+  border: 2px dashed #ccc;
+}
+
 /*----------------------------------------------
 Timeline box section end
 ----------------------------------------------*/

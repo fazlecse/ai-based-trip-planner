@@ -234,13 +234,13 @@
                             For you
                         </a>
                     </div>
-                    <div class="itinerary-box">
+                    <div id="itinerary-box" class="itinerary-box">
                         <div class="d-flex align-items-center justify-content-between gap-2">
                             <p class="mb-0 fw-medium trip-itinerary-times-count">35/38 saves added</p>
                             <div class="edit-btn-box">
-                                <button type="button" class="cmn-btn edit-btn">edit</button>
+                                <button type="button" id="edit-btn" class="cmn-btn edit-btn">edit</button>
                                 <div class="btn-box">
-                                    <button type="button" class="cmn-btn2 close-btn">Cancel</button>
+                                    <button type="button" id="close-btn" class="cmn-btn2 close-btn">Cancel</button>
                                     <button type="button" class="cmn-btn">Save</button>
                                 </div>
                             </div>
@@ -2593,6 +2593,8 @@
         </div>
     </section>
     <!-- Trip details section end -->
+
+
     <!-- Footer Section start -->
     <section class="footer-section">
         <div class="container">
@@ -3384,7 +3386,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-
             // product box active inactive
             const productBoxs = document.querySelectorAll('.addPlaceOffcanvas .product-box4');
             productBoxs.forEach(productBox => {
@@ -3393,8 +3394,9 @@
                     productBox.classList.add('active');
                 });
             });
+        });
 
-            // *************************************************
+        document.addEventListener('DOMContentLoaded', function () {
             // action function show hide 
             function toggleActionButton(openBtn, btnBox, closeBtn, itineraryBox = null) {
 
@@ -3431,8 +3433,51 @@
             const tripItineraryTimesCount = document.querySelector('.trip-itinerary-times-count');
             toggleActionButton(openBtn2, btnBox2, closeBtn2, itineraryBox, tripItineraryTimesCount);
 
-            // *************************************************
+        });
 
+        // accordion all show when edit mode start
+        document.addEventListener('DOMContentLoaded', function () {
+            const itineraryBoxEdit = document.querySelector('#itinerary-box');
+            const editBtn = document.querySelector('#edit-btn');
+            const closeBtn = document.querySelector('#close-btn');
+            const accordionItems = document.querySelectorAll('.itinerary-box .accordion-item');
+
+            editBtn.addEventListener('click', () => {
+                accordionItems.forEach((accordionItem, index) => {
+                    if (index === 0) return;
+                    const accordionButtons = accordionItem.querySelectorAll('.accordion-button');
+                    accordionButtons.forEach(accordionButton => {
+                        accordionButton.classList.toggle('collapsed');
+                    });
+
+                    const accordionCollapses = accordionItem.querySelectorAll('.accordion-collapse');
+                    accordionCollapses.forEach(accordionCollapse => {
+                        accordionCollapse.classList.toggle('show');
+                    });
+
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                accordionItems.forEach((accordionItem, index) => {
+                    if (index === 0) return;
+                    const accordionButtons = accordionItem.querySelectorAll('.accordion-button');
+                    accordionButtons.forEach(accordionButton => {
+                        accordionButton.classList.toggle('collapsed');
+                    });
+
+                    const accordionCollapses = accordionItem.querySelectorAll('.accordion-collapse');
+                    accordionCollapses.forEach(accordionCollapse => {
+                        accordionCollapse.classList.toggle('show');
+                    });
+
+                });
+            });
+        });
+        // accordion all show when edit mode end
+
+
+        document.addEventListener('DOMContentLoaded', function () {
             // expand compressed btn
             document.querySelectorAll('.expand-compressed-description').forEach(description => {
                 const textElement = description.querySelector('.text');
@@ -3447,6 +3492,25 @@
                 buttonElement.addEventListener('click', toggleExpand);
             });
         });
+
+        // remove btn click to hide timeline item
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all timeline boxes
+            const timeLineBoxes = document.querySelectorAll('.timeline-box');
+
+
+            // Loop through each timeline box and add event listener
+            timeLineBoxes.forEach(timeLineBox => {
+                timeLineBox.addEventListener('click', function (event) {
+                    if (event.target.closest('.remove-btn')) {
+                        const timeLineItem = event.target.closest('.timeline-item');
+                        timeLineItem.remove();
+                    }
+                });
+            });
+        });
+
+
     </script>
 
 
@@ -3475,6 +3539,8 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8QwnfWXeL8Yw9PDqkW7MYLt2F1G1PS4&loading=async&callback=initMap&libraries=marker"></script>
     <!-- google map Js link -->
     <script src="assets/js/frontend_google_map.js" defer></script>
+    <!-- Sortable js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <!-- Main Js link -->
     <script src="assets/js/main.js"></script>
 </body>

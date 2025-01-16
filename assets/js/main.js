@@ -356,8 +356,19 @@ $(document).ready(function () {
             flatpickrInstance.open();
         });
     }
-
     // Date range picker end
+
+    // Sortable drag & drop start
+    new Sortable(document.querySelector('.timeline-box'), {
+        handle: '.move-btn', 
+        animation: 150,  
+        ghostClass: 'sortable-ghost', 
+        chosenClass: 'sortable-chosen', 
+        scroll: true, 
+        scrollSensitivity: 30,
+        scrollSpeed: 10
+    });
+
 });
 
 // input file preview

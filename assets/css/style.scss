@@ -9627,24 +9627,29 @@ Trip details section start
             }
 
             .icon-box {
-                visibility: hidden;
-                opacity: 0;
+                display: none;
             }
         }
 
         .middle-side {
             margin-bottom: 0;
         }
+
+        .right-side {
+            display: block;
+        }
     }
 
     .remove-btn {
-        visibility: visible;
-        opacity: 1;
+        display: flex;
     }
 
-    .right-side {
-        visibility: visible;
-        opacity: 1;
+    .add-place-btn {
+        display: none;
+    }
+
+    .action-btn-box {
+        display: none;
     }
 }
 
@@ -9657,24 +9662,20 @@ Trip details section start
     display: flex;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
 
     &:hover {
         background-color: var(--bg-color4);
     }
 }
 
-.right-side {
-    visibility: hidden;
-    opacity: 0;
-}
+
 
 .move-btn {
     width: 40px;
     height: 40px;
     font-size: 20px;
-    cursor: move !important;
+    cursor: grab !important;
 }
 
 /*----------------------------------------------
@@ -9723,6 +9724,10 @@ Timeline box section start
         .middle-side {
             flex-grow: 1;
 
+        }
+
+        .right-side {
+            display: none;
         }
     }
 }
@@ -9813,6 +9818,15 @@ Timeline box section start
     .popup-box .popup-box-inner {
         min-width: 280px;
     }
+}
+
+.sortable-ghost {
+    opacity: 0.5;
+
+}
+
+.sortable-chosen {
+    border: 2px dashed #ccc;
 }
 
 /*----------------------------------------------
