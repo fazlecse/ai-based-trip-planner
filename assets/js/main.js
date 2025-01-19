@@ -338,12 +338,12 @@ $(document).ready(function () {
             autoClose: false,
             startDate: '2023-01-01',
             endDate: '2025-12-31',
-            alwaysOpen: true
+            alwaysOpen: true,
         });
     }
     // Date range picker end
 
-    // Date range picker start
+    // Date picker start
     if ($('#myID2').length) {
         flatpickr("#myID2", {
             altInput: true,
@@ -356,18 +356,20 @@ $(document).ready(function () {
             flatpickrInstance.open();
         });
     }
-    // Date range picker end
+    // Date picker end
 
     // Sortable drag & drop start
-    new Sortable(document.querySelector('.timeline-box'), {
-        handle: '.move-btn', 
-        animation: 150,  
-        ghostClass: 'sortable-ghost', 
-        chosenClass: 'sortable-chosen', 
-        scroll: true, 
-        scrollSensitivity: 30,
-        scrollSpeed: 10
-    });
+    if ($('.timeline-box').length) {
+        new Sortable(document.querySelector('.timeline-box'), {
+            handle: '.move-btn',
+            animation: 150,
+            ghostClass: 'sortable-ghost',
+            chosenClass: 'sortable-chosen',
+            scroll: true,
+            scrollSensitivity: 30,
+            scrollSpeed: 10
+        });
+    }
 
 });
 

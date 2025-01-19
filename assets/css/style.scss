@@ -657,8 +657,11 @@ Breadcrumb start
 .breadcrumb {
     display: inline-flex;
     justify-content: center;
+    margin-bottom: 0;
 
     .breadcrumb-item {
+        font-weight: 500;
+
         + {
             .breadcrumb-item {
                 &::before {
@@ -1970,6 +1973,28 @@ Offcanvas end
     }
 }
 
+.login-btn {
+    background-color: rgb(var(--primary-color));
+    padding: 10px 20px;
+    transition: var(--transition);
+    font-size: 16px;
+    color: rgb(var(--white));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    gap: 5px;
+    border-radius: 40px;
+    font-weight: 500;
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: rgb(var(--primary-color), 0.8);
+        color: rgb(var(--white));
+    }
+
+}
+
 .social-btn {
     background: var(--bg-color1);
     padding: 10px 20px;
@@ -2837,13 +2862,13 @@ hr.divider:after {
 // Multi step progress section start
 .multi-step-progress-section {
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .multi-step-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     text-align: center;
-
 
     .item {
         position: relative;
@@ -2857,8 +2882,6 @@ hr.divider:after {
             top: 9px;
             position: absolute;
             background-color: var(--light-gray);
-
-
         }
 
         &:first-child::before {
@@ -2915,34 +2938,33 @@ hr.divider:after {
     }
 }
 
-// Responsive multi step list start
-@media (max-width: 767px) {
+// Responsive multi step progress section start
+@media(max-width: 767px) {
     .multi-step-progress-section {
-        margin-left: 50px;
-    }
-
-    .multi-step-list {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        margin-bottom: 30px;
 
         .item {
-            .progress-link {
-                flex-direction: row;
-                justify-content: start;
+            &::before {
+                height: 3px;
+                top: 6px;
             }
-        }
 
-        .item::before {
-            width: 2px;
-            height: 100%;
-            left: 35px;
-            top: -100%;
+            &.active {
+                .icon-area {
+                    font-size: 10px;
+                }
+            }
+
+            .icon-area {
+                width: 15px;
+                height: 15px;
+                font-size: 8px;
+            }
         }
     }
 }
 
-// Responsive multi step list end
-
+// Responsive multi step progress section end
 // Rtl multi step progress section start
 .rtl {
     .multi-step-list .item::before {
@@ -2970,8 +2992,7 @@ hr.divider:after {
 .cmn-list {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
+    gap: 15px;
 
     .item {
         display: flex;
@@ -5832,7 +5853,7 @@ Bottom Mobile, Tab nav end
 00. Hero section start
 ----------------------------------------------*/
 .hero-section {
-    padding: 100px 0 80px;
+    padding: 50px 0 80px;
 
     .header-box {
         text-align: center;
@@ -5923,6 +5944,7 @@ Bottom Mobile, Tab nav end
     align-items: center;
     justify-content: center;
     gap: 8px;
+    margin-bottom: 50px;
 
     .icon-box {
         width: 25px;
@@ -5964,6 +5986,20 @@ Bottom Mobile, Tab nav end
     display: block;
 }
 
+// Responsive hero section start
+@media(max-width: 991px) {
+    .hero-section {
+        padding: 100px 0 50px;
+    }
+}
+
+@media(max-width: 767px) {
+    .powerd-by {
+        margin-bottom: 30px;
+    }
+}
+
+// Responsive hero section end
 /*----------------------------------------------
 Hero section end
 ----------------------------------------------*/
@@ -5972,6 +6008,7 @@ Hero section end
 Custom radio container start
 ----------------------------------------------*/
 .custom-radio-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -6000,7 +6037,7 @@ Custom radio container start
         box-shadow: var(--shadow1);
 
         .content-box {
-            padding-right: 30px;
+            padding-right: 25px;
 
             .title {
                 font-size: 18px;
@@ -6031,30 +6068,86 @@ Custom radio container start
     }
 }
 
-// Rtl payment section start
-.rtl {
-    .payment-container-list {
-        .form-check-label .content-area {
-            padding-right: 0;
-            padding-left: 30px;
-        }
-
-        .form-check-input {
-            left: 15px;
-            right: auto;
-        }
+// Responsive custom radio container start
+@media(max-width: 767px) {
+    .custom-radio-container {
+        margin-top: 30px;
     }
 }
 
-// Rtl payment section enn
+// Responsive custom radio container end
 /*----------------------------------------------
 Custom radio container end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Custom radio container2 start
+----------------------------------------------*/
+.custom-radio-container2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    .item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px 40px;
+        cursor: pointer;
+        border-radius: 9999px;
+        transition: var(--transition);
+        gap: 15px;
+        border: 1px solid var(--border-color1);
+        outline: 1px solid transparent;
+        background-color: var(--bg-color1);
+        box-shadow: var(--shadow1);
+
+        .content-box {
+            padding-right: 25px;
+
+            .title {
+                font-size: 18px;
+                text-transform: capitalize;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+            }
+        }
+    }
+
+    .form-check-input {
+        position: absolute;
+        right: 15px;
+        margin-top: 0;
+    }
+
+    .form-check-input[type=radio]:checked+.form-check-label {
+        background-color: rgb(var(--primary-color), 0.1);
+        border-color: rgb(var(--primary-color));
+        outline: 1px solid rgb(var(--primary-color));
+
+    }
+}
+
+/*----------------------------------------------
+Custom radio container2 end
 ----------------------------------------------*/
 
 /*----------------------------------------------
 Custom checkbox container start
 ----------------------------------------------*/
 .custom-checkbox-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -6113,6 +6206,14 @@ Custom checkbox container start
     }
 }
 
+// Responsive custom checkbox container start
+@media(max-width: 767px) {
+    .custom-checkbox-container {
+        margin-top: 30px;
+    }
+}
+
+// Responsive custom checkbox container end
 // Rtl payment section start
 .rtl {
     .payment-container-list {
@@ -7223,8 +7324,7 @@ Copyright end
 ----------------------------------------------*/
 .banner-section {
     position: relative;
-    padding-top: 170px;
-    padding-bottom: 90px;
+    padding: 80px 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7256,11 +7356,10 @@ Copyright end
 
 .breadcrumb-area {
     // font-weight: 500;
-    text-align: center;
 
     h3 {
         text-transform: capitalize;
-        font-size: 40px;
+        font-size: 32px;
         margin-bottom: 10px;
     }
 }
@@ -7629,13 +7728,13 @@ Login Signup end
     gap: 10px;
 
     .btn-light {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
+        font-size: 10px;
         background-color: var(--bg-color3);
         border: none;
     }
@@ -8102,39 +8201,7 @@ Products section end
 Product details section start
 ----------------------------------------------*/
 .product-details-section {
-    background-color: var(--bg-color1);
-    position: relative;
-    z-index: 0;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 400px;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-image: linear-gradient(180deg, #f5f5f500, #ffffff), linear-gradient(84deg, #3bb3ff33, #2f3dbb33 70.83%, #752fbb33 100%, #ffffff);
-        z-index: -1;
-    }
-
-    .product-details-header {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-
-        .img-box {
-            max-width: 250px;
-            aspect-ratio: 1/1;
-
-            img {
-                width: 100%;
-                height: 100%;
-                border-radius: 20px;
-            }
-        }
-    }
+    padding-top: 40px;
 }
 
 
@@ -8251,6 +8318,7 @@ Product details section start
 
 .info-box {
     position: relative;
+    display: inline-flex;
 
     &:hover .info-text {
         visibility: visible;
@@ -8275,7 +8343,7 @@ Product details section start
         z-index: 1;
         width: 250px;
         border: 1px solid var(--border-color1);
-        padding: 10px;
+        padding: 15px;
         border-radius: 10px;
         opacity: 0;
         visibility: hidden;
@@ -8345,6 +8413,13 @@ Product details section start
         width: 100%;
         height: 100%;
         border-radius: 10px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .info-box .info-text {
+        width: 320px;
+        padding: 20px;
     }
 }
 
@@ -8691,6 +8766,8 @@ Offer chat section end
 00. Inline date range picker start
 ----------------------------------------------*/
 .inline-date-range-picker {
+    margin-top: 50px;
+
     .date-picker-wrapper {
         width: 100%;
         background-color: var(--bg-color2);
@@ -8768,11 +8845,11 @@ Offer chat section end
         .month1,
         .month2 {
             width: calc(50% - 18px) !important;
+            width: calc(45%) !important;
         }
 
         table {
             th {
-                min-width: 54px;
                 text-transform: capitalize;
             }
 
@@ -8781,6 +8858,9 @@ Offer chat section end
             //         background-color: rgb(var(--primary-color), 0.5);
             //     }
             // }
+            td {
+                padding: 3px 0;
+            }
 
             .day {
                 margin: auto;
@@ -8804,6 +8884,44 @@ Offer chat section end
     }
 }
 
+// Responsive inline date range picker start
+@media(min-width: 1200px) {
+    .inline-date-range-picker {
+        .month-wrapper {
+
+            table th {
+                min-width: 54px;
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .inline-date-range-picker {
+        .month-wrapper {
+
+            .month1,
+            .month2 {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .date-picker-wrapper .gap {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .inline-date-range-picker {
+        margin-top: 30px;
+    }
+}
+
+
+
+
+// Responsive inline date range picker end
 /*----------------------------------------------
 Inline date range picker end 
 ----------------------------------------------*/
@@ -9031,8 +9149,9 @@ strong {
             line-clamp: 2;
         }
     }
-
-
+    .cmn-list{
+        font-size: 14px;
+    }
 }
 
 .wishlist-btn {
@@ -9365,7 +9484,7 @@ Img carousel end
 Trip details section start
 ----------------------------------------------*/
 .trip-details-section {
-    padding-top: 110px;
+    padding-top: 40px;
 
     .breadcrumb-area {
         text-align: initial;
