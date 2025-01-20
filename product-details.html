@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="assets/css/meanmenu.css">
     <!-- flatpickr css link -->
     <link rel="stylesheet" href="assets/css/flatpickr.min.css">
-
+    <!-- Fancybox Css link -->
+    <link rel="stylesheet" href="assets/css/fancybox.css">
     <!-- Style Css link -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -164,7 +165,7 @@
     </nav>
     <!-- Nav section end -->
 
-    <!-- Trip details section start -->
+    <!-- Product details section start -->
     <section class="product-details-section">
         <div class="container">
             <div class="breadcrumb-area">
@@ -174,7 +175,7 @@
                     </li>
                     <li class="breadcrumb-item"><a href="index.html">Istanbul</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">trip details</li>
+                    <li class="breadcrumb-item active" aria-current="page">product details</li>
                 </ul>
             </div>
             <div class="product-details-header d-flex justify-content-between align-items-center">
@@ -205,16 +206,119 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="cmn-btn3">
+                        <i class="fa-regular fa-arrow-up-from-square"></i>
+                        <span class="link-underline">Share</span>
+                    </button>
+                    <button type="button" class="cmn-btn3">
+                        <i class="fa-regular fa-pen"></i>
+                        <span class="link-underline">Review</span>
+                    </button>
                     <button type="button" class="cmn-btn2">
                         <i class="fa-regular fa-heart"></i>
                         save
                     </button>
                 </div>
             </div>
+            <div class="gallery-box">
+                <div class="item" data-src="./assets/img/product-details/1.jpg" data-fancybox="gallery" data-caption=""
+                    data-index="0">
+                    <img src="./assets/img/product-details/1.jpg" alt="">
+                </div>
+                <div class="item" data-src="./assets/img/product-details/2.jpg" data-fancybox="gallery" data-caption=""
+                    aria-hidden="true">
+                    <img src="./assets/img/product-details/2.jpg" alt="">
+                </div>
+                <div class="item" data-src="./assets/img/product-details/3.jpg" data-fancybox="gallery" data-caption=""
+                    aria-hidden="true">
+                    <img src="./assets/img/product-details/3.jpg" alt="">
+                </div>
+                <div class="item" data-src="./assets/img/product-details/4.jpg" data-fancybox="gallery" data-caption=""
+                    aria-hidden="true">
+                    <img src="./assets/img/product-details/4.jpg" alt="">
+                </div>
+                <div class="item" data-src="./assets/img/product-details/5.jpg" data-fancybox="gallery" data-caption=""
+                    aria-hidden="true">
+                    <img src="./assets/img/product-details/5.jpg" alt="">
+                </div>
+            </div>
+            <div class="mt-30">
+                <div class="row">
+                    <div class="col-lg-8">
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget-area">
+                            <div class="d-flex justify-content-between">
+                                <h4 class="mb-0">From $299.00</h4>
+                                <div class="reviews d-flex align-items-center gap-1 mt-1">
+                                    <div>
+                                        <i class="active fa-solid fa-star"></i>
+                                    </div>
+                                    <h6 class="mb-0">5</h6>
+                                    <span>(3 reviews)</span>
+                                </div>
+                            </div>
+                            <small class="mb-0">Per group (up to 10)</small>
+                            <br>
+
+                            <label class="form-label mt-20">Select date</label>
+                            <div class="flatpickr custom-flatpickr">
+                                <input type="text" class="form-control" id="myID2" placeholder="Select Date" data-input>
+                                <span class="calendar-icon">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </span>
+                            </div>
+                            <label class="form-label mt-15">Select travelers</label>
+                            <div class="traveler-box">
+                                <div class="value-box">
+                                    <i class="fa-regular fa-users"></i>
+                                    <div>
+                                        <span class="value">1</span> Travelers
+                                    </div>
+                                </div>
+                                <div class="geust-picker">
+                                    <div class="geust-picker-item">
+                                        <div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <h6 class="mb-0">Adults</h6><small>Age 25 - 99</small>
+                                            </div>
+                                            <small>from $299 per group</small>
+                                        </div>
+                                        <div class="item-count adults">
+                                            <button class="btn-inc-dec" data-decrease="data-decrease"> <i
+                                                    class="fa-regular fa-minus"></i></button>
+                                            <input data-value="data-value" type="number" value="1">
+                                            <button class="btn-inc-dec" data-increase="data-increase"><i
+                                                    class="fa-regular fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="geust-picker-item">
+                                        <div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <h6 class="mb-0">Children</h6><small>Age 0 - 24</small>
+                                            </div>
+                                            <small>$13.65</small>
+                                        </div>
+                                        <div class="item-count">
+                                            <button class="btn-inc-dec" data-decrease="data-decrease"> <i
+                                                    class="fa-regular fa-minus"></i></button>
+                                            <input data-value="data-value" type="number" value="0">
+                                            <button class="btn-inc-dec" data-increase="data-increase"><i
+                                                    class="fa-regular fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Trip details section end -->
+    <!-- Product details section end -->
 
 
     <!-- Footer Section start -->
@@ -328,7 +432,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/romance-hotel-boutique.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/romance-hotel-boutique.jpg" alt="product-img">
                             </div>
                             <div class="text-box">
                                 <div class="tag mb-1">istanbul</div>
@@ -360,7 +464,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/conrad-istanbul-bosphorus.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/conrad-istanbul-bosphorus.jpg" alt="product-img">
                             </div>
                             <div class="text-box">
                                 <div class="tag mb-1">istanbul</div>
@@ -392,7 +496,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/hilton-istanbul-bomonti.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/hilton-istanbul-bomonti.jpg" alt="product-img">
                             </div>
                             <div class="text-box">
                                 <div class="tag mb-1">istanbul</div>
@@ -424,7 +528,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/swissotel-the-bosphorus.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/swissotel-the-bosphorus.jpg" alt="product-img">
                             </div>
                             <div class="text-box">
                                 <div class="tag mb-1">istanbul</div>
@@ -456,7 +560,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/lobby-reception.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/lobby-reception.jpg" alt="product-img">
                             </div>
                             <div class="text-box">
                                 <div class="tag mb-1">istanbul</div>
@@ -658,7 +762,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/romance-hotel-boutique.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/romance-hotel-boutique.jpg" alt="product-img">
                                 <button type="button" class="wishlist-btn">
                                     <i class="fa-regular fa-heart"></i>
                                 </button>
@@ -688,7 +792,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/20180416-230857-largejpg.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/20180416-230857-largejpg.jpg" alt="product-img">
                                 <button type="button" class="wishlist-btn">
                                     <i class="fa-regular fa-heart"></i>
                                 </button>
@@ -718,7 +822,7 @@
                     <div class="col-12">
                         <div class="product-box4">
                             <div class="img-box">
-                                <img src="./assets/img/product-box2/romance-hotel-boutique.jpg" alt="product-img">
+                                <img src="./assets/img/product-2/romance-hotel-boutique.jpg" alt="product-img">
                                 <button type="button" class="wishlist-btn">
                                     <i class="fa-regular fa-heart"></i>
                                 </button>
@@ -1007,134 +1111,73 @@
     <!-- Modal section end -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // product box active inactive
-            const productBoxs = document.querySelectorAll('.addPlaceOffcanvas .product-box4');
-            productBoxs.forEach(productBox => {
-                productBox.addEventListener('click', () => {
-                    productBoxs.forEach(productBox => productBox.classList.remove('active'));
-                    productBox.classList.add('active');
-                });
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // action function show hide 
-            function toggleActionButton(openBtn, btnBox, closeBtn, itineraryBox = null) {
-
-                btnBox.style.display = 'none';
-                openBtn.addEventListener('click', () => {
-                    btnBox.style.display = 'flex';
-                    openBtn.style.display = 'none';
-                    if (itineraryBox != null) {
-                        itineraryBox.classList.toggle('edit');
-                        tripItineraryTimesCount.textContent = itineraryBox.classList.contains('edit') ? "Drag to reorder" : "35/38 saves added";
-                    }
-                })
-                closeBtn.addEventListener('click', () => {
-                    btnBox.style.display = 'none';
-                    openBtn.style.display = 'block';
-                    if (itineraryBox != null) {
-                        itineraryBox.classList.toggle('edit');
-                        tripItineraryTimesCount.textContent = itineraryBox.classList.contains('edit') ? "Drag to reorder" : "35/38 saves added";
-                    }
-
-                })
+        const value = document.querySelector('.traveler-box .value');
+        const valueBox = document.querySelector('.traveler-box .value-box');
+        const travelerBox = document.querySelector('.traveler-box');
+        const itemCounts = document.querySelectorAll('.item-count');
+        const adultsCount = document.querySelector('.item-count.adults');
+        valueBox.addEventListener('click', () => {
+            travelerBox.classList.toggle('active');
+        })
+        window.addEventListener('click', (e) => {
+            if (!travelerBox.contains(e.target) && !valueBox.contains(e.target)) {
+                travelerBox.classList.remove('active');
             }
-            // Action btn box
-            const openBtn = document.querySelector('.action-btn-box .add-btn');
-            const btnBox = document.querySelector('.action-btn-box .btn-box');
-            const closeBtn = document.querySelector('.action-btn-box .close-btn');
-            toggleActionButton(openBtn, btnBox, closeBtn);
-
-            // edit btn box
-            const openBtn2 = document.querySelector('.edit-btn-box .edit-btn');
-            const btnBox2 = document.querySelector('.edit-btn-box .btn-box');
-            const closeBtn2 = document.querySelector('.edit-btn-box .close-btn');
-            const itineraryBox = document.querySelector('.itinerary-box');
-            const tripItineraryTimesCount = document.querySelector('.trip-itinerary-times-count');
-            toggleActionButton(openBtn2, btnBox2, closeBtn2, itineraryBox, tripItineraryTimesCount);
-
         });
-
-        // accordion all show when edit mode start
-        document.addEventListener('DOMContentLoaded', function () {
-            const itineraryBoxEdit = document.querySelector('#itinerary-box');
-            const editBtn = document.querySelector('#edit-btn');
-            const closeBtn = document.querySelector('#close-btn');
-            const accordionItems = document.querySelectorAll('.itinerary-box .accordion-item');
-
-            editBtn.addEventListener('click', () => {
-                accordionItems.forEach((accordionItem, index) => {
-                    if (index === 0) return;
-                    const accordionButtons = accordionItem.querySelectorAll('.accordion-button');
-                    accordionButtons.forEach(accordionButton => {
-                        accordionButton.classList.toggle('collapsed');
-                    });
-
-                    const accordionCollapses = accordionItem.querySelectorAll('.accordion-collapse');
-                    accordionCollapses.forEach(accordionCollapse => {
-                        accordionCollapse.classList.toggle('show');
-                    });
-
-                });
+        function updateTotalTravelers() {
+            let totalTravelers = 0;
+            itemCounts.forEach(itemCount => {
+                const valueInput = itemCount.querySelector('[data-value]');
+                totalTravelers += parseInt(valueInput.value);
             });
+            value.innerHTML = totalTravelers;
+        }
 
-            closeBtn.addEventListener('click', () => {
-                accordionItems.forEach((accordionItem, index) => {
-                    if (index === 0) return;
-                    const accordionButtons = accordionItem.querySelectorAll('.accordion-button');
-                    accordionButtons.forEach(accordionButton => {
-                        accordionButton.classList.toggle('collapsed');
-                    });
+        itemCounts.forEach(itemCount => {
+            const decreaseBtn = itemCount.querySelector('[data-decrease]');
+            const increaseBtn = itemCount.querySelector('[data-increase]');
+            const valueInput = itemCount.querySelector('[data-value]');
 
-                    const accordionCollapses = accordionItem.querySelectorAll('.accordion-collapse');
-                    accordionCollapses.forEach(accordionCollapse => {
-                        accordionCollapse.classList.toggle('show');
-                    });
-
-                });
-            });
-        });
-        // accordion all show when edit mode end
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // expand compressed btn
-            document.querySelectorAll('.expand-compressed-description').forEach(description => {
-                const textElement = description.querySelector('.text');
-                const buttonElement = description.querySelector('.expand-compressed-btn');
-
-                const toggleExpand = () => {
-                    textElement.classList.toggle('expanded');
-                    buttonElement.textContent = textElement.classList.contains('expanded') ? 'Read less' : 'Read more';
-                };
-
-                textElement.addEventListener('click', toggleExpand);
-                buttonElement.addEventListener('click', toggleExpand);
-            });
-        });
-
-        // remove btn click to hide timeline item
-        document.addEventListener('DOMContentLoaded', function () {
-            // Select all timeline boxes
-            const timeLineBoxes = document.querySelectorAll('.timeline-box');
-
-
-            // Loop through each timeline box and add event listener
-            timeLineBoxes.forEach(timeLineBox => {
-                timeLineBox.addEventListener('click', function (event) {
-                    if (event.target.closest('.remove-btn')) {
-                        const timeLineItem = event.target.closest('.timeline-item');
-                        timeLineItem.remove();
+            decreaseBtn.addEventListener('click', () => {
+                const currentValue = parseInt(valueInput.value);
+                if (itemCount.classList.contains('adults')) {
+                    if (currentValue > 1) {
+                        valueInput.value = currentValue - 1;
+                        updateTotalTravelers();
                     }
-                });
+                } else {
+                    if (currentValue > 0) {
+                        valueInput.value = currentValue - 1;
+                        updateTotalTravelers();
+                    }
+                }
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                const currentValue = parseInt(valueInput.value);
+                valueInput.value = currentValue + 1;
+                updateTotalTravelers();
+            });
+
+            // Optional: Update total on input change
+            valueInput.addEventListener('input', () => {
+                const currentValue = parseInt(valueInput.value);
+                if (itemCount.classList.contains('adults')) {
+                    if (currentValue < 1) {
+                        valueInput.value = 1;
+                    }
+                } else {
+                    if (currentValue < 0) {
+                        valueInput.value = 0;
+                    }
+                }
+                updateTotalTravelers();
             });
         });
 
-
+        // Initialize total travelers count
+        updateTotalTravelers();
     </script>
-
 
 
 
@@ -1156,11 +1199,8 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <!-- flatpickr Js link -->
     <script src="assets/js/flatpickr.js"></script>
-    <!-- googleapis Js link -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8QwnfWXeL8Yw9PDqkW7MYLt2F1G1PS4&loading=async&callback=initMap&libraries=marker"></script>
-    <!-- google map Js link -->
-    <script src="assets/js/frontend_google_map.js" defer></script>
+    <!-- fancybox Js link -->
+    <script src="assets/js/fancybox.umd.js"></script>
     <!-- Sortable js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <!-- Main Js link -->
