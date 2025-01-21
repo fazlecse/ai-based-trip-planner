@@ -1292,7 +1292,7 @@ Reusable style section start
     .search-result {
         position: absolute;
         left: 0;
-        top: 100%;
+        top: calc(100% + 2px);
         width: 100%;
         background-color: var(--bg-color1);
         box-shadow: var(--shadow2);
@@ -3023,17 +3023,26 @@ hr.divider:after {
 
 // Rtl cmn list section end
 // Cmn list section end
+
 // Cmn list2 section start
 .cmn-list2 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 
-    .item {
+    .cmn-list2-item {
         display: flex;
-        align-items: center;
         justify-content: space-between;
         gap: 15px;
+
+        &:not(:last-child) {
+            border-bottom: 1px dashed var(--border-color2);
+            padding-bottom: 10px;
+        }
+
+        h6 {
+            font-size: 16px;
+        }
     }
 
     .list-label {
@@ -3071,6 +3080,27 @@ hr.divider:after {
 }
 
 // Cmn list3 section end
+.cmn-list4 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .cmn-list4-item {
+        display: flex;
+        gap: 10px;
+
+        .img-box {
+            width: 22px;
+            height: 22px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
 // Reviews section start
 .reviews {
     font-size: 14px;
@@ -6017,11 +6047,9 @@ Bottom Mobile, Tab nav end
 // Responsive hero section start
 @media(max-width: 991px) {
     .hero-section {
-        padding: 100px 0 50px;
+        padding: 40px 0 50px;
     }
-}
 
-@media(max-width: 767px) {
     .powerd-by {
         margin-bottom: 30px;
     }
@@ -6030,6 +6058,17 @@ Bottom Mobile, Tab nav end
 // Responsive hero section end
 /*----------------------------------------------
 Hero section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Itinerary section start
+----------------------------------------------*/
+.itinerary-section {
+    background-color: var(--bg-color2);
+}
+
+/*----------------------------------------------
+Itinerary section end
 ----------------------------------------------*/
 
 /*----------------------------------------------
@@ -6272,7 +6311,7 @@ Custom checkbox container end
 .story-box {
     background-color: var(--bg-color1);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: var(--shadow1);
     display: flex;
     flex-direction: column;
@@ -6292,8 +6331,6 @@ Custom checkbox container end
         position: relative;
         overflow: hidden;
 
-
-
         &::after {
             content: "";
             position: absolute;
@@ -6310,15 +6347,32 @@ Custom checkbox container end
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 15px;
         }
     }
 
     .text-box {
         padding: 5px;
+        position: relative;
+
+        .location-box {
+            position: absolute;
+            color: rgb(var(--primary-color));
+            padding: 5px 10px;
+            border-radius: 9999px;
+            display: flex;
+            gap: 5px;
+            top: -55px;
+            left: 10px;
+            background-color: var(--bg-color1);
+            font-size: 14px;
+
+            .location-text-box {
+                text-transform: capitalize;
+            }
+        }
 
         .title {
-            margin-top: 15px;
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-box-orient: vertical;
@@ -8232,6 +8286,15 @@ Product details section start
 ----------------------------------------------*/
 .product-details-section {
     padding-top: 40px;
+
+    .expand-compressed-description {
+        font-size: 16px;
+
+        .text-box .text {
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+        }
+    }
 }
 
 .gallery-box {
@@ -8299,7 +8362,7 @@ Product details section start
         z-index: 1;
         opacity: 0;
         visibility: hidden;
-        transition: var(--transition);        
+        transition: var(--transition);
 
         .geust-picker-item {
             display: flex;
@@ -9527,6 +9590,33 @@ strong {
     }
 }
 
+// Responsive trip builder preview section start
+@media(max-width: 1199px) {
+    .trip-builder-preview-section .content-box {
+        padding: 0 30px;
+    }
+}
+
+@media(max-width: 991px) {
+    .trip-builder-preview-section .content-box {
+        padding: 0 20px;
+    }
+}
+
+@media(max-width: 767px) {
+    .trip-builder-preview-section .map-section #map {
+        height: 300px;
+    }
+}
+
+@media(max-width: 575px) {
+    .preview-action-bar {
+        padding: 10px;
+        width: calc(100% - 15px);
+    }
+}
+
+// Responsive trip builder preview section end
 /*----------------------------------------------
 Trip builder preview section start
 ----------------------------------------------*/
@@ -10073,3 +10163,61 @@ Timeline box section start
 /*----------------------------------------------
 Timeline box section end
 ----------------------------------------------*/
+/* From Uiverse.io by alexmaracinaru */
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+}
+
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.95);
+}

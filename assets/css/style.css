@@ -1107,7 +1107,7 @@ Reusable style section start
 .search-box2 .search-result {
   position: absolute;
   left: 0;
-  top: 100%;
+  top: calc(100% + 2px);
   width: 100%;
   background-color: var(--bg-color1);
   box-shadow: var(--shadow2);
@@ -2535,13 +2535,19 @@ hr.divider:after {
 .cmn-list2 {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
-.cmn-list2 .item {
+.cmn-list2 .cmn-list2-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 15px;
+}
+.cmn-list2 .cmn-list2-item:not(:last-child) {
+  border-bottom: 1px dashed var(--border-color2);
+  padding-bottom: 10px;
+}
+.cmn-list2 .cmn-list2-item h6 {
+  font-size: 16px;
 }
 .cmn-list2 .list-label {
   white-space: nowrap;
@@ -2565,6 +2571,24 @@ hr.divider:after {
 }
 .cmn-list3 .cmn-list3-item div:first-child {
   min-width: 80px;
+}
+
+.cmn-list4 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cmn-list4 .cmn-list4-item {
+  display: flex;
+  gap: 10px;
+}
+.cmn-list4 .cmn-list4-item .img-box {
+  width: 22px;
+  height: 22px;
+}
+.cmn-list4 .cmn-list4-item .img-box img {
+  width: 100%;
+  height: 100%;
 }
 
 .reviews {
@@ -4847,16 +4871,24 @@ Bottom Mobile, Tab nav end
 
 @media (max-width: 991px) {
   .hero-section {
-    padding: 100px 0 50px;
+    padding: 40px 0 50px;
   }
-}
-@media (max-width: 767px) {
   .powerd-by {
     margin-bottom: 30px;
   }
 }
 /*----------------------------------------------
 Hero section end
+----------------------------------------------*/
+/*----------------------------------------------
+Itinerary section start
+----------------------------------------------*/
+.itinerary-section {
+  background-color: var(--bg-color2);
+}
+
+/*----------------------------------------------
+Itinerary section end
 ----------------------------------------------*/
 /*----------------------------------------------
 Custom radio container start
@@ -5059,7 +5091,7 @@ Custom checkbox container end
 .story-box {
   background-color: var(--bg-color1);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: var(--shadow1);
   display: flex;
   flex-direction: column;
@@ -5092,13 +5124,28 @@ Custom checkbox container end
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .story-box .text-box {
   padding: 5px;
+  position: relative;
+}
+.story-box .text-box .location-box {
+  position: absolute;
+  color: rgb(var(--primary-color));
+  padding: 5px 10px;
+  border-radius: 9999px;
+  display: flex;
+  gap: 5px;
+  top: -55px;
+  left: 10px;
+  background-color: var(--bg-color1);
+  font-size: 14px;
+}
+.story-box .text-box .location-box .location-text-box {
+  text-transform: capitalize;
 }
 .story-box .text-box .title {
-  margin-top: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -6531,6 +6578,13 @@ Product details section start
 .product-details-section {
   padding-top: 40px;
 }
+.product-details-section .expand-compressed-description {
+  font-size: 16px;
+}
+.product-details-section .expand-compressed-description .text-box .text {
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
 
 .gallery-box {
   display: grid;
@@ -7582,6 +7636,27 @@ strong {
   right: -9px;
 }
 
+@media (max-width: 1199px) {
+  .trip-builder-preview-section .content-box {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 991px) {
+  .trip-builder-preview-section .content-box {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .trip-builder-preview-section .map-section #map {
+    height: 300px;
+  }
+}
+@media (max-width: 575px) {
+  .preview-action-bar {
+    padding: 10px;
+    width: calc(100% - 15px);
+  }
+}
 /*----------------------------------------------
 Trip builder preview section start
 ----------------------------------------------*/
@@ -8028,3 +8103,61 @@ Timeline box section start
 /*----------------------------------------------
 Timeline box section end
 ----------------------------------------------*/
+/* From Uiverse.io by alexmaracinaru */
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}

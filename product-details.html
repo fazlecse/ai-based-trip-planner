@@ -244,11 +244,93 @@
                 </div>
             </div>
             <div class="mt-30">
-                <div class="row">
+                <div class="row g-4">
                     <div class="col-lg-8">
+                        <div class="cmn-list4">
+                            <div class="cmn-list4-item">
+                                <div class="img-box"><img src="./assets/img/hero/man.png" alt=""></div>
+                                <div class="text-box">Only me</div>
+                            </div>
+                            <div class="cmn-list4-item">
+                                <div class="img-box"><img src="./assets/img/hero/suitcase.png" alt=""></div>
+                                <div class="text-box">balanced</div>
+                            </div>
+                            <div class="cmn-list4-item">
+                                <div class="img-box"><img src="./assets/img/product-details/list.png" alt=""></div>
+                                <div class="text-box">Comfortable Seating, Panoramic Views, Professional Crew, Beverage Service</div>
+                            </div>
+                        </div>
+                        <h4 class="mt-20">About</h4>
+                        <div class="mt-10">
+                            <p>Experience the ultimate in luxury and exclusivity with a private 2-hour yacht
+                                cruise along the enchanting Bosphorus Strait. Designed to accommodate up to nine
+                                guests, this intimate aquatic adventure is an ideal choice for a memorable
+                                family celebration, a romantic evening getaway, or an elegant business
+                                gathering.
+                            </p>
+                            <p> Indulge in the breathtaking scenery as you glide past iconic landmarks,
+                                including
+                                the majestic Hagia Sophia, the historic Topkapi Palace, the charming district of
+                                Üsküdar, and a host of other architectural marvels that line the strait. The
+                                leisurely pace of the cruise allows you to fully immerse yourself in the
+                                panoramic
+                                views and the unique cultural tapestry of Istanbul.</p>
 
+                            <p>To enhance your experience, meals can be freshly prepared on board at your
+                                request
+                                for an additional cost, offering a bespoke dining experience tailored to your
+                                preferences. Whether you're savoring a gourmet meal under the open sky or simply
+                                enjoying the tranquil waters, this private yacht cruise promises an
+                                unforgettable
+                                journey through one of the world's most captivating waterways.</p>
+                        </div>
                     </div>
                     <div class="col-lg-4">
+                        <div class="sidebar-widget-area">
+                            <div class="d-flex justify-content-between gap-2">
+                                <h4 class="title">Opening Hours</h4>
+                                <button type="button" class="cmn-btn3">
+                                    <i class="fa-regular fa-pen"></i>
+                                    <span class="link-underline">Suggest an edit</span>
+                                </button>
+                            </div>
+                            <div class="cmn-list2">
+                                <div class="cmn-list2-item">
+                                    <h6>Saturday</h6>
+                                    <div>
+                                        <p class="mb-0">12:00 PM - 3:00 PM</p>
+                                        <p class="mb-0">6:00 PM - 10:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Sunday</h6>
+                                    <div>
+                                        <p class="mb-0">12:00 PM - 3:00 PM</p>
+                                        <p class="mb-0">6:00 PM - 10:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Monday</h6>
+                                    <span>9 AM - 5 PM</span>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Tuesday</h6>
+                                    <span>9 AM - 5 PM</span>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Wednesday</h6>
+                                    <span>9 AM - 5 PM</span>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Thursday</h6>
+                                    <span>9 AM - 3 PM</span>
+                                </div>
+                                <div class="cmn-list2-item">
+                                    <h6>Friday</h6>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="sidebar-widget-area">
                             <div class="d-flex justify-content-between">
                                 <h4 class="mb-0">From $299.00</h4>
@@ -312,7 +394,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1116,6 +1197,7 @@
         const travelerBox = document.querySelector('.traveler-box');
         const itemCounts = document.querySelectorAll('.item-count');
         const adultsCount = document.querySelector('.item-count.adults');
+
         valueBox.addEventListener('click', () => {
             travelerBox.classList.toggle('active');
         })
@@ -1177,6 +1259,21 @@
 
         // Initialize total travelers count
         updateTotalTravelers();
+
+        // expand compressed btn start
+        document.querySelectorAll('.expand-compressed-description').forEach(description => {
+            const textElement = description.querySelector('.text');
+            const buttonElement = description.querySelector('.expand-compressed-btn');
+
+            const toggleExpand = () => {
+                textElement.classList.toggle('expanded');
+                buttonElement.textContent = textElement.classList.contains('expanded') ? 'Read less' : 'Read more';
+            };
+
+            textElement.addEventListener('click', toggleExpand);
+            buttonElement.addEventListener('click', toggleExpand);
+        });
+        // expand compressed btn start
     </script>
 
 
