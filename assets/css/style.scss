@@ -331,7 +331,7 @@ body {
 
 @media (max-width: 991px) {
     body {
-        font-size: 16px;
+        padding-bottom: 50px;
     }
 
 }
@@ -796,9 +796,7 @@ body::-webkit-scrollbar-thumb {
     border: none;
 }
 
-.modal-body {
-    padding: 0 30px 20px;
-}
+
 
 .modal-footer {
     padding: 16px 30px;
@@ -826,6 +824,10 @@ body::-webkit-scrollbar-thumb {
 @media(min-width: 576px) {
     .modal-dialog {
         max-width: 580px;
+    }
+
+    .modal-body {
+        padding: 0 30px 20px;
     }
 }
 
@@ -1388,12 +1390,12 @@ Reusable style section start
 .rtl {
     .search-box2 {
         .form-control {
-            padding: 6px 12px 6px 40px;
+            padding: 10px 20px 10px 60px;
         }
 
-        .search-btn2 {
+        .search-btn {
             right: auto;
-            left: 15px;
+            left: 6px;
 
             i {
                 transform: rotate(90deg);
@@ -2982,17 +2984,6 @@ hr.divider:after {
         left: 50%;
         right: auto;
     }
-
-    @media (max-width: 767px) {
-        .multi-step-progress-section {
-            margin-right: 50px;
-            margin-left: 0;
-        }
-
-        .multi-step-list .item::before {
-            right: 35px;
-        }
-    }
 }
 
 // Rtl multi step progress section end
@@ -3003,7 +2994,9 @@ hr.divider:after {
 .cmn-list {
     display: flex;
     align-items: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 5px;
 
     .item {
         display: flex;
@@ -5855,6 +5848,15 @@ Padding bottom
             }
         }
     }
+
+    @media(max-width: 767px) {
+        .navbar {
+            .nav-right {
+                position: absolute;
+                left: 12px;
+            }
+        }
+    }
 }
 
 // Rtl nav end
@@ -6028,6 +6030,10 @@ Bottom Mobile, Tab nav end
         background-color: rgb(var(--primary-color), 0.1);
         border-radius: 9999px;
     }
+}
+
+.rtl .prev-btn i {
+    transform: rotate(180deg);
 }
 
 #multiStepForm {
@@ -6397,29 +6403,15 @@ Custom checkbox container end
 
 }
 
-// .image-anime {
-//     position: relative;
-//     overflow: hidden;
-// }
+// Rtl story box start
+.rtl {
+    .story-box .text-box .location-box {
+        left: auto;
+        right: 10px;
+    }
+}
 
-// .image-anime:after {
-//     content: "";
-//     position: absolute;
-//     width: 200%;
-//     height: 0%;
-//     left: 50%;
-//     top: 50%;
-//     background-color: rgba(255, 255, 255, .3);
-//     transform: translate(-50%, -50%) rotate(-45deg);
-//     z-index: 1;
-// }
-
-// .image-anime:hover:after {
-//     height: 250%;
-//     transition: all 600ms linear;
-//     background-color: transparent;
-// }
-
+// Rtl story box end
 /*----------------------------------------------
 Story section end
 ----------------------------------------------*/
@@ -7411,7 +7403,6 @@ Copyright end
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
-    // background-image: linear-gradient(180deg, var(--bg-color2), var(--bg-color3));
     background-color: var(--bg-color3);
 
     .img-box {
@@ -7473,25 +7464,6 @@ Copyright end
     }
 }
 
-.banner-section2 {
-    padding-top: 250px;
-    position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        background-image: url(../img/banner/rUYpAGFByr2MLYP7LVVmGihd1gVZh9.webp);
-        background-color: #000;
-        top: 0;
-        left: 0;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        z-index: -1;
-    }
-}
-
 // Responsive banner section start
 @media(min-width: 768px) {
     .banner-section .img-box {
@@ -7500,10 +7472,6 @@ Copyright end
 }
 
 @media(max-width: 991px) {
-    .banner-section2 {
-        padding-top: 150px;
-    }
-
     .banner-section h3 {
         font-size: 36px
     }
@@ -7514,8 +7482,8 @@ Copyright end
 }
 
 @media(max-width: 767px) {
-    .banner-section2 {
-        padding-top: 50px;
+    .banner-section {
+        padding: 40px;
     }
 }
 
@@ -7888,7 +7856,7 @@ Login Signup end
 
 .sidebar-widget-area {
     padding: 25px;
-    background-color: var(--bg-color11);
+    background-color: var(--bg-color1);
     border-radius: 15px;
     margin-bottom: 25px;
     border: 1px solid var(--border-color1);
@@ -7898,8 +7866,6 @@ Login Signup end
         margin-bottom: 15px;
         text-transform: capitalize;
     }
-
-
 
     .sidebar-widget-item {
         display: flex;
@@ -8045,6 +8011,14 @@ Login Signup end
     }
 }
 
+// Responsive blog details start
+@media(max-width: 991px) {
+    .sidebar-widget-area {
+        padding: 20px;
+    }
+}
+
+// Responsive blog details end
 
 // Blog details rtl start
 .rtl {
@@ -8256,10 +8230,14 @@ Policy section end
     }
 }
 
+@media (max-width: 767px) {
+    .error-section {
+        text-align: center;
+    }
+}
 
 @media (max-width: 575px) {
     .error-section {
-        text-align: center;
         min-height: 100%;
         min-width: 100%;
     }
@@ -8297,32 +8275,6 @@ Product details section start
     }
 }
 
-.gallery-box {
-    display: grid;
-    grid-template-columns: 30% repeat(3, 1fr);
-    gap: 8px;
-    border-radius: 20px;
-    overflow: hidden;
-    justify-content: space-between;
-    margin-top: 20px;
-
-    .item {
-        &:first-child {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
-            max-height: calc(500px + 8px);
-        }
-
-        cursor: pointer;
-        max-height: 250px;
-
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-}
 
 .traveler-box {
     position: relative;
@@ -8363,6 +8315,7 @@ Product details section start
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
+        width: 100%;
 
         .geust-picker-item {
             display: flex;
@@ -8591,20 +8544,22 @@ Product details section start
     }
 }
 
-@media(min-width: 576px) {
-    .traveler-box {
-        .geust-picker {
-            width: 100%;
-            min-width: 350px;
-        }
-    }
-}
-
 @media(min-width: 1024px) {
     .info-box .info-text {
         width: 320px;
         padding: 20px;
     }
+}
+
+@media(max-width: 425px) {
+    .traveler-box .geust-picker {
+        min-width: 280px;
+
+        .geust-picker-item {
+            flex-wrap: wrap;
+        }
+    }
+
 }
 
 .rtl {
@@ -8616,6 +8571,50 @@ Product details section start
 
 /*----------------------------------------------
 Product details section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Gallery box section start
+----------------------------------------------*/
+
+.gallery-box {
+    display: grid;
+    grid-template-columns: 30% repeat(3, 1fr);
+    gap: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .item {
+        &:first-child {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            max-height: calc(500px + 8px);
+            min-height: 300px;
+        }
+
+        cursor: pointer;
+        max-height: 250px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Responsive gallery box start
+@media(max-width: 767px) {
+    .gallery-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// Responsive gallery box end
+/*----------------------------------------------
+Gallery box section end
 ----------------------------------------------*/
 
 /*----------------------------------------------
@@ -9254,6 +9253,7 @@ strong {
 
     .img-box {
         width: 120px;
+        min-width: 120px;
         height: 120px;
 
         img {
@@ -9601,6 +9601,10 @@ strong {
     .trip-builder-preview-section .content-box {
         padding: 0 20px;
     }
+
+    .preview-action-bar {
+        bottom: 60px;
+    }
 }
 
 @media(max-width: 767px) {
@@ -9613,6 +9617,18 @@ strong {
     .preview-action-bar {
         padding: 10px;
         width: calc(100% - 15px);
+    }
+}
+
+@media(max-width: 425px) {
+    .product-box3 {
+        flex-direction: column;
+        align-items: start;
+
+        .img-box {
+            width: 100%;
+            height: 150px;
+        }
     }
 }
 
@@ -9714,6 +9730,10 @@ Trip details section start
         background-color: transparent;
     }
 
+    .accordion-body {
+        padding: 15px 0;
+    }
+
     .map-section {
         position: sticky;
         top: 70px;
@@ -9753,6 +9773,7 @@ Trip details section start
     .accordion-button {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
         font-size: 22px;
 
@@ -9818,6 +9839,7 @@ Trip details section start
             border-radius: 15px;
             aspect-ratio: 2/1;
             max-height: 370px;
+            min-height: 250px;
             width: 100%;
         }
     }
@@ -10009,6 +10031,37 @@ Trip details section start
     cursor: grab !important;
 }
 
+// Responsive trip details section start
+@media(max-width: 991px) {
+    .trip-details-section .map-section {
+        #map {
+            height: 350px;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .trip-details-header .text-box .title {
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 425px) {
+    .save-accordion .product-box4 {
+        flex-direction: column;
+
+        .img-box {
+            width: 100%;
+        }
+
+        .img-carousel .item img {
+            width: 100%;
+        }
+    }
+
+}
+
+// Responsive trip details section end
 /*----------------------------------------------
 Trip details section end
 ----------------------------------------------*/
@@ -10106,7 +10159,7 @@ Timeline box section start
         background-color: rgb(var(--white));
         border-radius: 10px;
         box-shadow: var(--shadow3);
-        min-width: 200px;
+        min-width: 280px;
         cursor: auto;
         z-index: 1;
 
@@ -10146,8 +10199,19 @@ Timeline box section start
 }
 
 @media(min-width: 576px) {
-    .popup-box .popup-box-inner {
-        min-width: 280px;
+    .popup-box {
+
+        .popup-box-inner {
+            min-width: 280px;
+        }
+    }
+}
+
+@media(max-width: 425px) {
+
+    .popup-box {
+        right: -80px;
+        left: auto;
     }
 }
 

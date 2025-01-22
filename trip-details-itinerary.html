@@ -164,6 +164,27 @@
     </nav>
     <!-- Nav section end -->
 
+    <!-- Bottom Mobile Tab nav section start -->
+    <ul class="nav bottom-nav fixed-bottom d-lg-none">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasNavbar"
+                href="#offcanvasNavbar" aria-current="page"><i class="fa-light fa-list"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-planet-ringed"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"><i class="fa-light fa-house"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-address-book"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-user"></i></a>
+        </li>
+    </ul>
+    <!-- Bottom Mobile Tab nav section end -->
+
     <!-- Trip details section start -->
     <section class="trip-details-section">
         <div class="container">
@@ -202,7 +223,7 @@
                                     <button type="button" data-bs-target="#edit-trip-modal" data-bs-toggle="modal">
                                         <div class="title">Istanbul for 7 days</div>
                                     </button>
-                                    <div class="mt-2 d-flex align-items-center gap-4">
+                                    <div class="mt-2 d-flex align-items-center gap-3 gap-sm-4 flex-wrap">
                                         <button type="button" data-bs-target="#edit-trip-modal" data-bs-toggle="modal">
                                             <div class="sub-title">
                                                 <div class="icon-area"><i class="fa-regular fa-calendar-days"></i></div>
@@ -3364,8 +3385,10 @@
                             <hr class="cmn-hr2 m-0">
                         </div>
                         <div class="col-12">
-                            <a href="" class="cmn-btn">Duplicate trip</a>
-                            <a href="" class="delete-btn">Delete trip</a>
+                            <div class="d-flex gap-2">
+                                <a href="" class="cmn-btn">Duplicate trip</a>
+                                <a href="" class="delete-btn">Delete trip</a>
+                            </div>
                         </div>
 
                     </div>
