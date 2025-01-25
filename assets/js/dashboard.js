@@ -65,7 +65,7 @@ $(document).ready(function () {
       delay: 4000,
       disableOnInteraction: false,
     },
-    autoplay: false,
+    // autoplay: false,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -88,94 +88,25 @@ $(document).ready(function () {
   // Jquery UI end
 
   // Apexcharts start
-  // Columnchart
-  if ($("#columnChart").length) {
+  // Piechart
+  if ($("#pieChart").length) {
     var options = {
-      series: [
-        {
-          name: "Investment",
-          color: "#567eae",
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 40, 45, 50],
-        },
-        {
-          name: "Payout",
-          color: "#32c36c",
-          data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 60, 65, 70],
-        },
-        {
-          name: "Deposit",
-          color: "#5a56ae",
-          data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 80, 85, 90],
-        },
-        {
-          name: "Deposit Bonus",
-          color: "#e7bb89",
-          data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 30, 35, 40],
-        },
-      ],
+      series: [44, 55, 13, 33],
       chart: {
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
-        },
+        type: "donut",
+        height: "300",
       },
       dataLabels: {
         enabled: false,
       },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ],
-      },
-      yaxis: {
-        title: {
-          text: "$ (thousands)",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-      tooltip: {
-        y: {
-          formatter: function (val) {
-            return "$ " + val + " thousands";
-          },
-        },
-      },
-      theme: {
-        mode: "light",
-        palette: "palette1",
-        monochrome: {
-          enabled: false,
-          color: "#255aee",
-          shadeTo: "light",
-          shadeIntensity: 0.65,
-        },
+      legend: {
+        position: "right",
+        offsetY: 0,
+        height: 230,
       },
     };
 
-    var chart = new ApexCharts(document.querySelector("#columnChart"), options);
+    var chart = new ApexCharts(document.querySelector("#pieChart"), options);
     chart.render();
   }
   // Apexcharts end

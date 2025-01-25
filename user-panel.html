@@ -18,9 +18,11 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- swiper Css link -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-
     <!-- select2 Css link -->
     <link rel="stylesheet" href="assets/css/select2.min.css" />
+    <!-- Jquery UI Css link -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.structure.min.css" />
 
     <!-- Style Css link -->
     <link rel="stylesheet" href="assets/css/dashboard.css" />
@@ -308,7 +310,7 @@
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="fa-sharp fa-light fa-user"></i
+            <i class="fa-sharp fa-regular fa-user"></i
             ><span>Account Settings</span>
             <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
           </a>
@@ -341,7 +343,7 @@
             data-bs-toggle="collapse"
             href="#"
           >
-            <i class="fa-light fa-magnet"></i><span>Components</span>
+            <i class="fa-regular fa-magnet"></i><span>Components</span>
             <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
           </a>
           <ul
@@ -364,55 +366,25 @@
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="user-panel-pay-bill.html">
-            <i class="fa-light fa-image"></i>
+            <i class="fa-regular fa-image"></i>
             <span>subscription</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="chat-widget.html">
-            <i class="fa-light fa-messages"></i>
+            <i class="fa-regular fa-messages"></i>
             <span>Chat Widget</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="chat.html">
-            <i class="fa-light fa-messages"></i>
+            <i class="fa-regular fa-messages"></i>
             <span>chat</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
-            <span>transaction</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
-            <span>transaction</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
-            <span>transaction</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
-            <span>transaction</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
-            <span>transaction</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="user-panel-transection.html">
-            <i class="fa-light fa-arrow-right-arrow-left"></i>
+            <i class="fa-regular fa-arrow-right-arrow-left"></i>
             <span>transaction</span>
           </a>
         </li>
@@ -432,7 +404,7 @@
               <div class="swiper-slide">
                 <div class="slider-box">
                   <div class="text-box">
-                    <div class="section-subtitle">Nearest trip</div>
+                    <div class="section-subtitle">Popular trip</div>
                     <h1 class="title">Istanbul, Turkey</h1>
                   </div>
                   <div class="img-box">
@@ -446,7 +418,7 @@
               <div class="swiper-slide">
                 <div class="slider-box">
                   <div class="text-box">
-                    <div class="section-subtitle">Nearest trip</div>
+                    <div class="section-subtitle">Popular trip</div>
                     <h1 class="title">Rome, Italy</h1>
                   </div>
                   <div class="img-box">
@@ -457,7 +429,7 @@
               <div class="swiper-slide">
                 <div class="slider-box">
                   <div class="text-box">
-                    <div class="section-subtitle">Nearest trip</div>
+                    <div class="section-subtitle">Popular trip</div>
                     <h1 class="title">Paris, France</h1>
                   </div>
                   <div class="img-box">
@@ -470,546 +442,141 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
+          <div class="mt-25">
+            <div class="row g-4">
+              <div class="col-xxl-4 col-xl-6">
+                <div class="map-section">
+                  <div id="map"></div>
+                </div>
+              </div>
+              <div class="col-xxl-8 col-xl-6">
+                <div class="card">
+                  <div class="card-header pb-0 border-0">
+                    <h4 class="mb-0 text-center">Upcoming Trip</h4>
+                  </div>
+                  <div class="card-body">
+                    <div id="calendar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-25">
+            <h3 class="mb-10 card-title">Saved stories</h3>
+            <div class="row g-4">
+              <div class="col-xxl-4 col-sm-6">
+                <div class="story-box">
+                  <div class="img-box">
+                    <img
+                      src="./assets/img/story-box/florian-wehde--y3sidWvDxg-unsplash.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text-box">
+                    <ul class="meta">
+                      <li class="item">
+                        <span class="icon"
+                          ><i class="fa-light fa-calendar-days"></i
+                        ></span>
+                        <span>20 Aug 2024</span>
+                      </li>
+                    </ul>
+                    <h5 class="title mt-15">
+                      <a class="border-effect" href="story-details.html"
+                        >Exploring the Vibrant City of Bangkok</a
+                      >
+                    </h5>
+                    <p class="sub-title">
+                      Bangkok, or "Krung Thep Maha Nakhon" in Thai, is a vibrant
+                      metropolis where modernity blends seamlessly with
+                      tradition. It’s a city of contrasts: gleaming skyscrapers
+                      stand beside ancient temples, bustling markets coexist
+                      with high-end shopping malls, and serene river canals
+                      weave through chaotic streets. As Thailand's capital,
+                      Bangkok is a hub for culture, cuisine, and commerce,
+                      offering something for every traveler.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-sm-6">
+                <div class="story-box">
+                  <div class="img-box">
+                    <img src="./assets/img/products/1.jpg" alt="" />
+                  </div>
+                  <div class="text-box">
+                    <ul class="meta">
+                      <li class="item">
+                        <span class="icon"
+                          ><i class="fa-light fa-calendar-days"></i
+                        ></span>
+                        <span>20 Aug 2024</span>
+                      </li>
+                    </ul>
+                    <h5 class="title mt-15">
+                      <a class="border-effect" href="story-details.html"
+                        >Discover Istanbul’s Timeless Charm</a
+                      >
+                    </h5>
+                    <p class="sub-title">
+                      Istanbul, a city that spans two continents, is a
+                      captivating blend of ancient history and modern vibrancy.
+                      From its iconic landmarks to its bustling bazaars,
+                      Istanbul offers an unforgettable experience for travelers
+                      seeking culture, cuisine, and breathtaking views.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-sm-6">
+                <div class="story-box">
+                  <div class="img-box">
+                    <img src="./assets/img/products/2.jpg" alt="" />
+                  </div>
+                  <div class="text-box">
+                    <ul class="meta">
+                      <li class="item">
+                        <span class="icon"
+                          ><i class="fa-light fa-calendar-days"></i
+                        ></span>
+                        <span>20 Aug 2024</span>
+                      </li>
+                    </ul>
+                    <h5 class="title mt-15">
+                      <a class="border-effect" href="story-details.html"
+                        >The Jewel of the Middle East</a
+                      >
+                    </h5>
+                    <p class="sub-title">
+                      Dubai, the shining star of the United Arab Emirates (UAE),
+                      is a city that fuses traditional Arabian culture with
+                      modern luxury. Known for its towering skyscrapers,
+                      extravagant shopping malls, and world-class attractions,
+                      Dubai offers a one-of-a-kind experience for travelers
+                      seeking adventure, opulence, and innovation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-lg-4">
-          
+          <div class="row g-4">
+            <div class="col-lg-12 col-md-6">
+              <div id="datepicker" class="mt-xl-0 mt-3 h-100"></div>
+            </div>
+            <div class="col-lg-12 col-md-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div id="pieChart"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Swiper -->
-
-      <div class="section dashboard">
-        <!-- Tab mobile view carousel start -->
-        <div class="tab-mobile-view-carousel-section mb-30 d-lg-none">
-          <div class="row">
-            <div class="col-12">
-              <div class="owl-carousel owl-theme carousel-1">
-                <div class="item">
-                  <div class="box-card box-card1">
-                    <div class="box-card-header">
-                      <h5 class="box-card-title">
-                        <i class="fa-light fa-calendar-days"></i>
-                        Total Booked Tour
-                      </h5>
-                    </div>
-                    <div class="box-card-body">
-                      <h4 class="mb-0">842,145</h4>
-                      <div class="statistics">
-                        <p class="growth">
-                          <i class="fa-light fa-chart-line-up"></i>2.5%
-                        </p>
-                        <div class="time">last 7 days</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="box-card box-card2">
-                    <div class="box-card-header">
-                      <h5 class="box-card-title">
-                        <i class="fa-light fa-user"></i>
-                        Total Users
-                      </h5>
-                    </div>
-                    <div class="box-card-body">
-                      <h4 class="mb-0">62.35%</h4>
-                      <div class="statistics">
-                        <p class="growth">
-                          <i class="fa-light fa-chart-line-up"></i>6%
-                        </p>
-                        <div class="time">last 7 days</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="box-card box-card3">
-                    <div class="box-card-header">
-                      <h5 class="box-card-title">
-                        <i class="fa-light fa-presentation-screen"></i>
-                        Total Seminars
-                      </h5>
-                    </div>
-                    <div class="box-card-body">
-                      <h4 class="mb-0">2.35%</h4>
-                      <div class="statistics">
-                        <p class="growth down">
-                          <i class="fa-light fa-chart-line-down"></i>0.5%
-                        </p>
-                        <div class="time">last 7 days</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="box-card box-card4">
-                    <div class="box-card-header">
-                      <h5 class="box-card-title">
-                        <i class="fa-light fa-closed-captioning-slash"></i>
-                        Total Plans
-                      </h5>
-                    </div>
-                    <div class="box-card-body">
-                      <h4 class="mb-0">3.32%</h4>
-                      <div class="statistics">
-                        <p class="growth">
-                          <i class="fa-light fa-chart-line-up"></i>0.3%
-                        </p>
-                        <div class="time">last 7 days</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Tab mobile view carousel end -->
-
-        <!-- Dashboard card start -->
-        <div class="col-12 d-none d-lg-block">
-          <div class="row g-4">
-            <div class="col-xxl-3 col-sm-6 box-item">
-              <div class="box-card">
-                <div class="box-card-header">
-                  <h5 class="box-card-title">
-                    <i class="fa-light fa-calendar-days"></i>
-                    Total Booked Tour
-                  </h5>
-                </div>
-                <div class="box-card-body">
-                  <h4 class="mb-0">842,145</h4>
-                  <div class="statistics">
-                    <p class="growth">
-                      <i class="fa-light fa-chart-line-up"></i>2.5%
-                    </p>
-                    <div class="time">last 7 days</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-3 col-sm-6 box-item">
-              <div class="box-card">
-                <div class="box-card-header">
-                  <h5 class="box-card-title">
-                    <i class="fa-light fa-user"></i>
-                    Total Users
-                  </h5>
-                </div>
-                <div class="box-card-body">
-                  <h4 class="mb-0">62.35%</h4>
-                  <div class="statistics">
-                    <p class="growth">
-                      <i class="fa-light fa-chart-line-up"></i>6%
-                    </p>
-                    <div class="time">last 7 days</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-3 col-sm-6 box-item">
-              <div class="box-card">
-                <div class="box-card-header">
-                  <h5 class="box-card-title">
-                    <i class="fa-light fa-presentation-screen"></i>
-                    Total Seminars
-                  </h5>
-                </div>
-                <div class="box-card-body">
-                  <h4 class="mb-0">2.35%</h4>
-                  <div class="statistics">
-                    <p class="growth down">
-                      <i class="fa-light fa-chart-line-down"></i>0.5%
-                    </p>
-                    <div class="time">last 7 days</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-3 col-sm-6 box-item">
-              <div class="box-card">
-                <div class="box-card-header">
-                  <h5 class="box-card-title">
-                    <i class="fa-light fa-closed-captioning-slash"></i>
-                    Total Plans
-                  </h5>
-                </div>
-                <div class="box-card-body">
-                  <h4 class="mb-0">3.32%</h4>
-                  <div class="statistics">
-                    <p class="growth">
-                      <i class="fa-light fa-chart-line-up"></i>0.3%
-                    </p>
-                    <div class="time">last 7 days</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Dashboard card start -->
-        <!-- Cmn table section start -->
-        <div class="card mt-50">
-          <div class="card-header d-flex justify-content-between border-0">
-            <h4>Fund History</h4>
-            <div class="btn-area">
-              <button
-                type="button"
-                class="cmn-btn"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample"
-              >
-                Filter<i class="fa-regular fa-filter"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="cmn-table">
-              <div class="table-responsive overflow-hidden">
-                <table class="table table-striped align-middle">
-                  <thead>
-                    <tr>
-                      <th scope="col">Transaction ID</th>
-                      <th scope="col">Gateway</th>
-                      <th scope="col">Amount</th>
-                      <th scope="col">Charge</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Time & Date</th>
-                      <th scope="col">action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-primary">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <div class="dropdown">
-                          <button
-                            class="action-btn-secondary"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <i
-                              class="fa-regular fa-ellipsis-stroke-vertical"
-                            ></i>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">save</a></li>
-                            <li>
-                              <a
-                                class="dropdown-item"
-                                href="#"
-                                data-bs-toggle="modal"
-                                data-bs-target="#apply-modal"
-                                >apply</a
-                              >
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">copy link</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">report</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-secondary">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <div class="dropdown">
-                          <button
-                            class="action-btn-secondary"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <i
-                              class="fa-regular fa-ellipsis-stroke-vertical"
-                            ></i>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">save</a></li>
-                            <li>
-                              <a
-                                class="dropdown-item"
-                                href="#"
-                                data-bs-toggle="modal"
-                                data-bs-target="#apply-modal"
-                                >apply</a
-                              >
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">copy link</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">report</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-success">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <div class="dropdown">
-                          <button
-                            class="action-btn-secondary"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <i
-                              class="fa-regular fa-ellipsis-stroke-vertical"
-                            ></i>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">save</a></li>
-                            <li>
-                              <a
-                                class="dropdown-item"
-                                href="#"
-                                data-bs-toggle="modal"
-                                data-bs-target="#apply-modal"
-                                >apply</a
-                              >
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">copy link</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">report</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-danger">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <div class="dropdown">
-                          <button
-                            class="action-btn-secondary"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <i
-                              class="fa-regular fa-ellipsis-stroke-vertical"
-                            ></i>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">save</a></li>
-                            <li>
-                              <a
-                                class="dropdown-item"
-                                href="#"
-                                data-bs-toggle="modal"
-                                data-bs-target="#apply-modal"
-                                >apply</a
-                              >
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">copy link</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">report</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-warning">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <button
-                          type="button"
-                          class="action-btn-primary"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
-                        >
-                          <i class="fa-regular fa-pen-to-square"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-info">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <button
-                          type="button"
-                          class="action-btn-primary"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
-                        >
-                          <i class="fa-regular fa-pen-to-square"></i>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td data-label="Transaction ID">
-                        <span>#12415346563475</span>
-                      </td>
-                      <td data-label="Gateway">
-                        <span>Bank Transfer</span>
-                      </td>
-                      <td data-label="Amount">
-                        <span>10 USD</span>
-                      </td>
-                      <td data-label="Charge">
-                        <span>5 USD</span>
-                      </td>
-                      <td data-label="Status">
-                        <span class="badge text-bg-dark">Primary</span>
-                      </td>
-                      <td data-label="Time">
-                        <span>12 Apr 2023 04:40 PM</span>
-                      </td>
-                      <td data-label="Action">
-                        <button
-                          type="button"
-                          class="action-btn-primary"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
-                        >
-                          <i class="fa-regular fa-pen-to-square"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Cmn table section end -->
-
-        <!-- pagination section start -->
-        <div class="pagination-section">
-          <nav aria-label="...">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#"
-                  ><i class="fal fa-long-arrow-left"></i
-                ></a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#"
-                  ><i class="fal fa-long-arrow-right"></i
-                ></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!-- pagination section end -->
-      </div>
     </main>
     <!-- End #main -->
 
@@ -1116,16 +683,76 @@
     </div>
     <!-- Modal section end -->
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          initialDate: "2025-01-07",
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+          events: [
+            {
+              title: "All Day Event",
+              start: "2025-01-01",
+            },
+            {
+              title: "Long Event",
+              start: "2025-01-07",
+              end: "2025-01-10",
+            },
+            {
+              groupId: "999",
+              title: "Repeating Event",
+              start: "2025-01-16T16:00:00",
+            },
+            {
+              title: "Conference",
+              start: "2025-01-11",
+              end: "2025-01-13",
+            },
+            {
+              title: "Meeting",
+              start: "2025-01-12T14:30:00",
+            },
+            {
+              title: "Birthday Party",
+              start: "2025-01-13T07:00:00",
+            },
+            {
+              title: "Click for Google",
+              url: "https://google.com/",
+              start: "2025-01-28",
+            },
+          ],
+        });
+
+        calendar.render();
+      });
+    </script>
+
     <!-- Jquery Js link -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-
     <!-- Bootstrap Js link -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- select2_Js_link -->
     <script src="assets/js/select2.min.js"></script>
     <!-- Swiper Js link -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-
+    <!-- Jquery UI Js link -->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- global Js link -->
+    <script src="assets/js/index.global.min.js"></script>
+    <!-- Jquery Apexcharts Js link -->
+    <script src="assets/js/apexcharts.min.js"></script>
+    <!-- googleapis Js link -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8QwnfWXeL8Yw9PDqkW7MYLt2F1G1PS4&loading=async&callback=initMap&libraries=marker"></script>
+    <!-- google map Js link -->
+    <script src="assets/js/frontend_google_map.js" defer></script>
     <!-- Main Js slink -->
     <script src="assets/js/dashboard.js"></script>
   </body>
