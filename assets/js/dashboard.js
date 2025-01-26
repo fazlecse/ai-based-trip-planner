@@ -65,7 +65,7 @@ $(document).ready(function () {
       delay: 4000,
       disableOnInteraction: false,
     },
-    // autoplay: false,
+    autoplay: false,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

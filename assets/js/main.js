@@ -219,35 +219,6 @@ $(document).ready(function () {
     });
     // cmn select2 modal start
 
-    // Hero slider start
-    const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
-    var swiper = new Swiper(".hero-swiper", {
-        centeredSlides: true,
-        effect: "fade",
-        autoplay: {
-            false: true,
-            delay: 3000,
-            disableOnInteraction: false
-        },
-        // autoplay: false,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
-        on: {
-            autoplayTimeLeft(s, time, progress) {
-                progressCircle.style.setProperty("--progress", 1 - progress);
-                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-            }
-        }
-    });
-    // Hero slider end
-
     // Countdown start
     if ($('.countdown').length) {
         $('.countdown').countdown('2025/3/19', function (event) {
@@ -323,10 +294,6 @@ $(document).ready(function () {
         });
     }
     //--- BAR FILLAR ---//
-
-    // Aos start
-    AOS.init();
-    // Aos end
 
     // Date range picker start
     if ($('#inline-date-range-picker').length) {
@@ -502,14 +469,6 @@ if (document.querySelector('.login-register-form')) {
 
 // input field show hide password end
 
-// mobile menu start
-jQuery('#mobile-menu').meanmenu({
-    meanScreenWidth: "991",
-    meanMenuContainer: '.mobile-menu',
-    meanMenuOpen: "<i class='fal fa-bars'></i>",
-    meanMenuClose: "<i class='far fa-times-circle'></i>"
-});
-// mobile menu end
 
 // Dropdown select with Filter end
 if ($(".search-box2").length) {

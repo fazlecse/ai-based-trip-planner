@@ -245,114 +245,117 @@
     <!-- Sidebar section start -->
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="user-panel.html">
-                    <i class="fa-regular fa-grid"></i>
-                    <span>Dashboard</span>
+          <li class="nav-item">
+            <a class="nav-link active" href="user-panel.html">
+              <i class="fa-regular fa-grid"></i>
+              <span>dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link collapsed"
+              data-bs-target="#account-settings"
+              data-bs-toggle="collapse"
+              href="#"
+            >
+              <i class="fa-sharp fa-regular fa-user"></i
+              ><span>Account Settings</span>
+              <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
+            </a>
+            <ul
+              id="account-settings"
+              class="nav-content collapse"
+              data-bs-parent="#sidebar-nav"
+            >
+              <li>
+                <a href="account-settings-profile.html">
+                  <i class="fa-regular fa-circle"></i><span>Account</span>
                 </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="javascript:void(0)">
-                    <i class="fa-light fa-address-book"></i>
-                    <span>Contact</span>
+              </li>
+              <li>
+                <a href="account-settings-notifications.html">
+                  <i class="fa-regular fa-circle"></i><span>Notifications</span>
                 </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#crm" data-bs-toggle="collapse" href="#">
-                    <i class="fa-light fa-handshake-simple"></i><span>CRM</span>
-                    <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
+              </li>
+              <li>
+                <a href="account-settings-identity-verification.html">
+                  <i class="fa-regular fa-circle"></i><span>KYC</span>
                 </a>
-                <ul id="crm" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa-regular fa-circle"></i><span>Email analytcs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa-regular fa-circle"></i><span>manage</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#sales" data-bs-toggle="collapse" href="#">
-                    <i class="fa-light fa-bag-shopping"></i><span>sales</span>
-                    <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link collapsed"
+              data-bs-target="#components"
+              data-bs-toggle="collapse"
+              href="#"
+            >
+              <i class="fa-regular fa-magnet"></i><span>Components</span>
+              <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
+            </a>
+            <ul
+              id="components"
+              class="nav-content collapse"
+              data-bs-parent="#sidebar-nav"
+            >
+              <li>
+                <a href="components-alerts.html">
+                  <i class="fa-regular fa-circle"></i><span>Alerts</span>
                 </a>
-                <ul id="sales" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa-regular fa-circle"></i><span>Email analytcs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa-regular fa-circle"></i><span>manage</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#account-settings" data-bs-toggle="collapse" href="#">
-                    <i class="fa-sharp fa-light fa-user"></i><span>Account Settings</span>
-                    <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-regular fa-circle"></i><span>Accordion</span>
                 </a>
-                <ul id="account-settings" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="account-settings-profile.html">
-                            <i class="fa-regular fa-circle"></i><span>Account</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="account-settings-notifications.html">
-                            <i class="fa-regular fa-circle"></i><span>Notifications</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="account-settings-identity-verification.html">
-                            <i class="fa-regular fa-circle"></i><span>KYC</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components" data-bs-toggle="collapse" href="#">
-                    <i class="fa-light fa-magnet"></i><span>Components</span>
-                    <i class="fa-regular fa-angle-down ms-auto bi-chevron-down"></i>
-                </a>
-                <ul id="components" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="components-alerts.html">
-                            <i class="fa-regular fa-circle"></i><span>Alerts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-regular fa-circle"></i><span>Accordion</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="user-panel-pay-bill.html">
-                    <i class="fa-light fa-image"></i>
-                    <span>subscription</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="user-panel-transection.html">
-                    <i class="fa-light fa-arrow-right-arrow-left"></i>
-                    <span>transaction</span>
-                </a>
-            </li>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="user-panel-add-fund.html">
+              <i class="fa-regular fa-wallet"></i>
+              <span>add fund</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="user-panel-notice.html">
+              <i class="fa-regular fa-bullhorn"></i>
+              <span>notice</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="form.html">
+              <i class="fa-regular fa-note"></i>
+              <span>form</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="user-panel-transection.html">
+              <i class="fa-regular fa-arrow-right-arrow-left"></i>
+              <span>transaction</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="api.html">
+              <i class="fa-regular fa-code"></i>
+              <span>api</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="chat.html">
+              <i class="fa-regular fa-message"></i>
+              <span>chat</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="support-ticket.html">
+              <i class="fa-regular fa-headset"></i>
+              <span>support ticket</span>
+            </a>
+          </li>
         </ul>
-
-    </aside>
-    <!-- Sidebar section end -->
+      </aside>
+      <!-- Sidebar section end -->
 
 
 
@@ -369,7 +372,7 @@
 
         <!-- Cmn table section start -->
         <div class="card">
-            <div class="card-header d-flex justify-content-between border-0">
+            <div class="card-header pb-0 d-flex justify-content-between border-0">
                 <h4>Fund History</h4>
                 <div class="btn-area">
                     <button type="button" class="cmn-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -665,7 +668,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="section-header">
-                        <h5>transaction Details</h5>
+                        <h5>Transaction Details</h5>
                     </div>
                     <ul class="list-area">
                         <li><span>Available balance</span> <span>2544.14 USD</span></li>
