@@ -127,59 +127,37 @@ preloader section start
   position: fixed;
   width: 100%;
   height: 100vh;
+  top: 0;
+  left: 0;
   z-index: 99999;
-  background-color: rgb(var(--white));
+  background-color: var(--bg-color1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#preloader .load {
-  padding: 5px;
+#preloader .loader {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  transform: rotate(45deg);
+}
+#preloader .loader:before,
+#preloader .loader:after {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center center;
-  transform: translate(-50%, -50%) rotate(135deg);
-  width: 50px;
-  height: 50px;
+  inset: 0;
+  border-radius: 50% 50% 0 50%;
+  background: rgba(0, 0, 0, 0);
+  background-image: radial-gradient(circle 11.2px at 50% 50%, rgba(0, 0, 0, 0) 94%, rgb(var(--primary-color)));
 }
-#preloader .load :first-child {
-  background: #19a68c;
-  animation-delay: -1.5s;
+#preloader .loader:after {
+  animation: pulse-ytk0dhmd 1s infinite;
+  transform: perspective(336px) translateZ(0px);
 }
-#preloader .load :nth-child(2) {
-  background: #f63d3a;
-  animation-delay: -1s;
-}
-#preloader .load :nth-child(3) {
-  background: #fda543;
-  animation-delay: -0.5s;
-}
-#preloader .load :last-child {
-  background: #193b48;
-}
-#preloader .load hr {
-  border: 0;
-  margin: 0;
-  width: 40%;
-  height: 40%;
-  position: absolute;
-  border-radius: 50%;
-  animation: spin 2s ease infinite;
-  opacity: 1;
-}
-@keyframes spin {
-  0%, 100% {
-    transform: translateX(200%);
-  }
-  25% {
-    transform: translateY(200%);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateY(0);
+@keyframes pulse-ytk0dhmd {
+  to {
+    transform: perspective(336px) translateZ(168px);
+    opacity: 0;
   }
 }
 
@@ -310,7 +288,7 @@ textarea.form-control {
 }
 
 .form-control:disabled {
-  background: rgb(var(--primary-color), 0.1);
+  background: #f2f2f2;
 }
 
 .form-check label,
@@ -379,7 +357,7 @@ textarea.form-control {
   height: 40px;
 }
 .cmn-file-input:hover label {
-  background: rgb(var(--primary-color), 0.1);
+  background: rgb(var(--primary-color), 0.8);
 }
 .cmn-file-input label {
   font-size: 16px !important;
@@ -387,12 +365,13 @@ textarea.form-control {
   height: 40px;
   font-weight: 500 !important;
   background: rgb(var(--primary-color));
-  border-radius: 5px;
+  border-radius: 9999px;
   color: rgb(var(--white));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  transition: var(--transition);
 }
 .cmn-file-input .form-control {
   cursor: pointer;
@@ -458,6 +437,9 @@ intlTelInput section start
 
 /*----------------------------------------------
 intlTelInput end
+----------------------------------------------*/
+/*----------------------------------------------
+Select2 start
 ----------------------------------------------*/
 .select2 {
   width: 100% !important;
@@ -567,6 +549,9 @@ intlTelInput end
   margin-left: 0;
 }
 
+/*----------------------------------------------
+Select2 end
+----------------------------------------------*/
 .breadcrumb {
   display: flex;
   justify-content: center;
@@ -704,7 +689,7 @@ figure {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background: rgb(var(--primary-color));
+  background-color: rgb(var(--primary-color), 0.8);
   visibility: hidden;
   opacity: 0;
 }
@@ -723,7 +708,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 body::-webkit-scrollbar-thumb:hover {
-  background-color: var(--black);
+  background-color: rgb(var(--primary-color));
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -850,6 +835,11 @@ a.ui-button:active,
   right: 2px !important;
   top: 2px !important;
   background-color: rgb(var(--primary-color), 0.1) !important;
+}
+
+.fc .fc-toolbar {
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .fc .fc-toolbar-title {
@@ -1083,6 +1073,9 @@ Offcanvas section end
   -webkit-text-fill-color: transparent;
 }
 
+/*----------------------------------------------
+Cmn btn start
+----------------------------------------------*/
 .cmn-btn {
   background: rgb(var(--primary-color));
   padding: 10px 20px;
@@ -1243,6 +1236,9 @@ Offcanvas section end
   background-color: var(--delete-btn-hover-bg);
 }
 
+/*----------------------------------------------
+Cmn tab section start
+----------------------------------------------*/
 .cmn-tabs {
   display: flex;
   justify-content: center;
@@ -1271,6 +1267,12 @@ Offcanvas section end
   color: rgb(var(--white));
 }
 
+/*----------------------------------------------
+Cmn tab section end
+----------------------------------------------*/
+/*----------------------------------------------
+Alerts section start
+----------------------------------------------*/
 .alert {
   display: flex;
   align-items: center;
@@ -1383,6 +1385,12 @@ Offcanvas section end
     left: 15px;
   }
 }
+/*----------------------------------------------
+Alerts section end
+----------------------------------------------*/
+/*----------------------------------------------
+rich-text-editor section start
+----------------------------------------------*/
 .richtexteditor.rte-modern {
   border: none;
   height: 600px;
@@ -1399,6 +1407,9 @@ Offcanvas section end
     height: 300px;
   }
 }
+/*----------------------------------------------
+rich-text-editor section end
+----------------------------------------------*/
 .video_play_btn {
   position: absolute;
   top: 50%;
@@ -1912,7 +1923,7 @@ Chat section start
 }
 .single-btn:hover {
   color: rgb(var(--primary-color));
-  background: var(--primary-color-opacity-low2);
+  background: rgb(var(--primary-color), 0.2);
 }
 
 .single-btn2 {
@@ -2694,6 +2705,9 @@ Padding bottom
 }
 
 /* Box Card section end*/
+/*----------------------------------------------
+Bottom Mobile Tab nav section start
+----------------------------------------------*/
 .bottom-nav {
   background: rgb(var(--white));
   justify-content: space-around;
@@ -2724,9 +2738,12 @@ Padding bottom
   font-size: 20px;
 }
 
-/*------------------------------------------------------
+/*----------------------------------------------
+Bottom Mobile Tab nav section end
+----------------------------------------------*/
+/*----------------------------------------------
 Header section start
--------------------------------------------------------*/
+----------------------------------------------*/
 .header {
   transition: var(--transition);
   z-index: 997;
@@ -2797,9 +2814,9 @@ Header section start
   margin-right: 10px;
 }
 
-/*---------------------------------------------------
-  Header Nav start
-----------------------------------------------------*/
+/*----------------------------------------------
+Header Nav end
+----------------------------------------------*/
 .header-nav .nav-icons {
   display: flex;
   align-items: center;
@@ -3238,9 +3255,9 @@ Sidebar start
     right: 0;
   }
 }
-/*--------------------------------------------------
+/*----------------------------------------------
 Main section start
----------------------------------------------------*/
+----------------------------------------------*/
 #main {
   margin-top: 70px;
   padding: 30px;
@@ -3273,7 +3290,7 @@ Main section start
   }
 }
 /*----------------------------------------------
-  Card section start
+Card section start
 ----------------------------------------------*/
 .card {
   border-radius: 20px;
@@ -3302,10 +3319,10 @@ Main section start
   }
 }
 /*----------------------------------------------
-    Card section end
+Card section end
 ----------------------------------------------*/
 /*----------------------------------------------
-    Cmn table section start
+Cmn table section start
 ----------------------------------------------*/
 .cmn-table-card .search-bar {
   display: flex;
@@ -3363,7 +3380,7 @@ Account settings profile section start
 .account-settings-navbar .nav .nav-link {
   background-color: rgb(var(--white));
   color: rgb(var(--heading-color));
-  border-radius: 5px;
+  border-radius: 9999px;
   padding: 8px 20px;
   text-transform: capitalize;
   font-weight: 500;

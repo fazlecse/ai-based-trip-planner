@@ -27,11 +27,9 @@ Typography
   --bg-color2: rgb(var(--primary-color), 0.05);
   --bg-color3: rgb(var(--primary-color), 0.1);
   --bg-color4: #f2f2f2;
-
   --body-color: #1a1a1a;
   --border-color1: rgba(231, 234, 243, 0.7);
   --border-color2: rgba(140, 152, 164, 0.25);
-
   --shadow1: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
   --shadow2: 0 0.1875rem 0.75rem rgba(140, 152, 164, 0.25);
   --shadow3: 0 0.6125rem 2.5rem 0.6125rem rgba(140, 152, 164, 0.175);
@@ -148,73 +146,47 @@ preloader section start
   position: fixed;
   width: 100%;
   height: 100vh;
+  top: 0;
+  left: 0;
   z-index: 99999;
-  background-color: rgb(var(--white));
+  background-color: var(--bg-color1);
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .load {
-    padding: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-    transform: translate(-50%, -50%) rotate(135deg);
-    width: 50px;
-    height: 50px;
-
-    :first-child {
-      background: #19a68c;
-      animation-delay: -1.5s;
-    }
-
-    :nth-child(2) {
-      background: #f63d3a;
-      animation-delay: -1s;
-    }
-
-    :nth-child(3) {
-      background: #fda543;
-      animation-delay: -0.5s;
-    }
-
-    :last-child {
-      background: #193b48;
-    }
-
-    hr {
-      border: 0;
-      margin: 0;
-      width: 40%;
-      height: 40%;
-      position: absolute;
-      border-radius: 50%;
-      animation: spin 2s ease infinite;
-      opacity: 1;
-    }
+  .loader {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    transform: rotate(45deg);
   }
 
-  @keyframes spin {
-    0%,
-    100% {
-      transform: translateX(200%);
-    }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50% 50% 0 50%;
+    background: #0000;
+    background-image: radial-gradient(
+      circle 11.2px at 50% 50%,
+      #0000 94%,
+      rgb(var(--primary-color))
+    );
+  }
 
-    25% {
-      transform: translateY(200%);
-    }
+  .loader:after {
+    animation: pulse-ytk0dhmd 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+  }
 
-    50% {
-      transform: translateX(0);
-    }
-
-    75% {
-      transform: translateY(0);
+  @keyframes pulse-ytk0dhmd {
+    to {
+      transform: perspective(336px) translateZ(168px);
+      opacity: 0;
     }
   }
 }
-
 /*----------------------------------------------
 preloader end
 ----------------------------------------------*/
@@ -346,7 +318,7 @@ textarea.form-control {
 }
 
 .form-control:disabled {
-  background: rgb(var(--primary-color), 0.1);
+  background: #f2f2f2;
 }
 
 .form-check label,
@@ -427,7 +399,7 @@ textarea.form-control {
   height: 40px;
 
   &:hover label {
-    background: rgb(var(--primary-color), 0.1);
+    background: rgb(var(--primary-color), 0.8);
   }
 
   label {
@@ -436,13 +408,13 @@ textarea.form-control {
     height: 40px;
     font-weight: 500 !important;
     background: rgb(var(--primary-color));
-    border-radius: 5px;
+    border-radius: 9999px;
     color: rgb(var(--white));
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    // cursor: pointer;
+    transition: var(--transition);
   }
 
   .form-control {
@@ -524,9 +496,9 @@ intlTelInput section start
 intlTelInput end
 ----------------------------------------------*/
 
-// --------------------------------------------------------
-// Select2 start
-// --------------------------------------------------------
+/*----------------------------------------------
+Select2 start
+----------------------------------------------*/
 .select2 {
   width: 100% !important;
 }
@@ -659,9 +631,10 @@ intlTelInput end
 }
 
 // Select2 rtl end
-// --------------------------------------------------------
-// Select2 end
-// --------------------------------------------------------
+/*----------------------------------------------
+Select2 end
+----------------------------------------------*/
+
 // Breadcrumb start
 .breadcrumb {
   display: flex;
@@ -807,6 +780,7 @@ figure {
   padding-top: 10px;
 }
 
+// Scroll bar section start
 ::-webkit-scrollbar {
   width: 3px;
   height: 3px;
@@ -814,7 +788,7 @@ figure {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background: rgb(var(--primary-color));
+  background-color: rgb(var(--primary-color), 0.8);
   visibility: hidden;
   opacity: 0;
 }
@@ -833,10 +807,11 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 
   &:hover {
-    background-color: var(--black);
+    background-color: rgb(var(--primary-color));
   }
 }
 
+// Scroll bar section end
 // Owl carousel section start
 .owl-theme .owl-dots .owl-dot span {
   width: 10px;
@@ -974,6 +949,10 @@ a.ui-button:active,
 // Jquery UI section end
 
 // Full calender start
+.fc .fc-toolbar {
+  flex-wrap: wrap;
+  gap: 5px;
+}
 .fc .fc-toolbar-title {
   font-size: 20px;
 }
@@ -1243,9 +1222,9 @@ Offcanvas section end
   -webkit-text-fill-color: transparent;
 }
 
-// --------------------------------------------------------
-// Cmn btn start
-// --------------------------------------------------------
+/*----------------------------------------------
+Cmn btn start
+----------------------------------------------*/
 .cmn-btn {
   background: rgb(var(--primary-color));
   padding: 10px 20px;
@@ -1415,9 +1394,9 @@ Offcanvas section end
   }
 }
 
-// --------------------------------------------------------
-// -- Cmn tab section start --
-// --------------------------------------------------------
+/*----------------------------------------------
+Cmn tab section start
+----------------------------------------------*/
 .cmn-tabs {
   display: flex;
   justify-content: center;
@@ -1446,13 +1425,13 @@ Offcanvas section end
   color: rgb(var(--white));
 }
 
-// --------------------------------------------------------
-// -- Cmn tab section end --
-// --------------------------------------------------------
+/*----------------------------------------------
+Cmn tab section end
+----------------------------------------------*/
 
-// --------------------------------------------------------
-//  Alerts section start
-// --------------------------------------------------------
+/*----------------------------------------------
+Alerts section start
+----------------------------------------------*/
 .alert {
   display: flex;
   align-items: center;
@@ -1597,14 +1576,13 @@ Offcanvas section end
 }
 
 // Alerts rtl end
-// --------------------------------------------------------
-//  Alerts section end
-// --------------------------------------------------------
+/*----------------------------------------------
+Alerts section end
+----------------------------------------------*/
 
-// --------------------------------------------------------
-// rich-text-editor section start
-// --------------------------------------------------------
-
+/*----------------------------------------------
+rich-text-editor section start
+----------------------------------------------*/
 .richtexteditor.rte-modern {
   border: none;
   height: 600px;
@@ -1626,10 +1604,9 @@ Offcanvas section end
 
 // Richtexteditor responsive end
 
-// --------------------------------------------------------
-// rich-text-editor section end
-// --------------------------------------------------------
-
+/*----------------------------------------------
+rich-text-editor section end
+----------------------------------------------*/
 .video_play_btn {
   position: absolute;
   top: 50%;
@@ -2282,7 +2259,7 @@ Chat section start
 
   &:hover {
     color: rgb(var(--primary-color));
-    background: var(--primary-color-opacity-low2);
+    background: rgb(var(--primary-color), 0.2);
   }
 }
 
@@ -3219,9 +3196,9 @@ Padding bottom
 // Box card rtl end
 /* Box Card section end*/
 
-// ----------------------------------------------------
-// Bottom Mobile Tab nav section start
-// ----------------------------------------------------
+/*----------------------------------------------
+Bottom Mobile Tab nav section start
+----------------------------------------------*/
 .bottom-nav {
   background: rgb(var(--white));
   justify-content: space-around;
@@ -3257,15 +3234,13 @@ Padding bottom
     }
   }
 }
+/*----------------------------------------------
+Bottom Mobile Tab nav section end
+----------------------------------------------*/
 
-// ----------------------------------------------------
-// Bottom Mobile Tab nav section end
-// ----------------------------------------------------
-
-/*------------------------------------------------------
+/*----------------------------------------------
 Header section start
--------------------------------------------------------*/
-
+----------------------------------------------*/
 .header {
   transition: var(--transition);
   z-index: 997;
@@ -3346,10 +3321,9 @@ Header section start
 }
 
 // Header rtl end
-/*---------------------------------------------------
-  Header Nav start
-----------------------------------------------------*/
-
+/*----------------------------------------------
+Header Nav end
+----------------------------------------------*/
 .header-nav {
   .nav-icons {
     display: flex;
@@ -3894,9 +3868,9 @@ Sidebar start
 
 // Sidebar rtl end
 
-/*--------------------------------------------------
+/*----------------------------------------------
 Main section start
----------------------------------------------------*/
+----------------------------------------------*/
 #main {
   margin-top: 70px;
   padding: 30px;
@@ -3940,7 +3914,7 @@ Main section start
 // Main responsive end
 
 /*----------------------------------------------
-  Card section start
+Card section start
 ----------------------------------------------*/
 .card {
   border-radius: 20px;
@@ -3977,11 +3951,11 @@ Main section start
 
 // Responsive card end
 /*----------------------------------------------
-    Card section end
+Card section end
 ----------------------------------------------*/
 
 /*----------------------------------------------
-    Cmn table section start
+Cmn table section start
 ----------------------------------------------*/
 .cmn-table-card {
   .search-bar {
@@ -4056,7 +4030,7 @@ Account settings profile section start
     .nav-link {
       background-color: rgb(var(--white));
       color: rgb(var(--heading-color));
-      border-radius: 5px;
+      border-radius: 9999px;
       padding: 8px 20px;
       text-transform: capitalize;
       font-weight: 500;
@@ -4493,6 +4467,7 @@ Chat widget section start
 /*----------------------------------------------
 Chat widget section end
 ----------------------------------------------*/
+
 /*----------------------------------------------
 Wideget Section start
 ----------------------------------------------*/
@@ -4634,7 +4609,7 @@ Wideget Section start
   min-height: 400px;
 }
 
-// ************************************************
+// ***********************************************
 .widget-preview-container {
   position: relative;
   border: 1px solid var(--border-color1);
@@ -5037,7 +5012,7 @@ Wideget Section end
     .text-box .title {
       font-size: 26px;
     }
-    .img-box{
+    .img-box {
       margin-left: auto;
       height: 250px;
     }
